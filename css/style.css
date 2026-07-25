@@ -19,17 +19,29 @@
         scroll-behavior: smooth;
     }
 
-/* ///////////---------- Header ---------- */
+/* ///////---------- Header ---------- */
 
-    header {
-        position: relative;
+header {
 
-        padding: 30px 40px;
+    position: sticky;
 
-        background: var(--forge-dark);
+    top: 0;
 
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
+    z-index: 1000;
+
+    background: rgba(15, 15, 15, 0.82);
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255,107,0,.18);
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.45);
+
+    transition: all .3s ease;
+
+}
 
     .header-top {
         display: flex;
@@ -57,19 +69,58 @@
         margin-top: 30px;
     }
 
-    nav a {
-        color: var(--forge-white);
+nav a {
 
-        text-decoration: none;
+    position: relative;
 
-        font-weight: 600;
+    color: var(--forge-white);
 
-        transition: color .25s ease;
-    }
+    text-decoration: none;
 
-    nav a:hover {
-        color: var(--forge-orange);
-    }
+    font-weight: 600;
+
+    transition:
+        color .25s ease;
+
+}
+
+/* Animated underline */
+
+nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--forge-orange);
+
+    border-radius: 10px;
+
+    transition: width .25s ease;
+
+}
+
+nav a:hover {
+
+    color: var(--forge-orange);
+
+}
+
+nav a:hover::after {
+
+    width: 100%;
+
+}
+
+
 
 /* /////////////////////Hidden on desktop */
 
