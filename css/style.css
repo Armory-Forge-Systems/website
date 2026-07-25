@@ -88,18 +88,34 @@
 
 /* ///////---------- Hero ---------- */
 
-    .hero {
-        text-align: center;
+/* ///////---------- Hero ---------- */
 
-        padding: 120px 20px;
+.hero {
 
-        background:
-            linear-gradient(
-                rgba(18,18,18,.85),
-                rgba(18,18,18,.85)
-            ),
-            url("hero-bg.jpg") center/cover no-repeat;
-    }
+    text-align: center;
+
+    padding: 140px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(8,8,8,.78),
+            rgba(12,12,12,.86)
+        ),
+        url("../assets/images/home-hero-foundry.svg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    animation: forgePan 80s ease-in-out infinite alternate;
+
+}
 
     .hero h2 {
         font-size: 3rem;
