@@ -651,3 +651,20 @@ footer {
 .footer-social a:hover {
     color: var(--forge-orange);
 }
+.footer-copy {
+    color: #777;
+    margin-bottom: .5rem;
+}
+.footer-location {
+    color: #999;
+    font-size: .95rem;
+
+    letter-spacing: 1px;
+}
+.footer-logo {
+    width: 90px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+    transition: all .35s ease;
+}
