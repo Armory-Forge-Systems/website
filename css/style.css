@@ -668,3 +668,63 @@ footer {
     margin: 0 auto 20px;
     transition: all .35s ease;
 }
+/* ========================================
+   THE SIGNET
+======================================== */
+
+.signet-hero {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 80px;
+}
+
+.signet-hero .hero-content {
+    max-width: 800px;
+}
+
+.signet-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--forge-white);
+}
+
+.signet-hero .hero-tagline {
+    font-size: 1.4rem;
+    color: var(--forge-orange);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.signet-hero .hero-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--forge-gray);
+    margin-bottom: 40px;
+}
+
+/* ========================================
+   CATEGORIES
+======================================== */
+
+.categories {
+    padding: 100px 8%;
+}
+
+.categories .section-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.categories .section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.categories .section-title p {
+    color: var(--forge-gray);
+    line-height: 1.7;
+}
