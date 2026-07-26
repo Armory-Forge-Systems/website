@@ -370,7 +370,8 @@ nav a:hover::after {
 #services,
 #about,
 #signet,
-#contact {
+#contact,
+#featured-articles {
 
     scroll-margin-top: 110px;
 
