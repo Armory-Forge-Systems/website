@@ -22,4 +22,4 @@ Armory Forge Systems builds AI, automation, cloud infrastructure, and cybersecur
 
 **Armory Forge Systems**
 
-*"You imagine. We build."*
+*"You imagine. We build. To the victor, the spoils."*
