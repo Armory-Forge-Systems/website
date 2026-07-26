@@ -113,8 +113,56 @@ section{
     background:var(--forge-panel);
     border:1px solid var(--forge-border);
     border-radius:10px;
-    padding:30px;
+    padding:2rem;
     transition:.3s;
+}
+
+.article-card > * + * {
+    margin-top:1rem;
+}
+
+.article-category{
+    font-size:.82rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#9a9a9a;
+}
+
+.article-title{
+    font-size:1.85rem;
+    font-weight:700;
+    line-height:1.25;
+    color:#fff;
+}
+
+.article-summary{
+    color:#b8b8b8;
+    line-height:1.8;
+}
+
+.article-cta{
+    color:var(--forge-orange);
+    text-align:right;
+    font-size:.85rem;
+    font-weight:600;
+    letter-spacing:.05em;
+    margin-top:.75rem;
+}
+
+.article-title a{
+    color:#fff;
+    text-decoration:none;
+    transition:.25s;
+}
+
+.article-title a:hover{
+    color:var(--forge-orange);
+}
+
+/* Reset default link colors since the whole card is a link */
+a.article-card{
+    color:inherit;
+    text-decoration:none;
 }
 
 .service-card:hover,
