@@ -616,32 +616,11 @@ section{
     width:60px;
 }
 
-.seal-content{
-    padding:24px 0;
-}
-
-.seal-mark{
+.seal-image{
     display:block;
-    font-size:1.6rem;
-    color:var(--forge-orange);
-    margin-bottom:10px;
-    line-height:1;
-}
-
-.seal-title{
-    font-size:0.75rem;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:var(--forge-gray);
-    margin:0 0 8px;
-    font-weight:600;
-}
-
-.seal-verified{
-    font-size:0.85rem;
-    color:var(--forge-light-gray);
-    line-height:1.5;
-    margin:0;
+    margin:24px auto;
+    max-width:120px;
+    height:auto;
 }
 
 .article-cta{
