@@ -21,12 +21,6 @@ hiddenElements.forEach((element) => {
     observer.observe(element);
 
 });
-
-hiddenElements.forEach((element) => {
-
-    observer.observe(element);
-
-});
 // ===========================
 // Mobile Navigation
 // ===========================
