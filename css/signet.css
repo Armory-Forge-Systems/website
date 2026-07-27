@@ -606,6 +606,7 @@ section{
 .signet-approval{
     max-width:680px;
     margin:0 auto;
+    position:relative;
 }
 
 /* Override global .hidden/.show — wrapper is a trigger only */
@@ -625,39 +626,46 @@ section{
 
 .signet-certification{
     text-align:center;
-    padding:60px 8% 30px;
+    padding:20px 8% 10px;
+    position:relative;
 }
+
+/* ════════════════════════════
+   STAGE 1 — Divider (0ms)
+   ════════════════════════════ */
 
 .seal-line{
     border:none;
-    border-top:1px solid var(--forge-border);
-    width:60px;
+    border-top:1px solid var(--forge-orange);
+    width:80px;
     margin:0 auto;
+    opacity:0;
+    transform:scaleX(0);
+    transform-origin:center;
 }
 
-.seal-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    max-width:420px;
-    margin:24px auto 30px;
-    padding:0 8%;
+.signet-approval.show .seal-line{
+    animation:stageDivider 300ms ease-out 0ms forwards;
 }
 
-.seal-title{
-    font-size:0.75rem;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:#888;
+@keyframes stageDivider{
+    0%{
+        opacity:0;
+        transform:scaleX(0);
+    }
+    100%{
+        opacity:1;
+        transform:scaleX(1);
+    }
 }
 
-.seal-number{
-    font-size:0.7rem;
-    letter-spacing:2px;
-    color:#666;
-    font-family:Georgia, 'Times New Roman', serif;
-    font-style:italic;
+.seal-line-bottom{
+    margin-top:30px;
 }
+
+/* ════════════════════════════
+   STAGE 2 — The Signet (550ms)
+   ════════════════════════════ */
 
 .seal-body{
     display:flex;
@@ -668,33 +676,83 @@ section{
     padding:0 8%;
 }
 
-/* Seal image — starts hidden, animates on reveal */
 .signet-approval .seal-image{
     display:block;
     width:90px;
     height:auto;
     flex-shrink:0;
     opacity:0;
-    transform:scale(0.9);
+    transform:translateY(20px) scale(0.96);
 }
 
 .signet-approval.show .seal-image{
-    animation:sealReveal 700ms ease-out 300ms forwards;
+    animation:stageSeal 700ms ease-out 550ms forwards;
 }
 
-@keyframes sealReveal{
+@keyframes stageSeal{
     0%{
         opacity:0;
-        transform:scale(0.9);
+        transform:translateY(20px) scale(0.96);
     }
     100%{
         opacity:1;
-        transform:scale(1);
+        transform:translateY(0) scale(1);
     }
+}
+
+/* ════════════════════════════
+   STAGE 3 — Signature (1500ms)
+   ════════════════════════════ */
+
+.seal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:20px auto 24px;
+    max-width:480px;
+    padding:0 8%;
+    opacity:0;
+    transform:translateY(10px);
+}
+
+.signet-approval.show .seal-header{
+    animation:stageSignature 500ms ease-out 1500ms forwards;
+}
+
+.seal-title{
+    font-size:0.75rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#999;
+}
+
+.seal-number{
+    font-size:0.7rem;
+    letter-spacing:2px;
+    color:#777;
+    font-family:Georgia, 'Times New Roman', serif;
+    font-style:italic;
 }
 
 .seal-copy{
     text-align:left;
+    opacity:0;
+    transform:translateY(10px);
+}
+
+.signet-approval.show .seal-copy{
+    animation:stageSignature 500ms ease-out 1500ms forwards;
+}
+
+@keyframes stageSignature{
+    0%{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .seal-copy blockquote{
@@ -722,6 +780,7 @@ section{
     display:block;
     color:var(--forge-white);
     margin-bottom:2px;
+    letter-spacing:0.3px;
 }
 
 .seal-author span{
@@ -729,20 +788,56 @@ section{
     font-size:0.8rem;
 }
 
-/* CTA button starts hidden */
+/* ════════════════════════════
+   Glow Bridge (1250ms)
+   ════════════════════════════ */
+
+.seal-glow{
+    height:50px;
+    width:100%;
+    max-width:360px;
+    margin:-5px auto 0;
+    background:radial-gradient(ellipse at center top, rgba(255,107,0,0.10) 0%, transparent 70%);
+    opacity:0;
+}
+
+.signet-approval.show .seal-glow{
+    animation:glowFade 600ms ease-out 1250ms forwards;
+}
+
+@keyframes glowFade{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+/* ════════════════════════════
+   STAGE 4 — Call To Action (2400ms)
+   ════════════════════════════ */
+
 .signet-approval .cta-button{
     opacity:0;
-    transform:translateY(15px);
+    transform:translateY(30px);
 }
 
 .signet-approval.show .cta-button{
-    animation:ctaReveal 600ms ease-out 1400ms forwards;
+    animation:stageCTA 600ms ease-out 2400ms forwards;
 }
 
-@keyframes ctaReveal{
+.signet-approval.show .cta-button:hover{
+    background:var(--forge-orange);
+    filter:brightness(1.1);
+    transform:translateY(-3px);
+    box-shadow:0 6px 24px rgba(255,107,0,0.35);
+}
+
+@keyframes stageCTA{
     0%{
         opacity:0;
-        transform:translateY(15px);
+        transform:translateY(30px);
     }
     100%{
         opacity:1;
@@ -752,16 +847,55 @@ section{
 
 .article-cta{
     text-align:center;
-    padding:30px 8% 100px;
-    max-width:680px;
+    padding:0 8% 40px;
+    max-width:580px;
     margin:0 auto;
+}
+
+.article-cta h3{
+    font-size:1.6rem;
+    color:var(--forge-white);
+    margin-bottom:14px;
+    font-weight:600;
+    letter-spacing:-0.01em;
 }
 
 .article-cta p{
     color:var(--forge-gray);
-    font-size:1.1rem;
+    font-size:1.05rem;
     line-height:1.7;
-    margin-bottom:30px;
+    margin-bottom:34px;
+}
+
+.cta-secondary{
+    display:block;
+    margin-top:18px;
+    color:#888;
+    text-decoration:none;
+    font-size:0.85rem;
+    letter-spacing:0.5px;
+    transition:color 0.25s;
+}
+
+.cta-secondary:hover{
+    color:var(--forge-orange);
+}
+
+/* ════════════════════════════
+   Reduced Motion
+   ════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce){
+    .signet-approval .seal-line,
+    .signet-approval .seal-image,
+    .signet-approval .seal-header,
+    .signet-approval .seal-copy,
+    .signet-approval .seal-glow,
+    .signet-approval .cta-button{
+        animation:none !important;
+        opacity:1 !important;
+        transform:none !important;
+    }
 }
 
 .article-footer-nav{
@@ -830,6 +964,32 @@ section{
 
     .article-body p{
         font-size:1rem;
+    }
+
+    .article-cta h3{
+        font-size:1.3rem;
+    }
+
+    .article-cta p{
+        font-size:0.95rem;
+    }
+
+    .seal-body{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .signet-approval .seal-image{
+        width:80px;
+    }
+
+    .seal-copy{
+        text-align:center;
+    }
+
+    .seal-header{
+        flex-direction:column;
+        gap:6px;
     }
 
 }
