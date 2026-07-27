@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Cloud Security Matters | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="An overview of today's cloud security challenges and practical strategies businesses can use to protect their data.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/signet.css">
+</head>
+
+<body>
+
+<!-- =========================
+    Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1>Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../signet.html" class="active">The Signet</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Article Hero
+========================= -->
+<section class="article-hero">
+    <div class="hero-content">
+        <div class="article-meta-bar">
+            <span class="category">Cloud Computing</span>
+            <span class="date">July 2026</span>
+        </div>
+        <h1>Why Cloud Security Matters</h1>
+    </div>
+</section>
+
+<!-- =========================
+    Article Body
+========================= -->
+<article class="article-body">
+
+<p class="forge-note"><em>The Forge — Armory Forge Systems</em></p>
+
+<p>Every week, another headline. Another company exposed. Another database of customer information scraped, encrypted, or sold. And almost always, the same question surfaces: <em>"We thought our cloud provider handled security."</em></p>
+
+<p>Here's the uncomfortable truth they didn't talk about in the sales demo.</p>
+
+<h2>The Shared Responsibility Model</h2>
+
+<p>Cloud providers like AWS, Azure, and Google Cloud are clear about this — though many businesses never read the fine print. The provider is responsible for <strong>security of the cloud</strong>. You are responsible for <strong>security in the cloud</strong>.</p>
+
+<p>That means AWS makes sure their data centers have armed guards, biometric locks, and redundant power. But <em>you</em> are responsible for configuring your S3 buckets, managing IAM roles, encrypting your data, patching your instances, and monitoring for threats.</p>
+
+<p>Most breaches aren't exploits of cloud provider vulnerabilities. They're misconfigurations, exposed keys, overly permissive access policies, and forgotten resources with default settings.</p>
+
+<h2>The Three Biggest Cloud Security Risks</h2>
+
+<h3>1. Misconfiguration</h3>
+<p>An S3 bucket set to "public" because a developer needed quick access during testing — and no one remembered to lock it down. An Amazon RDS database exposed to the internet because the security group was left open. A Kubernetes pod with privilege escalation enabled. These aren't sophisticated attacks; they're configuration mistakes, and they account for the majority of cloud data exposures.</p>
+
+<p>The fix: automated policy enforcement. Infrastructure-as-code tools like Terraform can validate configurations before deployment. Services like AWS Config can continuously monitor for drift and alert when a resource falls out of compliance.</p>
+
+<h3>2. Identity and Access Management Failures</h3>
+<p>The principle of least privilege is one of the oldest rules in security: give every user, service, and system exactly the permissions it needs — nothing more. In practice, most cloud environments are littered with overly permissive IAM roles, unused access keys, and root accounts still in daily use.</p>
+
+<p>The fix: audit your IAM policies regularly. Rotate keys. Use temporary credentials wherever possible. And for God's sake, stop using root accounts for everyday tasks.</p>
+
+<h3>3. Unpatched Vulnerabilities</h3>
+<p>Your cloud infrastructure is only as secure as the software running on it. When a critical vulnerability drops — Log4j, Shellshock, whatever comes next — your window to patch is measured in hours, not days. Automated patch management and vulnerability scanning tools are not optional.</p>
+
+<h2>Practical Cloud Security for Small Teams</h2>
+
+<p>You don't need a dedicated security team to run a secure cloud environment. You need discipline and the right tools:</p>
+
+<ul>
+    <li><strong>Enable encryption everywhere</strong> — data at rest, data in transit, database encryption, backup encryption. Most cloud providers enable this with a checkbox. Check the box.</li>
+    <li><strong>Use a cloud security posture management tool</strong> — CSPM tools continuously scan your environment against benchmarks like CIS and flag misconfigurations before they become headlines.</li>
+    <li><strong>Implement least-privilege access</strong> — start with no permissions and grant only what's needed. Review quarterly.</li>
+    <li><strong>Enable logging and monitoring</strong> — CloudTrail, CloudWatch, or their equivalents in your provider. If you don't log it, you can't detect it.</li>
+    <li><strong>Test your backups</strong> — having backups isn't enough. Test restoration regularly. Backup without recovery testing is just organized hope.</li>
+    <li><strong>Have an incident response plan</strong> — when something goes wrong, you shouldn't be figuring out what to do in the moment. Write it down, practice it, update it.</li>
+</ul>
+
+<h2>Security as a Competitive Advantage</h2>
+
+<p>Here's the angle most businesses miss: good security sells.</p>
+
+<p>When you can tell a prospect "We encrypt everything end-to-end, we audit our access controls quarterly, and we maintain SOC 2 alignment," that's not a compliance checkbox. That's trust. And in a world where data breaches are weekly news, trust is a differentiator.</p>
+
+<p>Clients want to know their data is safe. If you can't answer that question confidently, someone else will.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>Cloud security isn't the cloud provider's job. It's yours. The tools are available, the practices are well-documented, and the cost of getting it wrong is far higher than the cost of doing it right.</p>
+
+<p>The question isn't whether your business is big enough to need cloud security. The question is whether you can afford to learn this lesson the hard way.</p>
+
+</article>
+
+<!-- =========================
+    Article CTA
+========================= -->
+<div class="article-cta">
+    <p>Need a cloud security audit? 💬 <strong>Consult the Forge</strong> — we'll review your infrastructure, identify risks, and give you a clear path to secure operations.</p>
+    <a href="../signet.html" class="btn-primary">Back to The Signet</a>
+</div>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine.<br>We build.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="../index.html#hero">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+            <a href="../signet.html">The Signet</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
