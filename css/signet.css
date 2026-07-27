@@ -121,10 +121,32 @@ section{
 
 .article-card{
     background:rgba(255,255,255,0.03);
-    border:1px solid rgba(255,255,255,0.08);
+    border:1px solid rgba(255,107,0,0.10);
     border-radius:12px;
     padding:2rem;
+    position:relative;
+    overflow:hidden;
     transition:transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow:0 0 8px rgba(255,107,0,0.03);
+}
+
+.article-card::before{
+    content:'';
+    position:absolute;
+    top:-40px;
+    left:-40px;
+    right:-40px;
+    height:60px;
+    background:radial-gradient(ellipse at center top, rgba(255,107,0,0.12) 0%, transparent 65%);
+    pointer-events:none;
+    z-index:0;
+    transition:opacity 0.4s ease, transform 0.4s ease;
+    opacity:0.4;
+}
+
+.article-card > *{
+    position:relative;
+    z-index:1;
 }
 
 .article-card > * + * {
@@ -335,16 +357,50 @@ section{
     font-size:1.1rem;
 }
 
+.service-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.service-card::before{
+    content:'';
+    position:absolute;
+    top:-40px;
+    left:-40px;
+    right:-40px;
+    height:60px;
+    background:radial-gradient(ellipse at center top, rgba(255,107,0,0.10) 0%, transparent 65%);
+    pointer-events:none;
+    z-index:0;
+    transition:opacity 0.4s ease;
+    opacity:0.3;
+}
+
+.service-card > *{
+    position:relative;
+    z-index:1;
+}
+
 .service-card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
     border-color:var(--forge-orange);
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    box-shadow:0 16px 40px rgba(255,107,0,0.18), 0 0 20px rgba(255,107,0,0.06);
+}
+
+.service-card:hover::before{
+    opacity:1;
+    background:radial-gradient(ellipse at center top, rgba(255,107,0,0.20) 0%, transparent 55%);
 }
 
 .article-card:hover{
-    transform:translateY(-6px);
+    transform:translateY(-8px);
     border-color:var(--forge-orange);
-    box-shadow:0 12px 30px rgba(255,107,0,0.15);
+    box-shadow:0 20px 45px rgba(255,107,0,0.20), 0 0 24px rgba(255,107,0,0.08);
+}
+
+.article-card:hover::before{
+    opacity:1;
+    background:radial-gradient(ellipse at center top, rgba(255,107,0,0.22) 0%, transparent 55%);
 }
 
 .article-meta{
