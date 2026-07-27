@@ -199,11 +199,36 @@ section{
     margin-top:8px;
 }
 
-.coming-soon{
+.category-archive{
+    padding:4rem 8%;
+}
+
+.archive-header{
+    text-align:center;
+    margin-bottom:3rem;
+}
+
+.archive-header h2{
+    font-size:2rem;
+    color:var(--forge-white);
+    margin-bottom:.5rem;
+}
+
+.archive-count{
+    color:var(--forge-gray);
+    font-size:1rem;
+}
+
+.archive-empty{
     text-align:center;
     padding:4rem 0;
     color:var(--forge-gray);
-    font-size:1.2rem;
+    font-size:1.1rem;
+}
+
+.archive-empty .btn-primary{
+    display:inline-block;
+    margin-top:1.5rem;
 }
 
 .service-card:hover{
