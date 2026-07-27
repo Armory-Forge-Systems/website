@@ -599,6 +599,51 @@ section{
     color:var(--forge-light-gray);
 }
 
+/* =========================
+    Signet Seal
+========================= */
+.signet-seal{
+    text-align:center;
+    padding:50px 8% 30px;
+    max-width:600px;
+    margin:0 auto;
+}
+
+.seal-divider{
+    border:none;
+    border-top:1px solid var(--forge-border);
+    margin:0 auto;
+    width:60px;
+}
+
+.seal-content{
+    padding:24px 0;
+}
+
+.seal-mark{
+    display:block;
+    font-size:1.6rem;
+    color:var(--forge-orange);
+    margin-bottom:10px;
+    line-height:1;
+}
+
+.seal-title{
+    font-size:0.75rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--forge-gray);
+    margin:0 0 8px;
+    font-weight:600;
+}
+
+.seal-verified{
+    font-size:0.85rem;
+    color:var(--forge-light-gray);
+    line-height:1.5;
+    margin:0;
+}
+
 .article-cta{
     text-align:center;
     padding:60px 8% 100px;
