@@ -623,6 +623,20 @@ section{
     height:auto;
 }
 
+/* Scroll-reveal: starts hidden */
+.seal-image.hidden{
+    opacity:0;
+    transform:translateY(20px);
+}
+
+.seal-image.show{
+    opacity:1;
+    transform:translateY(0);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
 .article-cta{
     text-align:center;
     padding:60px 8% 100px;
