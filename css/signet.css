@@ -600,11 +600,11 @@ section{
 }
 
 /* =========================
-    Signet Approval
+    Signet Approval (Trigger Wrapper)
 ========================= */
 
 .signet-approval{
-    max-width:600px;
+    max-width:680px;
     margin:0 auto;
 }
 
@@ -619,33 +619,70 @@ section{
     transform:none;
 }
 
-.signet-seal{
+/* =========================
+    Signet Certification Section
+========================= */
+
+.signet-certification{
     text-align:center;
-    padding:50px 8% 30px;
+    padding:60px 8% 30px;
 }
 
-.seal-divider{
+.seal-line{
     border:none;
     border-top:1px solid var(--forge-border);
-    margin:0 auto;
     width:60px;
+    margin:0 auto;
 }
 
-.seal-image{
+.seal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    max-width:420px;
+    margin:24px auto 30px;
+    padding:0 8%;
+}
+
+.seal-title{
+    font-size:0.75rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#888;
+}
+
+.seal-number{
+    font-size:0.7rem;
+    letter-spacing:2px;
+    color:#666;
+    font-family:Georgia, 'Times New Roman', serif;
+    font-style:italic;
+}
+
+.seal-body{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    max-width:520px;
+    margin:0 auto;
+    padding:0 8%;
+}
+
+/* Seal image — starts hidden, animates on reveal */
+.signet-approval .seal-image{
     display:block;
-    margin:24px auto;
-    max-width:120px;
+    width:90px;
     height:auto;
-    /* Start hidden — animated on reveal */
+    flex-shrink:0;
     opacity:0;
     transform:scale(0.9);
 }
 
 .signet-approval.show .seal-image{
-    animation:sealApprove 700ms ease-out 300ms forwards;
+    animation:sealReveal 700ms ease-out 300ms forwards;
 }
 
-@keyframes sealApprove{
+@keyframes sealReveal{
     0%{
         opacity:0;
         transform:scale(0.9);
@@ -656,6 +693,42 @@ section{
     }
 }
 
+.seal-copy{
+    text-align:left;
+}
+
+.seal-copy blockquote{
+    border:none;
+    padding:0;
+    margin:0 0 12px;
+    background:transparent;
+    font-style:normal;
+    font-size:0.95rem;
+    line-height:1.6;
+    color:var(--forge-gray);
+    quotes:none;
+}
+
+.seal-copy blockquote::before,
+.seal-copy blockquote::after{
+    content:none;
+}
+
+.seal-author{
+    font-size:0.85rem;
+}
+
+.seal-author strong{
+    display:block;
+    color:var(--forge-white);
+    margin-bottom:2px;
+}
+
+.seal-author span{
+    color:#888;
+    font-size:0.8rem;
+}
+
 /* CTA button starts hidden */
 .signet-approval .cta-button{
     opacity:0;
@@ -663,10 +736,10 @@ section{
 }
 
 .signet-approval.show .cta-button{
-    animation:ctaApprove 600ms ease-out 1400ms forwards;
+    animation:ctaReveal 600ms ease-out 1400ms forwards;
 }
 
-@keyframes ctaApprove{
+@keyframes ctaReveal{
     0%{
         opacity:0;
         transform:translateY(15px);
