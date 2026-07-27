@@ -205,6 +205,14 @@ section{
     border-top:1px solid var(--forge-border);
 }
 
+.archive-signet-label{
+    font-size:.8rem;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    color:#666;
+    margin-bottom:.5rem;
+}
+
 .archive-title{
     font-size:2.5rem;
     font-weight:700;
@@ -216,9 +224,17 @@ section{
 
 .archive-description{
     max-width:600px;
-    margin:0 auto 1.5rem;
+    margin:0 auto .75rem;
     color:var(--forge-gray);
     font-size:1.05rem;
+    font-style:italic;
+}
+
+.archive-subtitle{
+    max-width:600px;
+    margin:0 auto 1.5rem;
+    color:#888;
+    font-size:.9rem;
 }
 
 .archive-count{
