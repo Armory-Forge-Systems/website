@@ -140,6 +140,25 @@ section{
     line-height:1.8;
 }
 
+.featured-articles{
+    padding:4rem 8%;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.featured-articles h2{
+    font-size:2rem;
+    color:#fff;
+    margin-bottom:2.5rem;
+    text-align:center;
+}
+
+.article-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:2rem;
+}
+
 .article-cta{
     color:var(--forge-orange);
     text-align:right;
@@ -160,10 +179,7 @@ section{
 }
 
 /* Reset default link colors since the whole card is a link */
-a.article-card{
-    color:inherit;
-    text-decoration:none;
-}
+
 
 .service-card:hover,
 .article-card:hover{
@@ -173,11 +189,27 @@ a.article-card{
 }
 
 .article-meta{
-    color:var(--forge-orange);
+    display:flex;
+    gap:1rem;
+    color:var(--forge-gray);
     font-size:.8rem;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:12px;
+}
+
+.article-meta span{
+    color:var(--forge-gray);
+}
+
+.read-more{
+    display:inline-block;
+    color:var(--forge-orange);
+    font-weight:600;
+    font-size:.9rem;
+    text-decoration:none;
+    transition:.25s;
+}
+
+.read-more:hover{
+    color:#fff;
 }
 
 .article-card h3{
