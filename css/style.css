@@ -437,15 +437,45 @@ nav a:hover::after {
         .services {
             flex-direction: column;
             align-items: center;
+            padding: 60px 20px;
+        }
+
+        .service-container {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            gap: 20px;
         }
 
         .card {
             width: 100%;
-            max-width: 350px;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .forge-banner h2 {
             font-size: 2rem;
+        }
+
+        .technology {
+            padding: 60px 20px;
+        }
+
+        .technology h2 {
+            font-size: 2rem;
+        }
+
+        .tech-grid {
+            gap: 16px;
+        }
+
+        .hero {
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 1.6rem;
         }
 
     /* -/////////--------- Mobile Navigation ---------- */
