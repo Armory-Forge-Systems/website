@@ -21,12 +21,6 @@ hiddenElements.forEach((element) => {
     observer.observe(element);
 
 });
-
-hiddenElements.forEach((element) => {
-
-    observer.observe(element);
-
-});
 // ===========================
 // Mobile Navigation
 // ===========================
@@ -51,4 +45,17 @@ navLinks.forEach((link) => {
 
     });
 
+});
+
+// ===========================
+// Smooth Scroll — Browse Articles Button
+// ===========================
+
+document.querySelector(".btn-primary").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    document.querySelector("#featured").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 });
