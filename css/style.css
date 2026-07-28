@@ -857,3 +857,391 @@ footer {
     color: var(--forge-gray);
     line-height: 1.7;
 }
+
+/* ==========================================
+   FORGE EFFECTS — Molten Steel Atmosphere
+   ========================================== */
+
+/* ── Forge canvas overlay (ember particles) ── */
+#forge-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ── Heat shimmer on hero heading ── */
+.hero h2 {
+    position: relative;
+    z-index: 3;
+    text-shadow:
+        0 0 40px rgba(255,107,0,.45),
+        0 0 80px rgba(255,70,0,.25),
+        0 2px 4px rgba(0,0,0,.6);
+    animation: heatShimmer 4s ease-in-out infinite;
+}
+
+@keyframes heatShimmer {
+    0%, 100% {
+        text-shadow:
+            0 0 40px rgba(255,107,0,.45),
+            0 0 80px rgba(255,70,0,.25),
+            0 2px 4px rgba(0,0,0,.6);
+    }
+    50% {
+        text-shadow:
+            0 0 60px rgba(255,140,20,.60),
+            0 0 120px rgba(255,90,0,.35),
+            0 0 200px rgba(255,50,0,.15),
+            0 2px 4px rgba(0,0,0,.6);
+    }
+}
+
+.hero p,
+.hero .btn {
+    position: relative;
+    z-index: 3;
+}
+
+/* ── Molten pulse on CTA button ── */
+.btn {
+    animation: moltenPulse 3s ease-in-out infinite;
+}
+
+@keyframes moltenPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(255,107,0,.25),
+            0 8px 24px rgba(255,107,0,.15);
+    }
+    50% {
+        box-shadow:
+            0 0 35px rgba(255,107,0,.40),
+            0 0 60px rgba(255,70,0,.20),
+            0 12px 28px rgba(255,107,0,.25);
+    }
+}
+
+.btn:hover {
+    animation: none;
+    box-shadow:
+        0 0 40px rgba(255,140,20,.50),
+        0 0 80px rgba(255,70,0,.30),
+        0 16px 36px rgba(255,107,0,.35);
+}
+
+/* ── Card molten edge glow ── */
+.card {
+    position: relative;
+    overflow: visible;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 14px;
+    background: linear-gradient(
+        135deg,
+        transparent 30%,
+        rgba(255,107,0,.08) 50%,
+        rgba(255,140,20,.15) 70%,
+        transparent 90%
+    );
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .35s ease;
+    filter: blur(4px);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* ── Tech card forge glow ── */
+.tech-card:hover {
+    box-shadow:
+        0 0 0 2px rgba(255,107,0,.30),
+        0 0 20px rgba(255,107,0,.20),
+        0 10px 30px rgba(255,107,0,.20),
+        0 0 60px rgba(255,107,0,.10);
+}
+
+/* ── Forge banner heat effect ── */
+.forge-banner {
+    position: relative;
+}
+
+.forge-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at 50% 0%,
+        rgba(255,80,0,.08) 0%,
+        transparent 60%
+    );
+    pointer-events: none;
+    animation: bannerHeat 6s ease-in-out infinite alternate;
+}
+
+@keyframes bannerHeat {
+    0% { opacity: .4; }
+    100% { opacity: 1; }
+}
+
+/* ── Section divider with forge glow ── */
+.technology,
+.services,
+.about,
+.contact {
+    border-top: 1px solid rgba(255,107,0,.08);
+    position: relative;
+}
+
+.technology::before,
+.services::before,
+.about::before,
+.contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,107,0,.20),
+        rgba(255,140,20,.30),
+        rgba(255,107,0,.20),
+        transparent
+    );
+    pointer-events: none;
+}
+
+/* ── Text glow for section headings ── */
+.services h2,
+.about-text h2,
+.forge-banner h2,
+.contact h2,
+.technology h2 {
+    text-shadow: 0 0 30px rgba(255,107,0,.15);
+}
+
+/* ── Footer top glow line ── */
+footer {
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,107,0,.35),
+        rgba(255,140,20,.50),
+        rgba(255,107,0,.35),
+        transparent
+    );
+    pointer-events: none;
+}
+
+/* ==========================================
+   PASS 2 — Scroll Hardening / Cooling Reveals
+   ========================================== */
+
+/* ── Cooling reveal: elements glow hot then cool to solid ── */
+.forge-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: brightness(1.4) saturate(1.2);
+    transition:
+        opacity 1s cubic-bezier(0.22, 0.61, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+        filter 1.8s ease-out;
+}
+
+.forge-reveal.forge-cooled {
+    opacity: 1;
+    transform: translateY(0);
+    filter: brightness(1) saturate(1);
+}
+
+/* ── Branding-iron title reveal ── */
+.forge-title {
+    position: relative;
+    display: inline-block;
+}
+
+.forge-title::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--forge-orange);
+    border-radius: 2px;
+    box-shadow: 0 0 12px rgba(255,107,0,.6);
+    transition: width 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s;
+}
+
+.forge-title.forge-branded::after {
+    width: 100%;
+}
+
+/* ── Molten frame on about image ── */
+.about-image {
+    position: relative;
+    border-radius: 14px;
+    overflow: visible;
+}
+
+.about-image img {
+    border-radius: 12px;
+    transition: box-shadow 1.5s ease-out, filter 1.5s ease-out;
+    filter: brightness(1.15) saturate(1.1);
+}
+
+.about-image.forge-cooled img {
+    filter: brightness(1) saturate(1);
+}
+
+.about-image::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 16px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,140,20,.5),
+        rgba(255,70,0,.3),
+        rgba(255,180,40,.4),
+        rgba(255,60,0,.35)
+    );
+    z-index: -1;
+    opacity: 0;
+    filter: blur(6px);
+    transition: opacity 2s ease-out 0.5s;
+}
+
+.about-image.forge-cooled::before {
+    opacity: 0.15;
+}
+
+/* ── Heat haze overlay for section tops ── */
+.heat-haze {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    filter: url(#forge-heat-haze);
+    background: linear-gradient(
+        to bottom,
+        rgba(255,100,0,.12),
+        transparent
+    );
+}
+
+.heat-haze.active {
+    opacity: 0.6;
+}
+
+/* ── Header progressive forge glow on scroll ── */
+header {
+    transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+header.forge-scorched {
+    border-bottom-color: rgba(255,107,0,.40) !important;
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.45),
+        0 4px 20px rgba(255,107,0,.12),
+        0 1px 4px rgba(255,140,20,.08) !important;
+}
+
+/* ── Service cards "forge-into-place" ── */
+.card.forge-reveal {
+    transform: translateY(30px) scale(0.96);
+}
+
+.card.forge-reveal.forge-cooled {
+    transform: translateY(0) scale(1);
+}
+
+/* ── Hero CTA: build heat on hover ── */
+.btn {
+    position: relative;
+    overflow: visible;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 11px;
+    background: transparent;
+    z-index: -1;
+    transition: box-shadow 0.4s ease;
+}
+
+.btn:hover::after {
+    box-shadow:
+        0 0 20px rgba(255,107,0,.30),
+        0 0 40px rgba(255,80,0,.15);
+}
+
+/* ── Anvil strike pulse on forge banner heading ── */
+.forge-banner h2 {
+    animation: anvilPulse 5s ease-in-out infinite;
+}
+
+@keyframes anvilPulse {
+    0%, 90%, 100% {
+        text-shadow:
+            0 0 30px rgba(255,107,0,.15);
+        transform: scale(1);
+    }
+    93% {
+        text-shadow:
+            0 0 60px rgba(255,140,20,.50),
+            0 0 100px rgba(255,70,0,.30);
+        transform: scale(1.015);
+    }
+    96% {
+        transform: scale(0.995);
+    }
+}
+
+/* ── Scroll progress forge-line ── */
+#forge-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--forge-orange),
+        #ff8c2a,
+        #ff5500
+    );
+    z-index: 10000;
+    box-shadow: 0 0 10px rgba(255,107,0,.5);
+    transition: width 0.1s linear;
+    width: 0%;
+}
