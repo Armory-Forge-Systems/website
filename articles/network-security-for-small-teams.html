@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <title>Network Security for Small Teams | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="Practical network security strategies for small teams who can't afford a breach — segmentation, access control, monitoring, and more.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/signet.css">
+</head>
+
+<body>
+
+<!-- =========================
+    Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1>Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../signet.html" class="active">The Signet</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Article Hero
+========================= -->
+<section class="article-hero">
+    <div class="hero-content">
+        <div class="article-meta-bar">
+            <span class="category">Networking</span>
+            <span class="date">July 2026</span>
+        </div>
+        <h1>Network Security for Small Teams That Can't Afford a Breach</h1>
+    </div>
+</section>
+
+<!-- =========================
+    Hero Image
+========================= -->
+<div class="article-image-wrapper">
+    <img src="../assets/images/network-security-hero.jpg" alt="Network security concept — firewall, switches, and secure connections" loading="lazy">
+</div>
+
+<!-- =========================
+    Article Body
+========================= -->
+<article class="article-body">
+
+<p class="forge-note"><em>The Forge — Armory Forge Systems</em></p>
+
+<p>Network security often feels like a luxury reserved for Fortune 500 companies with dedicated security teams, six-figure SIEM tools, and compliance officers whose job title is exactly that — a compliance officer.</p>
+
+<p>But here's the reality: small and medium businesses are the favorite target of cybercriminals, precisely because they assume they're too small to notice. Verizon's <em>2024 Data Breach Investigations Report</em> found that over 40% of breaches involved small businesses. And the average cost? Somewhere north of $100,000 — enough to shutter a lot of small operations.</p>
+
+<p>The good news is that the fundamentals of network security don't require a huge budget. They require discipline, the right priorities, and a few well-placed tools. This article covers what every small team needs to know — and do — to secure their network without hiring an army.</p>
+
+<h2>Think Perimeters, Not Castles</h2>
+
+<p>The old model was a castle: hard on the outside, soft on the inside. Firewall at the edge, and once you're past it, everything is trusted. That model died the moment employees started working from coffee shops, contractors started needing VPN access, and a thousand IoT devices started asking for IP addresses.</p>
+
+<p>Modern network security replaces the castle with perimeters — multiple, overlapping boundaries that don't assume trust anywhere.</p>
+
+<p>For a small team, this doesn't mean three layers of firewalls and a dozen VLANs from day one. It means:</p>
+
+<ul>
+    <li><strong>Segment your network.</strong> Guest Wi-Fi should be on a separate VLAN from your internal workstations, and your internal workstations should be on a separate VLAN from your servers. If someone plugs a compromised laptop into your guest network, it should have no idea your file server exists.</li>
+    <li><strong>Use a proper firewall.</strong> The router your ISP gave you is not a firewall. It's a router with a few checkbox features. Invest in a proper security appliance — or at minimum, a firewall distro running on modest hardware. pfSense, OPNsense, and Untangle all offer small-business-appropriate options starting at free.</li>
+    <li><strong>Create a DMZ for anything public-facing.</strong> Web servers, VPN endpoints, and any service accessible from the internet should live in a demilitarized zone — a network segment with its own firewall rules that isolates it from your internal network.</li>
+</ul>
+
+<h2>Access Control: Who's on Your Network?</h2>
+
+<p>One of the most overlooked vulnerabilities in small business networks is simple: too many people have access. The former employee whose laptop still connects on the guest network. The contractor whose VPN access was never revoked. The shared admin password written on a sticky note under the keyboard.</p>
+
+<p>Access control is not sexy, but it's the single highest-impact investment you can make in network security.</p>
+
+<h3>Start With the Basics</h3>
+<ul>
+    <li><strong>Unique credentials for every person.</strong> No shared logins. If someone leaves your team, you disable one account, not change a password everyone shares.</li>
+    <li><strong>Role-based access.</strong> Reception doesn't need access to the server room's network segment. The developer doesn't need access to the finance VLAN. Start restrictive and open only as needed.</li>
+    <li><strong>802.1X for network access control.</strong> If your switches and access points support it, 802.1X authentication ensures that only authorized devices can connect to your network. A stolen employee laptop becomes a brick instead of a key.</li>
+    <li><strong>Disable DHCP for unknown devices.</strong> Use DHCP snooping and port security on managed switches to prevent rogue devices from grabbing an address and joining your network unnoticed.</li>
+</ul>
+
+<h3>VPNs: Your Remote Access Backbone</h3>
+<p>Every remote employee should connect through a VPN. No exceptions. But not all VPNs are created equal for small teams:</p>
+<ul>
+    <li><strong>WireGuard</strong> — modern, fast, audited, and simple to configure. Ideal for small deployments.</li>
+    <li><strong>OpenVPN</strong> — battle-tested, broadly supported, but heavier on configuration.</li>
+    <li><strong>Tailscale or ZeroTier</strong> — overlay mesh VPNs that simplify the configuration dramatically. Excellent for teams without dedicated IT staff.</li>
+</ul>
+<p>Whichever you choose, enforce multi-factor authentication (MFA) on VPN access. A password alone is not sufficient — credential theft is the leading cause of network intrusions.</p>
+
+<h2>Monitor Everything (Without a SOC)</h2>
+
+<p>You don't need a Security Operations Center to know when something's wrong. But you do need visibility. The most expensive security gap in small businesses isn't a lack of tools — it's a lack of awareness.</p>
+
+<h3>What to Monitor</h3>
+<ul>
+    <li><strong>Firewall logs</strong> — review weekly for unusual outbound connections, repeated failed login attempts, or traffic to known malicious IPs.</li>
+    <li><strong>DNS queries</strong> — many modern threats announce themselves through DNS. Blocking malicious DNS queries is one of the cheapest and most effective threat-detection methods available. Pi-hole (free and open-source) does this for the cost of a Raspberry Pi.</li>
+    <li><strong>DHCP lease logs</strong> — unauthorized devices appear here. Review periodically.</li>
+    <li><strong>Unusual traffic patterns</strong> — a workstation sending gigabytes of data at 3 AM to an overseas IP is not a backup. It's exfiltration.</li>
+</ul>
+
+<h3>Free and Low-Cost Monitoring Tools</h3>
+<ul>
+    <li><strong>Wireshark</strong> — for deep packet inspection when you need it.</li>
+    <li><strong>ntopng</strong> — real-time network traffic analysis.</li>
+    <li><strong>Security Onion</strong> — a full Linux distro for network security monitoring. Ready-to-deploy IDS/IPS, log analysis, and dashboards.</li>
+    <li><strong>Grafana + Prometheus</strong> — build custom dashboards for your network metrics. Visual correlation makes anomalies obvious.</li>
+    <li><strong>Cloud-managed NMS</strong> — tools like Auvik, Domotz, or even PRTG's free tier give small teams enterprise-style network visibility without enterprise complexity.</li>
+</ul>
+
+<h2>Patch Management Isn't Glamorous — It's Essential</h2>
+
+<p>The single most common vector for network compromise is unpatched software. Not some zero-day from a nation-state actor. Known vulnerabilities with publicly available patches that simply weren't applied.</p>
+
+<p>Every device on your network — switches, access points, firewalls, servers, workstations, printers (yes, printers) — runs software. That software has vulnerabilities. Patches exist for those vulnerabilities. Apply them.</p>
+
+<p>Set a monthly patch cycle. Or better yet, enable automatic updates wherever possible. If you can't patch everything, prioritize: internet-facing systems first, then internal servers, then endpoints.</p>
+
+<h2>Physical Security Still Matters</h2>
+
+<p>All the firewall rules in the world don't help if someone can walk into your office, plug a USB killer into an exposed port, or walk out with an unencrypted laptop under their arm.</p>
+
+<ul>
+    <li>Lock the server room or network closet.</li>
+    <li>Use cable locks on workstations in shared spaces.</li>
+    <li>Enable full-disk encryption on all laptops. BitLocker (Windows), FileVault (macOS), or LUKS (Linux) — pick your platform and enable it today.</li>
+    <li>Label and inventory every network device. If you don't know it's there, you can't secure it.</li>
+</ul>
+
+<h2>Build a Breach Response Plan (Before You Need It)</h2>
+
+<p>When the breach happens — and at some point it might — you don't want to be figuring out what to do in the moment. A simple one-page response plan is worth more than a $50,000 firewall.</p>
+
+<p>Your plan should cover:</p>
+<ul>
+    <li><strong>Who gets notified</strong> — internal leadership, your IT contact, legal counsel, and potentially law enforcement or a cyber insurance provider.</li>
+    <li><strong>How you isolate</strong> — the steps to disconnect affected systems from the network without deleting evidence.</li>
+    <li><strong>How you preserve logs</strong> — don't reboot, don't overwrite, don't "investigate" on the live system without forensic imaging.</li>
+    <li><strong>How you communicate</strong> — who says what to customers, partners, and the public.</li>
+    <li><strong>How you recover</strong> — verified clean backups, staged restoration, and a post-mortem to stop it from happening again.</li>
+</ul>
+
+<h2>The Bottom Line</h2>
+
+<p>Network security for small teams isn't about outspending the enterprise — it's about outthinking the opportunist. Criminals target small businesses because they're easy, not because they're valuable. Make your network harder to breach than the business next door, and you've already won most of the battle.</p>
+
+<p>Segment your network. Control access ruthlessly. Monitor for the unusual. Patch on a schedule. And have a plan for when — not if — something slips through.</p>
+
+<p>The tools are accessible. The practices are proven. The only question is whether the cost of doing nothing has finally exceeded the cost of doing something.</p>
+
+</article>
+
+<!-- =========================
+    The Signet Certification
+========================= -->
+<div class="signet-approval hidden">
+
+<section class="signet-certification">
+    <div class="seal-line"></div>
+    
+    <div class="seal-header">
+        <span class="seal-title">SEALED BY THE SIGNET</span>
+        <span class="seal-number">Issue #009</span>
+    </div>
+    
+    <div class="seal-body">
+        <img src="../assets/images/signet-seal.png" alt="The Signet" class="seal-image">
+        <div class="seal-copy">
+            <blockquote>Every system we deliver is forged with intent, tested with rigor, and sealed with our mark.</blockquote>
+            <div class="seal-author">
+                <strong>Armory Forge Systems</strong>
+                <span>You imagine. We build.</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="seal-line seal-line-bottom"></div>
+</section>
+
+<div class="seal-glow"></div>
+
+<!-- =========================
+    Article CTA
+========================= -->
+<div class="article-cta">
+    <h3>Ready to forge your next system?</h3>
+    <p>Whether you're deploying AI agents, automating workflows, or modernizing infrastructure, we're ready to help.</p>
+    <a href="mailto:info@armoryforgesystems.com" class="btn-primary cta-button">Schedule a Discovery Call</a>
+    <a href="../signet.html" class="cta-secondary">Read another Signet article →</a>
+</div>
+
+</div>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine.<br>We build.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="../index.html#hero">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+            <a href="../signet.html">The Signet</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
