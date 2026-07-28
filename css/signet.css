@@ -564,6 +564,24 @@ section{
     font-weight:600;
 }
 
+/* ── Article Hero Image ── */
+.article-hero-image {
+    max-width: 900px;
+    margin: -40px auto 0;
+    padding: 0 8%;
+}
+
+.article-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    border: 1px solid rgba(255,107,0,.12);
+    box-shadow:
+        0 8px 32px rgba(0,0,0,.4),
+        0 0 40px rgba(255,107,0,.06);
+}
+
 .article-body{
     max-width:780px;
     margin:0 auto;
