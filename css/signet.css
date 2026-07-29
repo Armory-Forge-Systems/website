@@ -71,6 +71,19 @@ section{
     margin-bottom:10px;
 }
 
+.signet-page-seal{
+    width:90px;
+    height:auto;
+    margin-bottom:16px;
+    filter:drop-shadow(0 0 16px rgba(255,107,0,.25));
+    animation:signetSealGlow 4s ease-in-out infinite;
+}
+
+@keyframes signetSealGlow{
+    0%,100%{filter:drop-shadow(0 0 16px rgba(255,107,0,.25));}
+    50%{filter:drop-shadow(0 0 28px rgba(255,140,20,.40));}
+}
+
 .hero-tagline{
     color:var(--forge-orange);
     text-transform:uppercase;
