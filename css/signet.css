@@ -73,7 +73,7 @@ section{
 
 .signet-page-seal{
     display:block;
-    width:90px;
+    width:125px;
     height:auto;
     margin:0 auto 16px;
     filter:drop-shadow(0 0 16px rgba(255,107,0,.25));
@@ -82,7 +82,7 @@ section{
 
 @keyframes signetSealGlow{
     0%,100%{filter:drop-shadow(0 0 16px rgba(255,107,0,.25));}
-    50%{filter:drop-shadow(0 0 32px rgba(255,140,20,.45));}
+    50%{filter:drop-shadow(0 0 40px rgba(255,140,20,.50));}
 }
 
 .hero-tagline{
