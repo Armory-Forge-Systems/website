@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <title>Speak with The Armorer | Armory Forge Systems</title>
+    <meta name="description" content="Meet The Armorer — our AI receptionist. Onboarding, pricing, and project inquiries. He'll get you to the right place.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/armorer.css">
+</head>
+
+<body>
+
+<!-- SVG filters -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<!-- =========================
+    Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1 class="forge-text">Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the Spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="signet.html">The Signet</a>
+        <a href="index.html#about">About</a>
+        <a href="armorer.html" class="active">The Armorer</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Armorer Hero
+========================= -->
+<section class="armorer-hero">
+    <div class="hero-intro">
+        <h2 class="forge-text">The Armorer</h2>
+        <p class="hero-subtitle">AI Receptionist · Armory Forge Systems</p>
+        <p class="hero-desc">I handle onboarding, pricing questions, and project inquiries. Tell me about your business and I'll forge a path forward.</p>
+    </div>
+    <div class="hero-rule"></div>
+</section>
+
+<!-- =========================
+    Chat Interface
+========================= -->
+<section class="chat-section">
+    <div class="chat-container" id="chat-container">
+
+        <!-- Chat messages -->
+        <div class="chat-messages" id="chat-messages">
+            <div class="message message--armorer">
+                <div class="message-avatar">⚒️</div>
+                <div class="message-bubble">
+                    <p>Welcome to the forge. I'm <strong>The Armorer</strong> — Armory Forge Systems' AI receptionist.</p>
+                    <p>I can help with pricing, onboarding, and matching your business to the right AI solutions. To get started, tell me a bit about your company.</p>
+                    <p class="message-hint">What kind of business do you run, and what brought you here today?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typing indicator (hidden by default) -->
+        <div class="typing-indicator" id="typing-indicator" style="display:none;">
+            <div class="message-avatar">⚒️</div>
+            <div class="typing-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- Input area -->
+        <div class="chat-input-area">
+            <textarea
+                id="chat-input"
+                class="chat-input"
+                placeholder="Tell me about your business..."
+                rows="1"
+                maxlength="2000"
+            ></textarea>
+            <button class="chat-send" id="chat-send" aria-label="Send message">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M2 10L18 2L10 18L8 12L2 10Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Powered by -->
+        <div class="chat-footer">
+            <span>⚒️ The Armorer · Armory Forge Systems</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- =========================
+    How It Works
+========================= -->
+<section class="armorer-how">
+    <h3 class="forge-text">How The Armorer Works</h3>
+    <div class="steps">
+        <div class="step">
+            <span class="step-num">01</span>
+            <h4>You Describe Your Business</h4>
+            <p>Tell me about your company, industry, and the challenges you're facing.</p>
+        </div>
+        <div class="step">
+            <span class="step-num">02</span>
+            <h4>I Match You to Solutions</h4>
+            <p>I'll cross-reference your needs with our services and pricing to find the right fit.</p>
+        </div>
+        <div class="step">
+            <span class="step-num">03</span>
+            <h4>We Schedule Next Steps</h4>
+            <p>I'll capture your details and our team will follow up with a personalized proposal.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine.<br>We build.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="index.html#hero">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="signet.html">The Signet</a>
+            <a href="armorer.html">The Armorer</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="js/forge-effects.js"></script>
+<script src="js/app.js"></script>
+<script src="js/armorer-chat.js"></script>
+</body>
+</html>
