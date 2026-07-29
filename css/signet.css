@@ -72,9 +72,10 @@ section{
 }
 
 .signet-page-seal{
-    width:90px;
+    display:block;
+    width:48px;
     height:auto;
-    margin-bottom:16px;
+    margin:0 auto 12px;
     filter:drop-shadow(0 0 16px rgba(255,107,0,.25));
     animation:signetSealGlow 4s ease-in-out infinite;
 }
