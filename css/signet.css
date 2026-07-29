@@ -15,7 +15,6 @@
 }
 
 body{
-    background:linear-gradient(180deg,#0d0d0d 0%,#111 50%,#0d0d0d 100%);
     color:var(--forge-white);
     font-family:Inter,Arial,sans-serif;
     line-height:1.7;
@@ -123,9 +122,9 @@ section{
 }
 
 .service-card{
-    background:var(--forge-panel);
-    border:1px solid var(--forge-border);
-    border-radius:10px;
+    background:linear-gradient(180deg,#1a1a1a,#101010);
+    border:1px solid rgba(255,107,0,.15);
+    border-radius:18px;
     padding:2rem;
     transition:.3s;
     display:block;
@@ -134,9 +133,9 @@ section{
 }
 
 .article-card{
-    background:rgba(255,255,255,0.03);
-    border:1px solid rgba(255,107,0,0.10);
-    border-radius:12px;
+    background:linear-gradient(180deg,#1a1a1a,#101010);
+    border:1px solid rgba(255,107,0,.15);
+    border-radius:18px;
     padding:2rem;
     position:relative;
     overflow:hidden;
@@ -399,6 +398,7 @@ section{
     transform:translateY(-10px);
     border-color:var(--forge-orange);
     box-shadow:0 16px 40px rgba(255,107,0,0.18), 0 0 20px rgba(255,107,0,0.06);
+    animation: cardForgeGlow 2.5s ease-in-out infinite;
 }
 
 .service-card:hover::before{
@@ -410,6 +410,7 @@ section{
     transform:translateY(-8px);
     border-color:var(--forge-orange);
     box-shadow:0 20px 45px rgba(255,107,0,0.20), 0 0 24px rgba(255,107,0,0.08);
+    animation: cardForgeGlow 2.5s ease-in-out infinite;
 }
 
 .article-card:hover::before{
@@ -1087,4 +1088,14 @@ section{
         gap:6px;
     }
 
+}
+
+/* ==========================================
+   ANIMATED FIRE GLOW
+   ========================================== */
+
+@keyframes cardForgeGlow {
+    0%   { box-shadow: 0 20px 40px rgba(255,107,0,.12), 0 0 12px rgba(255,107,0,.20); }
+    50%  { box-shadow: 0 20px 40px rgba(255,107,0,.22), 0 0 22px rgba(255,107,0,.45); }
+    100% { box-shadow: 0 20px 40px rgba(255,107,0,.12), 0 0 12px rgba(255,107,0,.20); }
 }

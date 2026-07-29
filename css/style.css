@@ -12,11 +12,47 @@
 
     body {
         margin: 0;
-        background: #181818;
+        background:
+            /* ── Crack glows (orange bleeding from fissures) ── */
+            radial-gradient(ellipse at 78% 12%, rgba(255,107,0,.09) 0%, transparent 55%),
+            radial-gradient(ellipse at 22% 48%, rgba(255,80,0,.06) 0%, transparent 45%),
+            radial-gradient(ellipse at 85% 75%, rgba(255,100,0,.05) 0%, transparent 40%),
+            radial-gradient(ellipse at 40% 85%, rgba(255,70,0,.04) 0%, transparent 35%),
+            /* ── Top forge heat bleed ── */
+            radial-gradient(circle at 50% 0%, rgba(255,107,0,.10) 0%, transparent 45%),
+            /* ── Steel grain lines ── */
+            repeating-linear-gradient(
+                47deg,
+                transparent,
+                transparent 3px,
+                rgba(255,255,255,.008) 3px,
+                rgba(255,255,255,.008) 4px
+            ),
+            repeating-linear-gradient(
+                -42deg,
+                transparent,
+                transparent 5px,
+                rgba(255,255,255,.005) 5px,
+                rgba(255,255,255,.005) 6px
+            ),
+            /* ── Dark gradient base ── */
+            linear-gradient(180deg, #121212 0%, #0a0a0a 45%, #050505 100%);
         color: #ffffff;
         font-family: Arial, Helvetica, sans-serif;
-
         scroll-behavior: smooth;
+        position: relative;
+    }
+
+    /* ── Noise texture overlay ── */
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 9998;
+        pointer-events: none;
+        opacity: 0.35;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+        background-size: 200px 200px;
     }
 
 /* ///////---------- Header ---------- */
@@ -51,8 +87,6 @@ header {
 
     .branding h1 {
         font-size: 2.2rem;
-        color: var(--forge-orange);
-
         margin-bottom: 5px;
     }
 
@@ -231,18 +265,14 @@ nav a:hover::after {
     }
 
     .card {
-        background: #222;
+        background: linear-gradient(180deg, #1a1a1a, #101010);
         padding: 30px;
-        border-radius: 12px;
+        border-radius: 18px;
         width: 250px;
-
         position: relative;
         overflow: hidden;
-
         transition: all 0.3s ease;
-
-        border: 1px solid rgba(255,107,0,.12);
-
+        border: 1px solid rgba(255,107,0,.15);
         box-shadow:
             0 8px 20px rgba(0,0,0,.35),
             0 0 12px rgba(255,107,0,.04);
@@ -286,7 +316,7 @@ nav a:hover::after {
     }
 
     .card h3 {
-        color: #ff6b00;
+        /* color handled by .forge-text */
         position: relative;
         z-index: 1;
     }
@@ -379,14 +409,75 @@ nav a:hover::after {
     max-width: 500px;
     margin: 0 auto;
     padding: 40px;
-    background: var(--forge-surface);
-    border: 1px solid var(--forge-border);
-    border-radius: 12px;
+    position: relative;
+
+    /* ── Brushed metal base ── */
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 1px,
+            rgba(255,255,255,.015) 1px,
+            rgba(255,255,255,.015) 2px
+        ),
+        linear-gradient(180deg, rgba(30,30,30,.88), rgba(12,12,12,.92));
+
+    /* ── Glass blur overlay ── */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    /* ── Glowing orange outline ── */
+    border: 1px solid rgba(255,107,0,.25);
+    border-radius: 18px;
+
+    /* ── Layered shadows: inner highlight + ambient glow + depth ── */
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.06),
+        0 0 24px rgba(255,107,0,.12),
+        0 0 60px rgba(255,107,0,.05),
+        0 12px 40px rgba(0,0,0,.45);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25px;
+    overflow: hidden;
+}
+
+/* ── Top reflection gleam ── */
+.contact-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,180,100,.25),
+        rgba(255,255,255,.15),
+        rgba(255,180,100,.25),
+        transparent
+    );
+    pointer-events: none;
+}
+
+/* ── Subtle corner reflection ── */
+.contact-card::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(
+        circle at center,
+        rgba(255,140,60,.08),
+        transparent 70%
+    );
+    pointer-events: none;
+    border-radius: 50%;
 }
 
 .contact-card p {
@@ -401,6 +492,7 @@ nav a:hover::after {
    Section Anchor Offset
 ========================================== */
 
+#hero,
 #services,
 #about,
 #signet,
@@ -632,9 +724,9 @@ nav a:hover::after {
 
     height: 140px;
 
-    background: #1d1d1d;
+    background: linear-gradient(180deg, #1a1a1a, #101010);
 
-    border: 1px solid rgba(255,107,0,.08);
+    border: 1px solid rgba(255,107,0,.15);
 
     border-radius: 12px;
 
@@ -1009,7 +1101,7 @@ footer {
     content: "";
     position: absolute;
     inset: -2px;
-    border-radius: 14px;
+    border-radius: 18px;
     background: linear-gradient(
         135deg,
         transparent 30%,
@@ -1090,13 +1182,7 @@ footer {
 }
 
 /* ── Text glow for section headings ── */
-.services h2,
-.about-text h2,
-.forge-banner h2,
-.contact h2,
-.technology h2 {
-    text-shadow: 0 0 30px rgba(255,107,0,.15);
-}
+/* (now handled by .forge-text) */
 
 /* ── Footer top glow line ── */
 footer {
@@ -1311,4 +1397,76 @@ header.forge-scorched {
     box-shadow: 0 0 10px rgba(255,107,0,.5);
     transition: width 0.1s linear;
     width: 0%;
+}
+
+/* ==========================================
+   MOLTEN TYPOGRAPHY
+   ========================================== */
+
+.forge-text {
+    /* ── Gradient fill (molten steel: light → orange → dark ember) ── */
+    background: linear-gradient(
+        180deg,
+        #ffb35b 0%,
+        #ff8c2a 25%,
+        #ff6b00 55%,
+        #d44500 85%,
+        #b13d00 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    /* ── Glow behind the gradient text ── */
+    text-shadow:
+        0 0 8px rgba(255,107,0,.50),
+        0 0 20px rgba(255,107,0,.20);
+
+    /* ── Subtle bevel via lighter edge at top ── */
+    -webkit-text-stroke: 0.3px rgba(255,180,90,.10);
+}
+
+/* ==========================================
+   ANIMATED FIRE GLOW
+   ========================================== */
+
+@keyframes forgeGlow {
+    0%   { box-shadow: 0 0 12px rgba(255,107,0,.20); }
+    50%  { box-shadow: 0 0 22px rgba(255,107,0,.45); }
+    100% { box-shadow: 0 0 12px rgba(255,107,0,.20); }
+}
+
+/* ── Cards breathe with fire on hover ── */
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #ff6b00;
+    box-shadow: none;
+    animation: cardForgeGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes cardForgeGlow {
+    0%   { box-shadow: 0 20px 40px rgba(255,107,0,.12), 0 0 12px rgba(255,107,0,.20); }
+    50%  { box-shadow: 0 20px 40px rgba(255,107,0,.22), 0 0 22px rgba(255,107,0,.45); }
+    100% { box-shadow: 0 20px 40px rgba(255,107,0,.12), 0 0 12px rgba(255,107,0,.20); }
+}
+
+/* ── Tech cards breathe on hover ── */
+.tech-card:hover {
+    animation: techForgeGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes techForgeGlow {
+    0%   { box-shadow: 0 0 0 2px rgba(255,107,0,.15), 0 0 20px rgba(255,107,0,.10), 0 10px 30px rgba(255,107,0,.10), 0 0 12px rgba(255,107,0,.20); }
+    50%  { box-shadow: 0 0 0 2px rgba(255,107,0,.30), 0 0 30px rgba(255,107,0,.25), 0 10px 30px rgba(255,107,0,.20), 0 0 22px rgba(255,107,0,.45); }
+    100% { box-shadow: 0 0 0 2px rgba(255,107,0,.15), 0 0 20px rgba(255,107,0,.10), 0 10px 30px rgba(255,107,0,.10), 0 0 12px rgba(255,107,0,.20); }
+}
+
+/* ── Forge banner ambient pulse ── */
+.forge-banner {
+    animation: forgeBannerGlow 4s ease-in-out infinite;
+}
+
+@keyframes forgeBannerGlow {
+    0%, 100% { box-shadow: inset 0 0 60px rgba(255,107,0,.03); }
+    50%      { box-shadow: inset 0 0 100px rgba(255,107,0,.08); }
 }

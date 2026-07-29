@@ -23,6 +23,13 @@
       <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
     </filter>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
   </defs>
 </svg>
 <!-- =========================
@@ -34,7 +41,7 @@
 
         <div class="branding">
 
-            <h1>Armory Forge Systems</h1>
+            <h1 class="forge-text">Armory Forge Systems</h1>
             <p>You imagine. We build. To the victor, the Spoils.</p>
 
         </div>
@@ -69,7 +76,7 @@
 
         <section id="hero" class="hero">
             <canvas id="forge-canvas"></canvas>
-            <h2>AI • Cloud • Automation • Cybersecurity</h2>
+            <h2 class="forge-text">AI • Cloud • Automation • Cybersecurity</h2>
 
             <p>
                 Building intelligent software and infrastructure for the next generation
@@ -81,22 +88,22 @@
 
         <section id="services" class="services hidden">
 
-    <h2>Our Services</h2>
+    <h2 class="forge-text">Our Services</h2>
 
     <div class="service-container">
 
         <div class="card">
-            <h3>AI Automation</h3>
+            <h3 class="forge-text">AI Automation</h3>
             <p>Custom AI agents and workflow automation.</p>
         </div>
 
         <div class="card">
-            <h3>Cloud Solutions</h3>
+            <h3 class="forge-text">Cloud Solutions</h3>
             <p>Cloud infrastructure, deployments, and scalability.</p>
         </div>
 
         <div class="card">
-            <h3>Cybersecurity</h3>
+            <h3 class="forge-text">Cybersecurity</h3>
             <p>Threat detection and AI-assisted defense.</p>
         </div>
 
@@ -117,7 +124,7 @@
     </div>
 
     <div class="about-text">
-        <h2>About Armory Forge Systems</h2>
+        <h2 class="forge-text">About Armory Forge Systems</h2>
 
         <p>
             Armory Forge Systems helps businesses harness the power of
@@ -143,7 +150,7 @@
 
     <div class="overlay">
 
-        <h2>Forging the Future of Intelligent Systems</h2>
+        <h2 class="forge-text">Forging the Future of Intelligent Systems</h2>
 
         <p>
             We combine AI, cloud computing, and cybersecurity into
@@ -160,7 +167,7 @@
 ========================= -->
 
 <section id="contact" class="contact">
-    <h2>Let's Build Something Great</h2>
+    <h2 class="forge-text">Let's Build Something Great</h2>
 
     <p class="contact-intro">
         Whether you're exploring AI automation, cloud infrastructure, or custom software,
@@ -190,7 +197,7 @@
 ========================= -->
 <section id="technology" class="technology">
 
-    <h2>Forged with Modern Technology</h2>
+    <h2 class="forge-text">Forged with Modern Technology</h2>
 
     <p class="technology-intro">
         We build reliable AI, cloud, and automation solutions using
