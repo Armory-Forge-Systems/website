@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <title>Pricing | Armory Forge Systems</title>
+    <meta name="description" content="Transparent pricing for AI automation, cloud infrastructure, and managed services. Free assessment, one-time projects, and ongoing managed partnerships.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/pricing.css">
+</head>
+
+<body>
+<!-- SVG filters for forge effects -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+<!-- =========================
+   Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1 class="forge-text">Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the Spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#services">Services</a>
+        <a href="pricing.html" class="active">Pricing</a>
+        <a href="signet.html">The Signet</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Hero
+========================= -->
+<section class="pricing-hero">
+    <div class="hero-content">
+        <h2 class="forge-text">Transparent Pricing</h2>
+        <p class="hero-desc">No hidden fees. No surprise invoices. Just clear, upfront pricing for AI systems that deliver real business value.</p>
+    </div>
+    <div class="hero-divider"></div>
+</section>
+
+<!-- =========================
+    Three Offerings
+========================= -->
+<section class="offerings">
+
+    <!-- Card 1: Forge Assessment -->
+    <div class="pricing-card pricing-card--free">
+        <div class="card-badge">Free</div>
+        <div class="card-icon">🔍</div>
+        <h3 class="forge-text">Forge Assessment</h3>
+        <p class="card-subtitle">The Blueprint</p>
+        <p class="card-desc">Perfect for businesses exploring AI for the first time. You'll leave with a written roadmap, not a sales pitch.</p>
+        <ul class="card-features">
+            <li>30–60 minute consultation</li>
+            <li>Business workflow review</li>
+            <li>Automation opportunity assessment</li>
+            <li>High-level implementation roadmap</li>
+            <li>No obligation</li>
+        </ul>
+        <div class="card-price">Free</div>
+        <a href="mailto:info@armoryforgesystems.com?subject=Forge%20Assessment" class="btn">Book Your Assessment</a>
+    </div>
+
+    <!-- Card 2: Forge Launch -->
+    <div class="pricing-card pricing-card--launch">
+        <div class="card-badge">One-Time</div>
+        <div class="card-icon">⚒️</div>
+        <h3 class="forge-text">Forge Launch</h3>
+        <p class="card-subtitle">The Forging</p>
+        <p class="card-desc">Perfect for businesses ready to automate one or more workflows with a custom-built solution.</p>
+        <ul class="card-features">
+            <li>Custom AI solution design</li>
+            <li>Setup and deployment</li>
+            <li>Staff onboarding</li>
+            <li>Testing and optimization</li>
+            <li>30 days of support after launch</li>
+        </ul>
+        <div class="card-price">$2,500 – $15,000</div>
+        <p class="card-price-note">Single automation → multi-workflow with integrations</p>
+        <a href="mailto:info@armoryforgesystems.com?subject=Forge%20Launch" class="btn">Start Your Project</a>
+    </div>
+
+    <!-- Card 3: Forge Guardian -->
+    <div class="pricing-card pricing-card--guardian pricing-card--featured">
+        <div class="card-badge card-badge--hot">Most Popular</div>
+        <div class="card-icon">🛡️</div>
+        <h3 class="forge-text">Forge Guardian</h3>
+        <p class="card-subtitle">The Watch</p>
+        <p class="card-desc">Perfect for businesses that want an ongoing AI partner instead of a one-time installer.</p>
+        <ul class="card-features">
+            <li>Continuous monitoring</li>
+            <li>Priority support</li>
+            <li>API and integration maintenance</li>
+            <li>Prompt optimization</li>
+            <li>Workflow improvements</li>
+            <li>Monthly performance reviews</li>
+            <li>Software and model updates</li>
+            <li>Early access to new AFS solutions</li>
+        </ul>
+        <div class="card-price">From $300<span class="price-period">/month</span></div>
+        <p class="card-price-note">12-month minimum · $2,500 one-time setup</p>
+        <a href="#guardian-tiers" class="btn">See Tier Details</a>
+    </div>
+
+</section>
+
+<!-- =========================
+    Guardian Tiers
+========================= -->
+<section id="guardian-tiers" class="guardian-tiers">
+    <h2 class="forge-text section-heading">Forge Guardian Tiers</h2>
+    <p class="section-intro">All tiers include the full Guardian feature set. Pricing scales with the number of automations, integrations, and locations.</p>
+
+    <div class="tier-table-wrapper">
+        <table class="tier-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th class="tier-col tier-essentials">
+                        <span class="tier-badge">Essentials</span>
+                        <span class="tier-price">$300–$750<span>/mo</span></span>
+                    </th>
+                    <th class="tier-col tier-pro">
+                        <span class="tier-badge">Professional</span>
+                        <span class="tier-price">$750–$2,000<span>/mo</span></span>
+                    </th>
+                    <th class="tier-col tier-enterprise">
+                        <span class="tier-badge">Enterprise</span>
+                        <span class="tier-price">$2,000–$5,000+<span>/mo</span></span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>One-time setup fee</td><td>$2,500</td><td>$2,500</td><td>$3,500</td></tr>
+                <tr><td>AI receptionists</td><td>1</td><td>Up to 3</td><td>Unlimited</td></tr>
+                <tr><td>Workflow automations</td><td>A few simple</td><td>Multiple</td><td>Unlimited</td></tr>
+                <tr><td>CRM integrations</td><td>—</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Business locations</td><td>1</td><td>Up to 3</td><td>Unlimited</td></tr>
+                <tr><td>Custom integrations</td><td>—</td><td>—</td><td>✓</td></tr>
+                <tr><td>SLA support</td><td>Standard</td><td>Priority</td><td>Premium</td></tr>
+                <tr><td>Quarterly strategy reviews</td><td>—</td><td>✓</td><td>✓</td></tr>
+                <tr><td>Dedicated account manager</td><td>—</td><td>—</td><td>✓</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="tier-note">All Guardian tiers require a 12-month minimum contract. Includes continuous monitoring, API maintenance, prompt optimization, security updates, and monthly performance reviews.</p>
+</section>
+
+<!-- =========================
+    Managed Cloud Infrastructure
+========================= -->
+<section class="cloud-infra">
+    <div class="cloud-card">
+        <div class="card-icon">☁️</div>
+        <h3 class="forge-text">Managed Cloud Infrastructure</h3>
+        <p class="card-subtitle">Available as a separate line item with any plan</p>
+        <p class="card-desc">Sell peace of mind, not server specs. We manage your AWS infrastructure so you don't have to think about it.</p>
+        <ul class="card-features">
+            <li>24/7 monitoring and alerting</li>
+            <li>AWS infrastructure management</li>
+            <li>API and integration maintenance</li>
+            <li>AI model updates</li>
+            <li>Prompt optimization</li>
+            <li>Bug fixes and security patches</li>
+            <li>Monthly optimization reviews</li>
+            <li>Priority support</li>
+            <li>Quarterly strategy reviews</li>
+        </ul>
+        <div class="cloud-pricing">
+            <span class="cloud-price-label">Pricing</span>
+            <span class="cloud-price">Your AWS Cost + 10% Management Fee</span>
+        </div>
+        <p class="cloud-note">Starting at $300/month for lightweight deployments. Full transparency — you see every AWS line item.</p>
+    </div>
+</section>
+
+<!-- =========================
+    FAQ
+========================= -->
+<section class="pricing-faq">
+    <h2 class="forge-text section-heading">Frequently Asked Questions</h2>
+
+    <div class="faq-grid">
+        <div class="faq-item">
+            <h4>What happens during the Forge Assessment?</h4>
+            <p>We spend 30–60 minutes reviewing your current workflows, identifying automation opportunities, and outlining a roadmap. It's a conversation, not a sales call. You'll walk away with clear next steps whether or not you choose to work with us.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Can I upgrade from Forge Launch to Guardian later?</h4>
+            <p>Absolutely. Many clients start with a Launch project to see results, then move to Guardian for ongoing management and continuous improvement. We'll credit your Launch investment toward Guardian setup.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What does the setup fee cover?</h4>
+            <p>Discovery, solution design, initial deployment, staff onboarding, and testing. It's a one-time investment to ensure your AI systems are built correctly from day one.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Is there a minimum contract for Guardian?</h4>
+            <p>Yes — 12 months. AI systems improve with data and iteration. A longer partnership ensures we can optimize, refine, and deliver compounding value over time.</p>
+        </div>
+        <div class="faq-item">
+            <h4>What if I need something between tiers?</h4>
+            <p>Every business is different. The tiers are starting points — we'll tailor a package that fits your specific needs, budget, and growth trajectory.</p>
+        </div>
+        <div class="faq-item">
+            <h4>How do you handle the AWS billing for Managed Cloud?</h4>
+            <p>You retain full ownership of your AWS account. We provide a monthly breakdown of all AWS costs plus our 10% management fee. No markup on infrastructure — complete transparency.</p>
+        </div>
+        <div class="faq-item">
+            <h4>Do you support Azure or other cloud providers?</h4>
+            <p>Yes. We're vendor-agnostic — AWS is simply where we start because it's the most widely adopted. If your business runs on Azure, Google Cloud, or a hybrid setup, we'll manage whatever stack you're on. Same 10% management model, same transparency. We recommend the right cloud for <em>your</em> workload, not the one we're most comfortable with.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+    CTA
+========================= -->
+<section class="pricing-cta">
+    <h2 class="forge-text">Ready to Forge Something Great?</h2>
+    <p>Start with a free assessment. We'll tell you honestly whether AI is right for your business — and exactly what it would take to make it happen.</p>
+    <a href="mailto:info@armoryforgesystems.com?subject=Forge%20Assessment" class="btn btn-large">Book Your Free Assessment</a>
+    <p class="cta-sub">No pressure. No obligation. Just clarity.</p>
+</section>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine.<br>We build.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="index.html#hero">Home</a>
+            <a href="index.html#services">Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="signet.html">The Signet</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="js/forge-effects.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

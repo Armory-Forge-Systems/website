@@ -1,0 +1,531 @@
+/* ==========================================================
+   Armory Forge Systems — Pricing Page
+   Forged steel cards, tier comparison, glass effects
+   ========================================================== */
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+
+.pricing-hero {
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.pricing-hero .hero-content {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.pricing-hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 18px;
+}
+
+.hero-desc {
+    font-size: 1.15rem;
+    color: var(--forge-light-gray, #ccc);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.hero-divider {
+    width: 100px;
+    height: 2px;
+    background: var(--forge-orange, #ff6b00);
+    margin: 36px auto 0;
+    border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   OFFERINGS GRID
+   ═══════════════════════════════════════════ */
+
+.offerings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px 80px;
+}
+
+/* ── Pricing Card Base ── */
+.pricing-card {
+    background: linear-gradient(180deg, #1a1a1a, #101010);
+    border: 1px solid rgba(255,107,0,.12);
+    border-radius: 18px;
+    padding: 36px 28px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,107,0,.30);
+    box-shadow:
+        0 16px 40px rgba(0,0,0,.35),
+        0 0 30px rgba(255,107,0,.10);
+}
+
+/* ── Featured card (Guardian) ── */
+.pricing-card--featured {
+    border-color: rgba(255,107,0,.25);
+    box-shadow:
+        0 0 30px rgba(255,107,0,.08),
+        0 8px 32px rgba(0,0,0,.30);
+    background:
+        linear-gradient(180deg, #1f1f1f, #111);
+}
+
+/* ── Badge ── */
+.card-badge {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.06);
+    color: #999;
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.card-badge--hot {
+    background: var(--forge-orange, #ff6b00);
+    color: #fff;
+    border-color: var(--forge-orange, #ff6b00);
+    box-shadow: 0 0 12px rgba(255,107,0,.30);
+}
+
+/* ── Icon ── */
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+/* ── Title & subtitle ── */
+.pricing-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
+.card-subtitle {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--forge-orange, #ff6b00);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.card-desc {
+    font-size: .95rem;
+    color: #b0b0b0;
+    line-height: 1.65;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+/* ── Features ── */
+.card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    flex-grow: 1;
+}
+
+.card-features li {
+    position: relative;
+    padding: 6px 0 6px 22px;
+    font-size: .9rem;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.card-features li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--forge-orange, #ff6b00);
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+/* ── Price ── */
+.card-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.price-period {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #888;
+}
+
+.card-price-note {
+    font-size: .78rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* ── Free card accent ── */
+.pricing-card--free {
+    border-color: rgba(255,255,255,.06);
+}
+
+.pricing-card--free .card-price {
+    background: linear-gradient(180deg, #ffb35b, #ff6b00, #b13d00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ═══════════════════════════════════════════
+   GUARDIAN TIERS TABLE
+   ═══════════════════════════════════════════ */
+
+.guardian-tiers {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+    text-align: center;
+}
+
+.section-heading {
+    font-size: 2.2rem;
+    margin-bottom: 14px;
+}
+
+.section-intro {
+    max-width: 650px;
+    margin: 0 auto 50px;
+    color: #b0b0b0;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.tier-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 30px;
+}
+
+.tier-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: .92rem;
+}
+
+.tier-table thead th {
+    background: linear-gradient(180deg, #1a1a1a, #101010);
+    border: 1px solid rgba(255,107,0,.10);
+    padding: 24px 16px;
+    vertical-align: top;
+    border-radius: 14px 14px 0 0;
+}
+
+.tier-table thead th:first-child {
+    background: transparent;
+    border: none;
+}
+
+.tier-col {
+    text-align: center;
+}
+
+.tier-badge {
+    display: block;
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--forge-orange, #ff6b00);
+    margin-bottom: 10px;
+}
+
+.tier-price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.tier-price span {
+    font-size: .8rem;
+    font-weight: 400;
+    color: #888;
+}
+
+.tier-enterprise {
+    background: linear-gradient(180deg, #1f1c18, #15110d) !important;
+    border-color: rgba(255,107,0,.25) !important;
+    box-shadow: 0 0 20px rgba(255,107,0,.06);
+}
+
+.tier-enterprise .tier-badge {
+    color: #ff8c2a;
+}
+
+.tier-table tbody td {
+    padding: 14px 16px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,.04);
+    color: #b0b0b0;
+    background: rgba(255,255,255,.01);
+}
+
+.tier-table tbody td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #ddd;
+    background: transparent;
+}
+
+.tier-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tier-note {
+    font-size: .82rem;
+    color: #777;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════
+   MANAGED CLOUD INFRASTRUCTURE
+   ═══════════════════════════════════════════ */
+
+.cloud-infra {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 40px 80px;
+}
+
+.cloud-card {
+    background: linear-gradient(180deg, #1a1a1a, #101010);
+    border: 1px solid rgba(255,107,0,.15);
+    border-radius: 18px;
+    padding: 40px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cloud-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,180,100,.20),
+        rgba(255,255,255,.10),
+        rgba(255,180,100,.20),
+        transparent
+    );
+}
+
+.cloud-card .card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.cloud-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.cloud-card .card-subtitle {
+    margin-bottom: 14px;
+}
+
+.cloud-card .card-desc {
+    max-width: 500px;
+    margin: 0 auto 22px;
+}
+
+.cloud-card .card-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px 16px;
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto 28px;
+}
+
+.cloud-pricing {
+    padding: 20px;
+    background: rgba(255,107,0,.06);
+    border: 1px solid rgba(255,107,0,.15);
+    border-radius: 12px;
+    margin-bottom: 14px;
+}
+
+.cloud-price-label {
+    display: block;
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.cloud-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.cloud-note {
+    font-size: .82rem;
+    color: #777;
+    line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   FAQ
+   ═══════════════════════════════════════════ */
+
+.pricing-faq {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 40px 80px;
+    text-align: center;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.faq-item {
+    background: linear-gradient(180deg, #1a1a1a, #101010);
+    border: 1px solid rgba(255,255,255,.05);
+    border-radius: 14px;
+    padding: 24px;
+    transition: border-color .3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(255,107,0,.15);
+}
+
+.faq-item h4 {
+    color: #fff;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    color: #b0b0b0;
+    font-size: .92rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════
+   CTA
+   ═══════════════════════════════════════════ */
+
+.pricing-cta {
+    text-align: center;
+    padding: 60px 20px 100px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.pricing-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.pricing-cta p {
+    font-size: 1.05rem;
+    color: #b0b0b0;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.btn-large {
+    padding: 18px 44px;
+    font-size: 1.1rem;
+}
+
+.cta-sub {
+    margin-top: 18px !important;
+    font-size: .85rem !important;
+    color: #777 !important;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+    .offerings {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        padding: 20px 20px 60px;
+    }
+
+    .cloud-card .card-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .pricing-hero h2 {
+        font-size: 2rem;
+    }
+
+    .guardian-tiers {
+        padding: 40px 16px 60px;
+    }
+
+    .tier-table {
+        font-size: .8rem;
+    }
+
+    .tier-table thead th {
+        padding: 16px 10px;
+    }
+
+    .tier-table tbody td {
+        padding: 10px 8px;
+    }
+
+    .tier-price {
+        font-size: 1.1rem;
+    }
+
+    .cloud-card .card-features {
+        grid-template-columns: 1fr;
+    }
+
+    .cloud-card {
+        padding: 28px 20px;
+    }
+}
