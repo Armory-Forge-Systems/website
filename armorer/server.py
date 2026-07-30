@@ -260,12 +260,7 @@ def mock_ai_response(messages: list[dict]) -> str:
 
 @app.get('/armorer/health')
 async def health():
-    return {
-        'status': 'ok',
-        'service': 'The Armorer',
-        'dev_mode': DEV_MODE,
-        'model': DEEPSEEK_MODEL,
-    }
+    return {'status': 'ok'}
 
 
 @app.post('/armorer/api/chat', response_model=ChatResponse)
