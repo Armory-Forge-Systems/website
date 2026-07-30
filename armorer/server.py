@@ -57,17 +57,46 @@ def check_rate_limit(ip: str) -> bool:
     rate_limit_store[ip].append(now)
     return True
 
+# ── Secrets Manager ─────────────────────────────────────────
+def load_secrets() -> dict:
+    """Load config from AWS Secrets Manager. Falls back to env vars for local dev."""
+    secret_name = os.getenv('AWS_SECRET_NAME', 'armorer/production')
+    region = os.getenv('AWS_REGION', 'us-east-1')
+
+    # Try AWS Secrets Manager first
+    try:
+        import boto3
+        client = boto3.client('secretsmanager', region_name=region)
+        resp = client.get_secret_value(SecretId=secret_name)
+        secrets = json.loads(resp['SecretString'])
+        log.info(f'[SECRETS] Loaded from AWS Secrets Manager: {secret_name}')
+        return secrets
+    except Exception as e:
+        log.warning(f'[SECRETS] AWS Secrets Manager unavailable ({e}), falling back to env vars')
+
+    # Fallback to environment variables (local dev)
+    return {
+        'DEEPSEEK_API_KEY': os.getenv('DEEPSEEK_API_KEY', ''),
+        'SMTP_HOST': os.getenv('SMTP_HOST', 'localhost'),
+        'SMTP_PORT': os.getenv('SMTP_PORT', '587'),
+        'SMTP_USER': os.getenv('SMTP_USER', ''),
+        'SMTP_PASS': os.getenv('SMTP_PASS', ''),
+        'NOTIFY_EMAIL': os.getenv('NOTIFY_EMAIL', 'info@armoryforgesystems.com'),
+    }
+
 # ── Config ──────────────────────────────────────────────────
-DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY', '')
+_secrets = load_secrets()
+
+DEEPSEEK_API_KEY = _secrets.get('DEEPSEEK_API_KEY', '')
 DEEPSEEK_BASE_URL = 'https://api.deepseek.com/v1'
 DEEPSEEK_MODEL = 'deepseek-chat'
-DEEPSEEK_REASONER_MODEL = 'deepseek-reasoner'  # higher-tier for complex queries
+DEEPSEEK_REASONER_MODEL = 'deepseek-reasoner'
 
-SMTP_HOST = os.getenv('SMTP_HOST', 'localhost')
-SMTP_PORT = int(os.getenv('SMTP_PORT', '587'))
-SMTP_USER = os.getenv('SMTP_USER', '')
-SMTP_PASS = os.getenv('SMTP_PASS', '')
-NOTIFY_EMAIL = os.getenv('NOTIFY_EMAIL', 'info@armoryforgesystems.com')
+SMTP_HOST = _secrets.get('SMTP_HOST', 'localhost')
+SMTP_PORT = int(_secrets.get('SMTP_PORT', '587'))
+SMTP_USER = _secrets.get('SMTP_USER', '')
+SMTP_PASS = _secrets.get('SMTP_PASS', '')
+NOTIFY_EMAIL = _secrets.get('NOTIFY_EMAIL', 'info@armoryforgesystems.com')
 
 DEV_MODE = os.getenv('ARMORER_DEV_MODE', '').lower() in ('true', '1', 'yes')
 
