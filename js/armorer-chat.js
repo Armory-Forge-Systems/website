@@ -9,7 +9,7 @@
   // ── Configuration ────────────────────────────────────────
   const API_URL = '/armorer/api/chat';  // proxied through nginx on prod, or direct in dev
   // For local dev without backend: set to '' to use mock mode
-  const DEV_MODE = true;  // set true for local testing without server
+  const DEV_MODE = false;  // set true for local testing without server
 
   // ── DOM refs ─────────────────────────────────────────────
   const messagesEl = document.getElementById('chat-messages');
