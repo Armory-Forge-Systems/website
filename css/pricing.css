@@ -304,6 +304,17 @@
     margin: 0 auto;
 }
 
+.tier-cta {
+    text-align: center;
+    padding: 40px 20px 10px;
+}
+
+.tier-cta p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 16px;
+}
+
 /* ═══════════════════════════════════════════
    MANAGED CLOUD INFRASTRUCTURE
    ═══════════════════════════════════════════ */
