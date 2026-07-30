@@ -8,8 +8,8 @@
 
   // ── Configuration ────────────────────────────────────────
   const API_URL = '/armorer/api/chat';  // proxied through nginx on prod, or direct in dev
-  // For local dev without backend: set to '' to use mock mode
   const DEV_MODE = false;  // set true for local testing without server
+  let currentSessionId = null;  // tracks conversation session
 
   // ── DOM refs ─────────────────────────────────────────────
   const messagesEl = document.getElementById('chat-messages');
@@ -114,7 +114,10 @@
     const res = await fetch(API_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message })
+      body: JSON.stringify({
+        message,
+        session_id: currentSessionId
+      })
     });
 
     if (!res.ok) {
@@ -122,7 +125,12 @@
       throw new Error(err.detail || `Server error: ${res.status}`);
     }
 
-    return await res.json();
+    const data = await res.json();
+    // Store the session ID for continuity
+    if (data.session_id) {
+      currentSessionId = data.session_id;
+    }
+    return data;
   }
 
   // ── Format response ──────────────────────────────────────
