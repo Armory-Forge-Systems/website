@@ -20,10 +20,12 @@ import os
 import json
 import logging
 import re
+from collections import defaultdict
 from datetime import datetime, timezone
+from time import time
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 import httpx
@@ -37,10 +39,29 @@ from prompt import ARMORER_SYSTEM_PROMPT
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 log = logging.getLogger('armorer')
 
+# ── Rate Limiter ────────────────────────────────────────────
+rate_limit_store: dict[str, list[float]] = defaultdict(list)
+RATE_LIMIT_PER_MINUTE = 20
+RATE_LIMIT_PER_HOUR = 100
+
+def check_rate_limit(ip: str) -> bool:
+    now = time()
+    minute_ago = now - 60
+    hour_ago = now - 3600
+    # Prune old entries
+    rate_limit_store[ip] = [t for t in rate_limit_store[ip] if t > hour_ago]
+    per_minute = sum(1 for t in rate_limit_store[ip] if t > minute_ago)
+    per_hour = len(rate_limit_store[ip])
+    if per_minute >= RATE_LIMIT_PER_MINUTE or per_hour >= RATE_LIMIT_PER_HOUR:
+        return False
+    rate_limit_store[ip].append(now)
+    return True
+
 # ── Config ──────────────────────────────────────────────────
 DEEPSEEK_API_KEY = os.getenv('DEEPSEEK_API_KEY', '')
 DEEPSEEK_BASE_URL = 'https://api.deepseek.com/v1'
 DEEPSEEK_MODEL = 'deepseek-chat'
+DEEPSEEK_REASONER_MODEL = 'deepseek-reasoner'  # higher-tier for complex queries
 
 SMTP_HOST = os.getenv('SMTP_HOST', 'localhost')
 SMTP_PORT = int(os.getenv('SMTP_PORT', '587'))
@@ -218,6 +239,45 @@ async def call_deepseek(messages: list[dict]) -> str:
         return data['choices'][0]['message']['content']
 
 
+async def call_deepseek_reasoner(messages: list[dict]) -> str:
+    """Call DeepSeek Reasoner for complex/off-script queries."""
+    if DEV_MODE or not DEEPSEEK_API_KEY:
+        return mock_ai_response(messages)
+
+    headers = {
+        'Authorization': f'Bearer {DEEPSEEK_API_KEY}',
+        'Content-Type': 'application/json',
+    }
+    payload = {
+        'model': DEEPSEEK_REASONER_MODEL,
+        'messages': messages,
+        'stream': False,
+    }
+
+    async with httpx.AsyncClient(timeout=60.0) as client:
+        resp = await client.post(
+            f'{DEEPSEEK_BASE_URL}/chat/completions',
+            headers=headers,
+            json=payload,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        return data['choices'][0]['message']['content']
+
+
+def detect_complexity(message: str) -> bool:
+    """Detect if a message needs higher-tier reasoning."""
+    triggers = [
+        'why', 'how does', 'explain', 'compare', 'difference',
+        'what if', 'should i', 'recommend', 'which one',
+        'is it worth', 'cost vs', 'pros and cons',
+        'not sure', 'confused', 'don\'t understand',
+        'custom', 'specific', 'unique', 'complicated',
+    ]
+    lower = message.lower()
+    return any(t in lower for t in triggers)
+
+
 def mock_ai_response(messages: list[dict]) -> str:
     """Mock responses matching the v2 structured intake flow."""
     user_msgs = [m['content'] for m in messages if m['role'] == 'user']
@@ -264,8 +324,14 @@ async def health():
 
 
 @app.post('/armorer/api/chat', response_model=ChatResponse)
-async def chat(req: ChatRequest):
-    # Get or create session
+async def chat(req: ChatRequest, request: Request):
+    # ── Rate limiting ──
+    client_ip = request.client.host if request.client else 'unknown'
+    if not check_rate_limit(client_ip):
+        log.warning(f'[RATE] Blocked {client_ip}')
+        raise HTTPException(status_code=429, detail='Too many requests. Please slow down.')
+
+    # ── Session ──
     session_id = req.session_id or f'session_{datetime.now().timestamp()}'
     is_new = session_id not in conversations
 
@@ -273,26 +339,33 @@ async def chat(req: ChatRequest):
         conversations[session_id] = [
             {'role': 'system', 'content': ARMORER_SYSTEM_PROMPT}
         ]
-        log.info(f'[SESSION] New session: {session_id[:20]}...')
+        log.info(f'[SESSION] New session: {session_id[:20]}... from {client_ip}')
     else:
         log.info(f'[SESSION] Existing: {session_id[:20]}... ({len(conversations[session_id])} msgs)')
 
     # Add user message
     conversations[session_id].append({'role': 'user', 'content': req.message})
 
-    # Trim history if too long (keep system prompt + last 30 messages)
-    # 30 messages = ~15 full exchanges — enough for the full intake flow
+    # Trim history
     if len(conversations[session_id]) > 35:
         conversations[session_id] = [
-            conversations[session_id][0],  # system prompt
-            *conversations[session_id][-30:]  # last 30 messages
+            conversations[session_id][0],
+            *conversations[session_id][-30:]
         ]
+
+    # ── Choose model based on complexity ──
+    use_reasoner = detect_complexity(req.message)
+    model_name = DEEPSEEK_REASONER_MODEL if use_reasoner else DEEPSEEK_MODEL
+    log.info(f'[AI] Using {model_name} (complexity={"high" if use_reasoner else "standard"})')
 
     # Get AI response
     try:
-        reply = await call_deepseek(conversations[session_id])
+        if use_reasoner:
+            reply = await call_deepseek_reasoner(conversations[session_id])
+        else:
+            reply = await call_deepseek(conversations[session_id])
     except Exception as e:
-        log.error(f'[AI] DeepSeek error: {e}')
+        log.error(f'[AI] Error: {e}')
         raise HTTPException(status_code=502, detail='AI service temporarily unavailable. Please try again.')
 
     # Add assistant reply to history
