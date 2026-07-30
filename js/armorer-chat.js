@@ -7,7 +7,7 @@
   'use strict';
 
   // ── Configuration ────────────────────────────────────────
-  const API_URL = '/armorer/api/chat';  // proxied through nginx on prod, or direct in dev
+  const API_URL = 'https://api.armoryforgesystems.com/armorer/api/chat';  // proxied through nginx on prod, or direct in dev
   // For local dev without backend: set to '' to use mock mode
   const DEV_MODE = false;  // set true for local testing without server
 
