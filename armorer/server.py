@@ -60,17 +60,14 @@ app = FastAPI(
     version='1.0.0'
 )
 
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://www.armoryforgesystems.com",
-        "https://armoryforgesystems.com",
-    ],
+    allow_origins=['*'],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=['*'],
+    allow_headers=['*'],
 )
+
 # ── Models ──────────────────────────────────────────────────
 
 class ChatRequest(BaseModel):
@@ -272,20 +269,25 @@ async def health():
 async def chat(req: ChatRequest):
     # Get or create session
     session_id = req.session_id or f'session_{datetime.now().timestamp()}'
+    is_new = session_id not in conversations
 
-    if session_id not in conversations:
+    if is_new:
         conversations[session_id] = [
             {'role': 'system', 'content': ARMORER_SYSTEM_PROMPT}
         ]
+        log.info(f'[SESSION] New session: {session_id[:20]}...')
+    else:
+        log.info(f'[SESSION] Existing: {session_id[:20]}... ({len(conversations[session_id])} msgs)')
 
     # Add user message
     conversations[session_id].append({'role': 'user', 'content': req.message})
 
-    # Trim history if too long (keep system prompt + last 12 messages)
-    if len(conversations[session_id]) > 15:
+    # Trim history if too long (keep system prompt + last 30 messages)
+    # 30 messages = ~15 full exchanges — enough for the full intake flow
+    if len(conversations[session_id]) > 35:
         conversations[session_id] = [
             conversations[session_id][0],  # system prompt
-            *conversations[session_id][-12:]  # last 12 messages
+            *conversations[session_id][-30:]  # last 30 messages
         ]
 
     # Get AI response
