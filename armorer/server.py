@@ -90,11 +90,13 @@ def extract_lead_info(reply: str) -> Optional[dict]:
 
     fields = {}
     patterns = {
-        'name': r'(?:Name|Full name)[:\s]+(.+?)(?:\n|$)',
-        'company': r'(?:Company|Company name|Business)[:\s]+(.+?)(?:\n|$)',
-        'email': r'(?:Email|Email address)[:\s]+([\w.+-]+@[\w-]+\.[\w.-]+)',
-        'phone': r'(?:Phone|Phone number)[:\s]+(.+?)(?:\n|$)',
-        'summary': r'(?:Summary|Needs|Requirements)[:\s]+(.+?)(?:\n|LEAD_CAPTURE|$)',
+        'name': r'(?:Contact|Name|Full name)[:\s]+(.+?)(?:\n|$|,)',
+        'company': r'(?:Business|Company)[:\s]+(.+?)(?:\n|$|,)',
+        'email': r'(?:Email)[:\s]+([\w.+-]+@[\w-]+\.[\w.-]+)',
+        'phone': r'(?:Phone)[:\s]+(.+?)(?:\n|$|,)',
+        'type': r'(?:Type|Industry)[:\s]+(.+?)(?:\n|$|,)',
+        'employees': r'(?:Employees|Employee count)[:\s]+(.+?)(?:\n|$|,)',
+        'needs': r'(?:Needs|Details)[:\s]+(.+?)(?:\n|LEAD_CAPTURE|$)',
     }
     for key, pattern in patterns.items():
         match = re.search(pattern, reply, re.IGNORECASE)
@@ -104,41 +106,66 @@ def extract_lead_info(reply: str) -> Optional[dict]:
     return fields if fields else None
 
 
-def send_lead_email(lead: dict):
-    """Send lead notification email."""
+def build_transcript(conversation: list[dict]) -> str:
+    """Build a readable transcript from conversation history."""
+    lines = []
+    for msg in conversation:
+        role = msg.get('role', '')
+        content = msg.get('content', '')
+        if role == 'user':
+            lines.append(f'Prospect: {content}')
+        elif role == 'assistant':
+            lines.append(f'Armorer: {content}')
+    return '\n\n'.join(lines)
+
+
+def send_lead_email(conversation: list[dict]):
+    """Send full transcript to email."""
     if not SMTP_HOST or SMTP_HOST == 'localhost':
-        log.info(f'[LEAD] Would send email: {json.dumps(lead, indent=2)}')
+        log.info(f'[LEAD] Would send email with {len(conversation)} messages')
         return
+
+    # Get summary from last assistant message (the confirmation)
+    last_ai = ''
+    for msg in reversed(conversation):
+        if msg['role'] == 'assistant':
+            last_ai = msg['content'].replace(LEAD_TRIGGER, '').strip()
+            break
+
+    transcript = build_transcript(conversation)
+    now = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
 
     try:
         msg = MIMEMultipart('alternative')
-        msg['Subject'] = f'New Lead: {lead.get("name", "Unknown")} — {lead.get("company", "No Company")}'
+        msg['Subject'] = f'New Armorer Intake — {now}'
         msg['From'] = SMTP_USER or 'armorer@armoryforgesystems.com'
         msg['To'] = NOTIFY_EMAIL
 
-        text = f"""New Armorer Lead
+        text = f"""⚒️ New Armorer Intake
 
-Name: {lead.get('name', '—')}
-Company: {lead.get('company', '—')}
-Email: {lead.get('email', '—')}
-Phone: {lead.get('phone', '—')}
+{last_ai}
 
-Summary:
-{lead.get('summary', '—')}
+──────────────────────────────
+FULL TRANSCRIPT
+──────────────────────────────
 
-Captured: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}
+{transcript}
+
+──────────────────────────────
+Captured: {now}
 """
 
-        html = f"""<html><body style="font-family:Arial,sans-serif;color:#333">
-<h2 style="color:#ff6b00">⚒️ New Armorer Lead</h2>
-<table style="border-collapse:collapse">
-<tr><td style="padding:6px 12px 6px 0;font-weight:bold;color:#666">Name</td><td>{lead.get('name', '—')}</td></tr>
-<tr><td style="padding:6px 12px 6px 0;font-weight:bold;color:#666">Company</td><td>{lead.get('company', '—')}</td></tr>
-<tr><td style="padding:6px 12px 6px 0;font-weight:bold;color:#666">Email</td><td>{lead.get('email', '—')}</td></tr>
-<tr><td style="padding:6px 12px 6px 0;font-weight:bold;color:#666">Phone</td><td>{lead.get('phone', '—')}</td></tr>
-<tr><td style="padding:6px 12px 6px 0;font-weight:bold;color:#666">Summary</td><td>{lead.get('summary', '—')}</td></tr>
-</table>
-<p style="color:#999;font-size:12px">Captured {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}</p>
+        html = f"""<html><body style="font-family:Arial,sans-serif;color:#333;max-width:700px">
+<h2 style="color:#ff6b00">⚒️ New Armorer Intake</h2>
+<h3 style="color:#555;margin-top:0">Summary</h3>
+<div style="background:#f9f9f9;padding:16px;border-radius:8px;border-left:3px solid #ff6b00;margin-bottom:24px;white-space:pre-wrap;line-height:1.6">
+{last_ai.replace(chr(10), '<br>')}
+</div>
+<h3 style="color:#555">Full Transcript</h3>
+<div style="background:#fafafa;padding:16px;border-radius:8px;font-size:13px;line-height:1.8;white-space:pre-wrap">
+{transcript.replace(chr(10), '<br>')}
+</div>
+<p style="color:#999;font-size:11px;margin-top:24px">Captured {now} · Armory Forge Systems</p>
 </body></html>"""
 
         msg.attach(MIMEText(text, 'plain'))
@@ -150,12 +177,11 @@ Captured: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}
                 server.login(SMTP_USER, SMTP_PASS)
             server.send_message(msg)
 
-        log.info(f'[LEAD] Email sent for {lead.get("name")} at {lead.get("company")}')
+        log.info(f'[LEAD] Email sent with full transcript')
 
     except Exception as e:
         log.error(f'[LEAD] Failed to send email: {e}')
-        # Log the lead so it's not lost
-        log.info(f'[LEAD] Fallback log: {json.dumps(lead, indent=2)}')
+        log.info(f'[LEAD] Fallback transcript:\n{transcript}')
 
 
 # ── AI call ─────────────────────────────────────────────────
@@ -190,18 +216,41 @@ async def call_deepseek(messages: list[dict]) -> str:
 
 
 def mock_ai_response(messages: list[dict]) -> str:
-    """Mock responses for dev/testing without API key."""
+    """Mock responses matching the v2 structured intake flow."""
     user_msgs = [m['content'] for m in messages if m['role'] == 'user']
     count = len(user_msgs)
+    last = user_msgs[-1].lower() if user_msgs else ''
 
+    # Step 1: Greeting
     if count == 1:
-        return "Thanks for reaching out. To help match you with the right solution, could you tell me what industry you're in and roughly how many employees you have?"
-    elif count == 2:
-        return "Got it. And what specific tasks are you looking to automate or improve? For example — handling customer calls, scheduling appointments, managing data entry, something else?"
-    elif count == 3:
-        return "Based on what you've described, I'd recommend starting with a **Forge Assessment** — it's completely free and takes about 30-60 minutes. You'll leave with a clear automation roadmap. Would you like me to capture your details so our team can reach out?\n\nIf you'd prefer to skip straight to a proposal, I can outline which tier fits your needs."
-    else:
-        return "I've captured your requirements. To move forward, I'll just need a few details:\n\nName: \nCompany: \nEmail: \nPhone (optional): \n\nOnce you share those, I'll log everything and our team will follow up within one business day.\n\nLEAD_CAPTURE_COMPLETE"
+        return "Welcome to the forge. I'm The Armorer, the AI receptionist for Armory Forge Systems. I'll ask you a few quick questions to understand your business. This should take about two minutes.\n\nFirst — what's the name of your business?"
+
+    # Step 2: Business name → ask type
+    if count == 2:
+        return "Got it. What type of business is it, and what industry are you in?"
+
+    # Step 3: Business type → ask employee count
+    if count == 3:
+        return "And how many employees work there?"
+
+    # Step 4: Employee count → ask important details
+    if count == 4:
+        return "Tell me a bit about your day-to-day. What tools or software do you use? What processes eat up the most time? Is there a particular bottleneck or frustration you're hoping to solve?"
+
+    # Step 5: Details → ask contact name
+    if count == 5:
+        return "Who should we reach out to? Your full name, please."
+
+    # Step 6: Contact name → ask email
+    if count == 6:
+        return "What's the best email address to send information to?"
+
+    # Step 7: Email → ask phone + best time
+    if count == 7:
+        return "And a phone number? Also — what's the best time of day to reach you?"
+
+    # Step 8: Done → confirm + close
+    return "I've captured everything. Here's a quick summary:\n\n- Business: [from conversation]\n- Type: [from conversation]\n- Employees: [from conversation]\n- Needs: [from conversation]\n- Contact: [from conversation]\n- Email: [from conversation]\n- Phone: [from conversation]\n\nA member of our team will review this and follow up within one business day. In the meantime, feel free to browse our pricing page or The Signet for more information. Thanks for stopping by the forge.\n\nLEAD_CAPTURE_COMPLETE"
 
 
 # ── Routes ──────────────────────────────────────────────────
@@ -249,11 +298,10 @@ async def chat(req: ChatRequest):
     # Check for lead capture
     lead_captured = LEAD_TRIGGER in reply
     if lead_captured:
-        lead = extract_lead_info(reply)
-        if lead:
-            send_lead_email(lead)
-            # Clean reply — remove the trigger line
-            reply = reply.replace(LEAD_TRIGGER, '').strip()
+        # Send full transcript — every single message the user sent is in there
+        send_lead_email(conversations[session_id])
+        # Clean reply — remove the trigger line
+        reply = reply.replace(LEAD_TRIGGER, '').strip()
 
     # Clean up old sessions (keep last 500)
     if len(conversations) > 500:
