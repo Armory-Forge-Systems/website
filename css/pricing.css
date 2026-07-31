@@ -453,6 +453,23 @@
     margin: 0;
 }
 
+.faq-cta {
+    margin-top: 40px;
+    padding: 32px 24px;
+    background: linear-gradient(180deg, #1a1a1a, #101010);
+    border: 1px solid rgba(255,107,0,.15);
+    border-radius: 14px;
+    text-align: center;
+}
+.faq-cta p {
+    color: #ccc;
+    font-size: 1rem;
+    margin: 0 0 18px 0;
+}
+.faq-cta .btn {
+    display: inline-block;
+}
+
 /* ═══════════════════════════════════════════
    CTA
    ═══════════════════════════════════════════ */
