@@ -421,6 +421,145 @@ async def chat(req: ChatRequest, request: Request):
     )
 
 
+# ═══════════════════════════════════════════════════════════════
+# PHONE CALL ENDPOINT — Twilio Webhook
+# ═══════════════════════════════════════════════════════════════
+
+VOICE_SYSTEM_PROMPT = """You are The Armorer — AI receptionist for Armory Forge Systems. You are speaking on a phone call. Keep every response under 20 seconds when spoken aloud. Be warm but efficient. No markdown, no lists, no emojis. Just natural speech. Follow the same intake flow: greet, ask business name, ask type, ask employees, ask needs, ask contact, close."""
+
+# Phone call session store: caller_number -> conversation history
+phone_sessions: dict[str, list[dict]] = {}
+
+async def get_voice_reply(transcript: str, caller: str) -> str:
+    """Get AI reply for a phone call transcript."""
+    if caller not in phone_sessions:
+        phone_sessions[caller] = [
+            {'role': 'system', 'content': VOICE_SYSTEM_PROMPT}
+        ]
+
+    phone_sessions[caller].append({'role': 'user', 'content': transcript})
+
+    # Trim if too long
+    if len(phone_sessions[caller]) > 25:
+        phone_sessions[caller] = [
+            phone_sessions[caller][0],
+            *phone_sessions[caller][-20:]
+        ]
+
+    if DEV_MODE or not DEEPSEEK_API_KEY:
+        msgs = [m['content'] for m in phone_sessions[caller] if m['role'] == 'user']
+        count = len(msgs)
+        if count == 1:
+            return "Welcome to Armory Forge Systems. I'm The Armorer. What's the name of your business?"
+        replies = [
+            "Got it. What type of business?",
+            "And how many employees?",
+            "What tools or software do you use day to day?",
+            "What's your name and the best email to reach you?",
+            "Got everything. Our team will follow up within one business day. Thanks for calling.",
+        ]
+        idx = min(count - 2, len(replies) - 1)
+        if idx >= 0:
+            return replies[idx]
+        return "Thanks. We'll be in touch."
+
+    headers = {
+        'Authorization': f'Bearer {DEEPSEEK_API_KEY}',
+        'Content-Type': 'application/json',
+    }
+    payload = {
+        'model': DEEPSEEK_MODEL,
+        'messages': phone_sessions[caller],
+        'temperature': 0.7,
+        'max_tokens': 200,  # short for voice
+        'stream': False,
+    }
+
+    async with httpx.AsyncClient(timeout=15.0) as client:
+        resp = await client.post(
+            f'{DEEPSEEK_BASE_URL}/chat/completions',
+            headers=headers,
+            json=payload,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        reply = data['choices'][0]['message']['content']
+        phone_sessions[caller].append({'role': 'assistant', 'content': reply})
+        return reply
+
+
+from fastapi.responses import Response
+
+@app.api_route('/armorer/call', methods=['GET', 'POST'])
+async def phone_call(request: Request):
+    """Handle Twilio voice calls. GET for health, POST for webhook."""
+    if request.method == 'GET':
+        return Response(
+            '<?xml version="1.0" encoding="UTF-8"?><Response><Say>Armory Forge Systems phone endpoint is active.</Say></Response>',
+            media_type='application/xml'
+        )
+
+    # Parse Twilio POST body
+    body = await request.form()
+    caller = body.get('From', 'unknown')
+    speech_result = body.get('SpeechResult', '').strip()
+
+    log.info(f'[CALL] From {caller}: SpeechResult="{speech_result[:80]}"')
+
+    if not speech_result:
+        # Initial call — greeting
+        twiml = (
+            '<?xml version="1.0" encoding="UTF-8"?>'
+            '<Response>'
+            '<Gather input="speech" action="/armorer/call" method="POST" '
+            'speechTimeout="auto" language="en-US" enhanced="true">'
+            '<Say voice="Polly.Joanna-Neural">Welcome to Armory Forge Systems. '
+            'I am The Armorer, an AI receptionist. '
+            'What is the name of your business?</Say>'
+            '</Gather>'
+            '<Say>I didn\'t catch that. Please call back or visit us at armoryforgeystems.com.</Say>'
+            '</Response>'
+        )
+        return Response(twiml, media_type='application/xml')
+
+    # Process speech through AI
+    try:
+        reply = await get_voice_reply(speech_result, caller)
+    except Exception as e:
+        log.error(f'[CALL] AI error: {e}')
+        reply = "I'm sorry, I'm having trouble processing that. Could you repeat your answer?"
+
+    # Clean reply for voice (strip markdown, keep it natural)
+    reply = reply.replace('**', '').replace('*', '').replace('\n', ' ').strip()
+
+    # Check if done
+    if 'LEAD_CAPTURE_COMPLETE' in reply:
+        reply = reply.replace('LEAD_CAPTURE_COMPLETE', '').strip()
+        twiml = (
+            f'<?xml version="1.0" encoding="UTF-8"?>'
+            f'<Response>'
+            f'<Say voice="Polly.Joanna-Neural">{reply}</Say>'
+            f'<Hangup/>'
+            f'</Response>'
+        )
+        # Clean up session
+        if caller in phone_sessions:
+            del phone_sessions[caller]
+    else:
+        twiml = (
+            f'<?xml version="1.0" encoding="UTF-8"?>'
+            f'<Response>'
+            f'<Gather input="speech" action="/armorer/call" method="POST" '
+            f'speechTimeout="auto" language="en-US" enhanced="true">'
+            f'<Say voice="Polly.Joanna-Neural">{reply}</Say>'
+            f'</Gather>'
+            f'<Say>I didn\'t catch that. Please try again.</Say>'
+            f'</Response>'
+        )
+
+    return Response(twiml, media_type='application/xml')
+
+
 # ── Main ────────────────────────────────────────────────────
 if __name__ == '__main__':
     import uvicorn
