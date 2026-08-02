@@ -48,14 +48,18 @@ navLinks.forEach((link) => {
 });
 
 // ===========================
-// Smooth Scroll — Browse Articles Button
+// Smooth Scroll — Browse Articles Button (signet.html only)
 // ===========================
 
-document.querySelector(".btn-primary").addEventListener("click", function (e) {
-    e.preventDefault();
+const browseButton = document.querySelector('.btn-primary[href="#featured"]');
 
-    document.querySelector("#featured").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+if (browseButton && document.querySelector("#featured")) {
+    browseButton.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.querySelector("#featured").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
     });
-});
+}
