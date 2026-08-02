@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <title>The Anatomy of a Phishing Email | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="How phishing actually works — the attack chain, the red flags that catch 90% of attacks, and the technical layer that stops them before your team ever clicks.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/signet.css">
+</head>
+
+<body>
+
+<!-- =========================
+    Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1>Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../signet.html" class="active">The Signet</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Article Hero
+========================= -->
+<section class="article-hero">
+    <div class="hero-content">
+        <div class="article-meta-bar">
+            <span class="category">Cybersecurity</span>
+            <span class="date">August 2026</span>
+        </div>
+        <h1>The Anatomy of a Phishing Email</h1>
+    </div>
+</section>
+
+<!-- =========================
+    Hero Image
+========================= -->
+<div class="article-image-wrapper">
+    <img src="../assets/images/phishing-email-anatomy-hero.png" alt="Phishing email concept — a legitimate-looking message hiding a hook" loading="lazy">
+</div>
+
+<!-- =========================
+    Article Body
+========================= -->
+<article class="article-body">
+
+<p class="forge-note"><em>The Forge — Armory Forge Systems</em></p>
+
+<p>Every breach story starts the same way — not with a hacker breaking into a server, but with an employee clicking a link.</p>
+
+<p>It's the oldest trick on the internet, and it still works. Verizon's <em>Data Breach Investigations Report</em> consistently finds phishing involved in a third of all breaches — with the human element behind the vast majority of them. Small businesses are the favorite target, not because they hold nation-state secrets, but because they're easier prey. One wrong click can mean a hijacked bank account, a ransomware lockout, or a customer database leaked to the dark web.</p>
+
+<p>So let's take a phishing email apart, piece by piece. Understand how it works, and you'll never look at your inbox the same way again.</p>
+
+<h2>The Attack Chain: Four Steps to Breach</h2>
+
+<p>Phishing isn't a single moment — it's a chain of events, and the attacker only needs you to fail once.</p>
+
+<ol>
+    <li><strong>Delivery.</strong> The email arrives in your inbox. It looks like it's from your bank, your software vendor, a client, or your own CEO.</li>
+    <li><strong>The Hook.</strong> Fear, urgency, curiosity, or authority gets you to act before you think. "Your account will be suspended." "This invoice is overdue." "Re: the contract we discussed."</li>
+    <li><strong>The Action.</strong> You click the link, open the attachment, enter your password, approve the payment, or forward the email to accounting.</li>
+    <li><strong>The Payoff.</strong> Credentials get harvested, ransomware deploys, a wire goes to the wrong account, or the attacker silently lives inside your mailbox for months.</li>
+</ol>
+
+<p>The defense fails at step 2. That's why phishing works — not because the technology is sophisticated, but because the psychology is.</p>
+
+<h2>Dissecting the Email Itself</h2>
+
+<p>Here's what a phishing email actually looks like when you stop reading it as a message and start reading it as evidence:</p>
+
+<ul>
+    <li><strong>The spoofed sender.</strong> The display name says "PayPal" — the actual address is <em>service@paypa1-security.com</em>. Display names are free text. Anyone can type "Your CEO" into the From field.</li>
+    <li><strong>The lookalike domain.</strong> <em>amaz0n.com</em>, <em>microsoft-support.net</em>, <em>yourbank-verify.com</em>. One character off, zero suspicion.</li>
+    <li><strong>The urgent language.</strong> Every phish has a timer: "within 24 hours," "immediately," "final notice." Deadlines short-circuit judgment.</li>
+    <li><strong>The mismatched link.</strong> The text says <em>paypal.com/login</em> — the destination is a raw IP address. Hover before you click. Every time.</li>
+    <li><strong>The attachment.</strong> Invoices, voicemails, "payment confirmations" — in <em>.docm</em>, <em>.zip</em>, or <em>.html</em> formats that hide macro malware or credential-harvesting pages.</li>
+    <li><strong>The ask.</strong> Credentials, MFA codes, wire transfers, gift cards. Legitimate services don't ask for your password over email. Ever.</li>
+</ul>
+
+<h2>Three Red Flags That Catch 90% of Phish</h2>
+
+<p>You don't need to be a security expert to spot most phishing. You need three reflexes:</p>
+
+<ol>
+    <li><strong>Urgency plus fear.</strong> Legitimate organizations don't threaten your account in the same sentence they ask you to log in.</li>
+    <li><strong>The link doesn't match.</strong> The visible text, the hover URL, and the destination page should all agree. If any one of them is off, it's a phish.</li>
+    <li><strong>An unexpected ask.</strong> Someone asking for credentials, payment, or a password reset that you didn't initiate — even if they know your name, your company, and your recent projects.</li>
+</ol>
+
+<p>If you see any one of these, stop. Pick up the phone and call the sender using a number you already have — not one from the email.</p>
+
+<h2>Why Smart People Still Fall For It</h2>
+
+<p>The red flags are easy in a textbook. Real phishing is designed by people who study how you actually work.</p>
+
+<ul>
+    <li><strong>Business Email Compromise (BEC).</strong> The attacker impersonates a vendor or executive: "I'm in a meeting, wire this invoice to the new account." No links, no attachments — just a conversation and a wire. BEC costs businesses billions a year.</li>
+    <li><strong>Invoice fraud.</strong> A fake invoice from a supplier whose name, domain, and branding you recognize. Accounting pays it without a second thought.</li>
+    <li><strong>Compromised accounts.</strong> The most convincing phish comes from a real inbox — a vendor, a partner, or a colleague whose account was already taken over. Their real emails are suddenly full of malicious links.</li>
+    <li><strong>AI-generated scams.</strong> The grammar errors that used to give phish away are gone. AI writes flawless, personalized lures in the voice of your actual contacts — and can even clone a voice on a phone call. The typos are the tell of the past. The absence of typos is the tell of the present.</li>
+</ul>
+
+<p>This is the new reality: the same technology that makes your business efficient now writes the attacks against it.</p>
+
+<h2>The Technical Layer: What Happens Behind the Email</h2>
+
+<p>Human judgment is the first line of defense — but it shouldn't be the only one. Every email carries technical evidence that machines can check faster and more reliably than people:</p>
+
+<ul>
+    <li><strong>SPF, DKIM, and DMARC</strong> verify that an email genuinely came from the domain it claims. A "bank" email that fails all three checks is a phish before you even read it.</li>
+    <li><strong>Domain reputation</strong> flags known-bad senders and newly registered lookalike domains.</li>
+    <li><strong>Link inspection</strong> expands shortened URLs and compares destinations against known malicious sites.</li>
+    <li><strong>Attachment sandboxing</strong> opens suspicious files in an isolated environment where malware can't reach your network.</li>
+</ul>
+
+<p>This is exactly how AI security layers work in practice — a cheap, fast filter catches the obvious phish in milliseconds; a smarter layer examines anything suspicious in context; and heavy analysis — threat intelligence lookups, sandboxing, full incident review — is reserved for the rare high-risk case. You get enterprise-grade inspection without enterprise-grade cost, because most attacks never make it past the first gate.</p>
+
+<h2>You Clicked. Now What?</h2>
+
+<p>First: don't panic, and don't hide it. The cost of a clicked link compounds the longer it goes unreported.</p>
+
+<ul>
+    <li><strong>Disconnect from the network</strong> — unplug Wi-Fi or Ethernet. Don't power off; you may need logs and forensic evidence.</li>
+    <li><strong>Change your credentials from a clean device</strong> — and every other account that used the same password.</li>
+    <li><strong>Verify MFA is on</strong> — and if you entered a code, the attacker may have used it. Treat those accounts as compromised.</li>
+    <li><strong>Report it immediately</strong> — to your IT contact, and forward the email to your security provider. Speed matters.</li>
+    <li><strong>Check for mailbox tampering</strong> — forwarding rules, inbox filters, and "read and deleted" settings. Attackers live quietly inside inboxes.</li>
+    <li><strong>Watch for the follow-up</strong> — a successful phish is usually step one of a longer campaign.</li>
+</ul>
+
+<h2>The Bottom Line</h2>
+
+<p>Phishing works because it targets humans, not firewalls. The fix isn't more technology or more training — it's both, working together.</p>
+
+<ul>
+    <li><strong>Trained humans</strong> who pause before they click and know the three red flags.</li>
+    <li><strong>Technical verification</strong> that checks every inbound message before a person ever sees it — SPF/DKIM/DMARC, reputation, link inspection, and sandboxing.</li>
+    <li><strong>A plan for the click that does happen</strong> — because at some point, someone will.</li>
+</ul>
+
+<p>The threat landscape keeps getting sharper. So does the defense: AI now fights on both sides of the inbox. The same models that write flawless phishing lures can inspect every message, explain <em>why</em> it's suspicious, and stop it before it reaches your team.</p>
+
+<p>That's the difference between hoping your people don't click — and knowing your systems are watching.</p>
+
+</article>
+
+<!-- =========================
+    The Signet Certification
+========================= -->
+<div class="signet-approval hidden">
+
+<section class="signet-certification">
+    <div class="seal-line"></div>
+    
+    <div class="seal-header">
+        <span class="seal-title">SEALED BY THE SIGNET</span>
+        <span class="seal-number">Issue #011</span>
+    </div>
+    
+    <div class="seal-body">
+        <img src="../assets/images/signet-seal.png" alt="The Signet" class="seal-image">
+        <div class="seal-copy">
+            <blockquote>Every system we deliver is forged with intent, tested with rigor, and sealed with our mark.</blockquote>
+            <div class="seal-author">
+                <strong>Armory Forge Systems</strong>
+                <span>You imagine. We build.</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="seal-line seal-line-bottom"></div>
+</section>
+
+<div class="seal-glow"></div>
+
+<!-- =========================
+    Article CTA
+========================= -->
+<div class="article-cta">
+    <h3>Ready to forge your next system?</h3>
+    <p>Whether you're deploying AI agents, automating workflows, or modernizing infrastructure, we're ready to help.</p>
+    <a href="mailto:info@armoryforgesystems.com" class="btn-primary cta-button">Schedule a Discovery Call</a>
+    <a href="../signet.html" class="cta-secondary">Read another Signet article →</a>
+</div>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine.<br>We build.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="../index.html#hero">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#contact">Contact</a>
+            <a href="../signet.html">The Signet</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
