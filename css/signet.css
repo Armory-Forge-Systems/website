@@ -958,6 +958,19 @@ section{
     margin-bottom:34px;
 }
 
+/* Stack CTA buttons with clear separation */
+.article-cta .btn-primary{
+    display:block;
+    width:100%;
+    max-width:340px;
+    margin:0 auto;
+    box-sizing:border-box;
+}
+
+.article-cta .btn-primary + .btn-primary{
+    margin-top:18px;
+}
+
 .cta-secondary{
     display:block;
     margin-top:18px;
