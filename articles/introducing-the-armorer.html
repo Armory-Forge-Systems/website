@@ -14,6 +14,22 @@
 </head>
 
 <body>
+<!-- SVG filters for forge effects -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-heat-haze" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
 
 <!-- =========================
     Header
@@ -21,7 +37,7 @@
 <header>
     <div class="header-top">
         <div class="branding">
-            <h1>Armory Forge Systems</h1>
+            <h1 class="forge-text">Armory Forge Systems</h1>
             <p>You imagine. We build. To the victor, the spoils.</p>
         </div>
         <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
@@ -29,10 +45,11 @@
     <nav>
         <a href="../index.html#hero">Home</a>
         <a href="../index.html#services">Services</a>
+        <a href="../pricing.html">Pricing</a>
         <a href="../signet.html" class="active">The Signet</a>
         <a href="../armorer.html">The Armorer</a>
         <a href="../index.html#about">About</a>
-        <a href="../index.html#contact">Contact</a>
+        <a href="../armorer.html">Contact</a>
     </nav>
 </header>
 
@@ -169,8 +186,9 @@
         <nav class="footer-nav">
             <a href="../index.html#hero">Home</a>
             <a href="../index.html#services">Services</a>
+            <a href="../pricing.html">Pricing</a>
             <a href="../index.html#about">About</a>
-            <a href="../index.html#contact">Contact</a>
+            <a href="../armorer.html">Contact</a>
             <a href="../signet.html">The Signet</a>
         </nav>
         <div class="footer-social">
@@ -184,6 +202,7 @@
     </div>
 </footer>
 
+<script src="../js/forge-effects.js"></script>
 <script src="../js/app.js"></script>
 </body>
 </html>

@@ -26,6 +26,10 @@
 <!-- SVG filters for forge effects -->
 <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
   <defs>
+    <filter id="forge-heat-haze" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
     <filter id="forge-metal-noise">
       <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
       <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
@@ -474,6 +478,7 @@
 
 </footer>
 
+<script src="js/forge-effects.js"></script>
 <script src="js/app.js"></script>
 
 </body>
