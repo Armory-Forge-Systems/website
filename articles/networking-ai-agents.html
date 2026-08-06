@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <title>When Your AI Agents Start Talking to Each Other — Signet Article #017 | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="Most businesses end up with a drawer full of AI gadgets that don't talk to each other. The real leap happens when your agents start passing work between them — like a team that never sleeps.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/signet.css">
+</head>
+
+<body>
+<!-- SVG filters for forge effects -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-heat-haze" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<!-- =========================
+    Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1 class="forge-text">Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../signet.html" class="active">The Signet</a>
+        <a href="../armorer.html">The Armorer</a>
+        <a href="../index.html#about">About</a>
+        <a href="../armorer.html">Contact</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Article Hero
+========================= -->
+<section class="article-hero">
+    <div class="hero-content">
+        <div class="article-meta-bar">
+            <span class="category">Networking</span>
+            <span class="date">August 2026</span>
+        </div>
+        <h1>When Your AI Agents Start Talking to Each Other — Signet Article #017</h1>
+    </div>
+</section>
+
+<!-- =========================
+    Article Hero Image
+========================= -->
+<div class="article-hero-image">
+    <img src="../assets/images/networking-ai-agents-hero.png"
+         alt="Two AI agents passing work between them, connected — a workforce that never sleeps">
+</div>
+
+<!-- =========================
+    Article Body
+========================= -->
+<article class="article-body">
+
+<p class="forge-note"><em>The Forge — Armory Forge Systems — Signet Article #017</em></p>
+
+<p>You bought the chatbot. Then the autopilot for your email. Then the tool that summarizes your meetings. Each one is impressive on its own — smarter than last year's model, faster than any human could be at its one job.</p>
+
+<p>But if you're honest with yourself, they're not a team. They're a drawer full of gadgets. The receptionist bot doesn't know the CRM just changed. The CRM doesn't tell the calendar. The calendar doesn't tell the follow-up tool. Nothing hands off, nothing escalates, and somewhere in the middle <em>you're</em> still the glue holding it all together.</p>
+
+<p>That's the gap this article is about. Because the businesses that win the next decade won't be the ones with the most AI tools. They'll be the ones whose AI tools work <strong>together</strong>.</p>
+
+<h2>First, a Quick Distinction: Agents Aren't Chatbots</h2>
+
+<p>A chatbot talks. An agent <em>acts</em>. It books the appointment, updates the record, sends the quote, files the report, escalates to a human when it hits something it can't handle. One agent can do one job exceptionally well — but a single agent is still a single employee. And no business runs on one employee.</p>
+
+<p>The real leap happens when agents start passing work to each other the way people do: with context, with a baton handoff, with a clear "this is yours now."</p>
+
+<h2>What It Looks Like at 2 AM</h2>
+
+<p>Imagine a lead submits a form on your website at 2 AM. Here's what happens in a connected system:</p>
+
+<ul>
+    <li>Your receptionist agent responds instantly, asks the qualifying questions, and gets the prospect to book a call.</li>
+    <li>The calendar agent finds the right slot and locks it in.</li>
+    <li>The CRM agent logs the lead, the source, and the answers — no double entry, no "I'll type it up tomorrow."</li>
+    <li>The dashboard updates itself.</li>
+    <li>By 7 AM, a sales-prep agent has pulled together a one-page brief: who this person is, what they need, what they asked, where they came from.</li>
+</ul>
+
+<p>At 9 AM you sit down, read one page, and close. Nothing was dropped. Nobody was "missed." No lead died in a handoff. The whole company worked a full shift while you were asleep.</p>
+
+<p>That's not a gadget. That's a workforce.</p>
+
+<h2>How Agents Actually Talk (No Engineering Degree Required)</h2>
+
+<p>Under the hood it's simpler than the marketing makes it sound. Three pieces do most of the work:</p>
+
+<h3>Webhooks — a doorbell</h3>
+<p>One system says "hey, something just happened," and rings another system's bell with the details. Simple, direct, everywhere.</p>
+
+<h3>Message queues — a mailroom</h3>
+<p>Systems drop messages in a box and the right desk picks them up when it's ready. Nothing gets lost when things get busy.</p>
+
+<h3>MCP (Model Context Protocol) — a universal connector</h3>
+<p>Think USB-C for AI: an open standard so different tools can plug into each other without custom glue. It's the reason your agents don't have to be built by the same company to work together.</p>
+
+<p>You don't need to know how to build any of this. You need to know it exists — because it means the "team of agents" thing isn't science fiction. It's plumbing. And plumbing is a solved problem.</p>
+
+<h2>Why This Matters to a Small Business</h2>
+
+<p>The big companies have been quietly wiring this up for years. That's partly <em>why</em> they feel unstoppable — not better products, better handoffs. For everyone else, the advantages are concrete:</p>
+
+<ul>
+    <li><strong>Leads stop dying in handoffs.</strong> Most businesses don't lose customers to competitors; they lose them to the silence between systems. A lead that gets an answer in four seconds at 2 AM doesn't shop around.</li>
+    <li><strong>Speed becomes your unfair advantage.</strong> You can't hire your way to a 24-hour response time. Software can.</li>
+    <li><strong>Your humans stay humans.</strong> The agents do the repetitive lifting, the data entry, the chasing. Your team does the thinking, the relationship-building, the closing — the work that actually pays.</li>
+    <li><strong>It scales without hiring.</strong> A connected system handles 10 leads a day the same way it handles 1,000. A person doesn't.</li>
+</ul>
+
+<h2>The Honest Catch</h2>
+
+<p>Stringing agents together is not a shopping problem — it's an engineering problem. Who has authority to do what? What's the protocol when two agents disagree? How do you keep customer data secure when it's moving between systems? How do you know it actually worked?</p>
+
+<p>That's the part the tool demos don't show you. And it's the part that separates a system that saves you time from a system that quietly costs you customers. This is why we build these systems for a living — and it's also why we run our own AI team this way internally. The Armorer takes the calls. The rest of the team handles research, infrastructure, and support. They hand off to each other constantly. It's not a demo. It's how we operate.</p>
+
+<h2>The Closing Thought</h2>
+
+<p>The tools were never the hard part. You can buy a chatbot this afternoon. The hard part is turning a pile of gadgets into a team — and that's a systems problem, not a gadget problem.</p>
+
+<p>The businesses that win will be the ones that treat their AI like a workforce, not a drawer of gadgets. They'll be the ones whose agents talk to each other, hand off cleanly, and never sleep. They'll be the ones who walk in at 9 AM to a page that says: <em>here's what happened, here's what's next, it's yours now.</em></p>
+
+<p><em>Want to see how your current tools could start passing work to each other? The Armorer can map it out with you. No pressure, just answers.</em></p>
+
+</article>
+
+<!-- =========================
+    The Signet Certification
+========================= -->
+<div class="signet-approval hidden">
+
+<section class="signet-certification">
+    <div class="seal-line"></div>
+    
+    <div class="seal-header">
+        <span class="seal-title">SEALED BY THE SIGNET</span>
+        <span class="seal-number">Issue #017</span>
+    </div>
+    
+    <div class="seal-body">
+        <img src="../assets/images/signet-seal.png" alt="The Signet" class="seal-image">
+        <div class="seal-copy">
+            <blockquote>Every system we deliver is forged with intent, tested with rigor, and sealed with our mark.</blockquote>
+            <div class="seal-author">
+                <strong>Armory Forge Systems</strong>
+                <span>You imagine. We build.</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="seal-line seal-line-bottom"></div>
+</section>
+
+<div class="seal-glow"></div>
+
+<!-- =========================
+    Article CTA
+========================= -->
+<div class="article-cta">
+    <h3>Ready to forge your next system?</h3>
+    <p>Whether you're deploying AI agents, automating workflows, or modernizing infrastructure, we're ready to help.</p>
+    <a href="../armorer.html" class="btn-primary cta-button">💬 Chat with The Armorer</a>
+    <a href="mailto:info@armoryforgesystems.com" class="btn-primary cta-button">Schedule a Discovery Call</a>
+    <a href="../signet.html" class="cta-secondary">Read another Signet article →</a>
+</div>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine.<br>We build.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="../index.html#hero">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../index.html#about">About</a>
+            <a href="../armorer.html">Contact</a>
+            <a href="../signet.html">The Signet</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="../js/forge-effects.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
