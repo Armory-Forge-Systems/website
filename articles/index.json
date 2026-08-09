@@ -1,0 +1,190 @@
+{
+  "library": "The Signet — Armory Forge Systems",
+  "volumes": {
+    "volume_i": "Articles 1-50",
+    "volume_ii": "Articles 51-99"
+  },
+  "article_count": 20,
+  "articles": [
+    {
+      "issue": 1,
+      "slug": "ai-agents-what-they-actually-are",
+      "title": "What Is an AI Agent? (Without the Hype)",
+      "category": "AI",
+      "date": "July 2026",
+      "url": "/articles/ai-agents-what-they-actually-are.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 2,
+      "slug": "can-ai-answer-your-business-phone",
+      "title": "Can AI Answer Your Business Phone While You Sleep?",
+      "category": "AI",
+      "date": "July 2026",
+      "url": "/articles/can-ai-answer-your-business-phone.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 3,
+      "slug": "cloud-infrastructure-uncomplicated",
+      "title": "Cloud Infrastructure, Uncomplicated",
+      "category": "CLOUD",
+      "date": "July 2026",
+      "url": "/articles/cloud-infrastructure-uncomplicated.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 4,
+      "slug": "how-much-does-ai-receptionist-cost",
+      "title": "How Much Does an AI Receptionist Cost?",
+      "category": "AI",
+      "date": "July 2026",
+      "url": "/articles/how-much-does-ai-receptionist-cost.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 5,
+      "slug": "the-cost-of-doing-nothing",
+      "title": "The Cost of Doing Nothing",
+      "category": "BUSINESS",
+      "date": "July 2026",
+      "url": "/articles/the-cost-of-doing-nothing.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 6,
+      "slug": "future-of-ai-receptionists",
+      "title": "The Future of AI Receptionists",
+      "category": "AI",
+      "date": "July 2026",
+      "url": "/articles/future-of-ai-receptionists.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 7,
+      "slug": "small-business-automation-guide",
+      "title": "Small Business Automation Guide",
+      "category": "AUTOMATION",
+      "date": "July 2026",
+      "url": "/articles/small-business-automation-guide.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 8,
+      "slug": "why-cloud-security-matters",
+      "title": "Why Cloud Security Matters",
+      "category": "CLOUD",
+      "date": "July 2026",
+      "url": "/articles/why-cloud-security-matters.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 9,
+      "slug": "network-security-for-small-teams",
+      "title": "Network Security for Small Teams",
+      "category": "NETWORKING",
+      "date": "July 2026",
+      "url": "/articles/network-security-for-small-teams.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 10,
+      "slug": "ai-receptionist-vs-hiring",
+      "title": "AI Receptionist vs Hiring Another Employee",
+      "category": "AI",
+      "date": "July 2026",
+      "url": "/articles/ai-receptionist-vs-hiring.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 11,
+      "slug": "the-anatomy-of-a-phishing-email",
+      "title": "The Anatomy of a Phishing Email",
+      "category": "CYBERSECURITY",
+      "date": "August 2026",
+      "url": "/articles/the-anatomy-of-a-phishing-email.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 12,
+      "slug": "ai-for-hvac-companies",
+      "title": "Your HVAC Company Is Missing Calls This Summer",
+      "category": "AI",
+      "date": "August 2026",
+      "url": "/articles/ai-for-hvac-companies.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 13,
+      "slug": "the-29000-email",
+      "title": "The $29,000 Email: What the DNC Scam Teaches Every Business",
+      "category": "NEW",
+      "date": "August 2026",
+      "url": "/articles/the-29000-email.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 14,
+      "slug": "your-ai-makes-things-up",
+      "title": "Why Your AI Assistant Makes Things Up — and How RAG Fixes It",
+      "category": "AI",
+      "date": "August 2026",
+      "url": "/articles/your-ai-makes-things-up.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 15,
+      "slug": "ai-for-law-firms",
+      "title": "Your Law Firm Is Missing Calls — and Cases",
+      "category": "AI",
+      "date": "August 2026",
+      "url": "/articles/ai-for-law-firms.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 16,
+      "slug": "automation-arms-your-team",
+      "title": "Automation Isn't About Replacing People — It's About Arming Them",
+      "category": "AUTOMATION",
+      "date": "August 2026",
+      "url": "/articles/automation-arms-your-team.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 17,
+      "slug": "networking-ai-agents",
+      "title": "When Your AI Agents Start Talking to Each Other",
+      "category": "NETWORKING",
+      "date": "August 2026",
+      "url": "/articles/networking-ai-agents.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 18,
+      "slug": "ai-for-real-estate-agents",
+      "title": "Your Real Estate Business Is Missing Calls — and Listings",
+      "category": "REAL ESTATE",
+      "date": "August 2026",
+      "url": "/articles/ai-for-real-estate-agents.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 19,
+      "slug": "ai-for-doctors",
+      "title": "Doctors Don't Need a Better Receptionist — They Need a Better Revenue Cycle",
+      "category": "NEW",
+      "date": "August 2026",
+      "url": "/articles/ai-for-doctors.html",
+      "unnumbered": false
+    },
+    {
+      "issue": null,
+      "slug": "introducing-the-armorer",
+      "title": "Introducing The Armorer — AFS's First AI Agent",
+      "category": "LIVE NOW",
+      "date": "July 2026",
+      "url": "/articles/introducing-the-armorer.html",
+      "unnumbered": true
+    }
+  ]
+}
