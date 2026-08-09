@@ -57,6 +57,12 @@
   </url>
   <!-- Articles -->
   <url>
+    <loc>https://www.armoryforgesystems.com/articles/ai-for-doctors.html</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.armoryforgesystems.com/articles/ai-for-real-estate-agents.html</loc>
     <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
