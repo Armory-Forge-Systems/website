@@ -48,18 +48,47 @@ navLinks.forEach((link) => {
 });
 
 // ===========================
-// Smooth Scroll — Browse Articles Button (signet.html only)
+// Tech Auto-Scroll — pauses on hover, resumes on leave
 // ===========================
 
-const browseButton = document.querySelector('.btn-primary[href="#featured"]');
+(function () {
+    const track = document.getElementById("techTrack");
+    const grid = document.getElementById("techGrid");
 
-if (browseButton && document.querySelector("#featured")) {
-    browseButton.addEventListener("click", function (e) {
-        e.preventDefault();
+    if (!track || !grid) return;
 
-        document.querySelector("#featured").scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+    // Clone cards for seamless looping
+    const cards = Array.from(track.children);
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        track.appendChild(clone);
     });
-}
+
+    let offset = 0;
+    let speed = 0.6; // pixels per frame (~36px/s at 60fps)
+    let paused = false;
+    let rafId = null;
+
+    function animate() {
+        if (!paused) {
+            offset -= speed;
+            // When we've scrolled past the first set, reset
+            const singleSetWidth = track.scrollWidth / 2;
+            if (Math.abs(offset) >= singleSetWidth) {
+                offset += singleSetWidth;
+            }
+            track.style.transform = `translateX(${offset}px)`;
+        }
+        rafId = requestAnimationFrame(animate);
+    }
+
+    grid.addEventListener("mouseenter", () => { paused = true; });
+    grid.addEventListener("mouseleave", () => { paused = false; });
+
+    // Also pause on touch for mobile
+    grid.addEventListener("touchstart", () => { paused = true; });
+    grid.addEventListener("touchend", () => { paused = false; });
+
+    // Start the loop
+    rafId = requestAnimationFrame(animate);
+})();
