@@ -37,7 +37,8 @@
                 rgba(255,255,255,.005) 6px
             ),
             /* ── Dark gradient base ── */
-            linear-gradient(180deg, #121212 0%, #0a0a0a 45%, #050505 100%);
+            linear-gradient(180deg, #121212 0%, #0a0a0a 45%, #050505 100%),
+            #0f0f0f;
         color: #ffffff;
         font-family: Arial, Helvetica, sans-serif;
         scroll-behavior: smooth;
@@ -266,7 +267,11 @@ nav a:hover::after {
     }
 
     .card {
-        background: linear-gradient(180deg, #1a1a1a, #101010);
+        background:
+            linear-gradient(180deg, rgba(26,26,26,.85), rgba(16,16,16,.90)),
+            url("../assets/textures-and-bg/bolted-sleel-card.png");
+        background-size: cover;
+        background-position: center;
         padding: 30px;
         border-radius: 18px;
         width: 250px;
@@ -421,7 +426,10 @@ nav a:hover::after {
             rgba(255,255,255,.015) 1px,
             rgba(255,255,255,.015) 2px
         ),
-        linear-gradient(180deg, rgba(30,30,30,.88), rgba(12,12,12,.92));
+        linear-gradient(180deg, rgba(30,30,30,.88), rgba(12,12,12,.92)),
+        url("../assets/textures-and-bg/cybersecurity-carbon-fiberpng.png");
+    background-size: auto, auto, cover;
+    background-position: center;
 
     /* ── Glass blur overlay ── */
     backdrop-filter: blur(14px);
@@ -497,12 +505,15 @@ nav a:hover::after {
 #services,
 #about,
 #signet,
-#contact,
 #featured-articles,
 #featured {
 
-    scroll-margin-top: 110px;
+    scroll-margin-top: 250px;
 
+}
+
+#contact-card {
+    scroll-margin-top: 210px;
 }
     /* ///////===== Scroll Animations ===== */
 
@@ -754,7 +765,11 @@ nav a:hover::after {
 
     height: 140px;
 
-    background: linear-gradient(180deg, #1a1a1a, #101010);
+    background:
+        linear-gradient(180deg, rgba(26,26,26,.85), rgba(16,16,16,.90)),
+        url("../assets/textures-and-bg/hammered-steel.png");
+    background-size: cover;
+    background-position: center;
 
     border: 1px solid rgba(255,107,0,.15);
 

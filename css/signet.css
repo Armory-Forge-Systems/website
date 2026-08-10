@@ -133,7 +133,11 @@ section{
 }
 
 .article-card{
-    background:linear-gradient(180deg,#1a1a1a,#101010);
+    background:
+        linear-gradient(180deg, rgba(26,26,26,.88), rgba(16,16,16,.92)),
+        url("../assets/textures-and-bg/steel-circuit-board.png");
+    background-size: cover;
+    background-position: center;
     border:1px solid rgba(255,107,0,.15);
     border-radius:18px;
     padding:2rem;

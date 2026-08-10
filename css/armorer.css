@@ -69,7 +69,6 @@
     max-height: 70vh;
 }
 
-/* ── Messages area ── */
 .chat-messages {
     flex: 1;
     overflow-y: auto;
