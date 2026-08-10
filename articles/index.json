@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 20,
+  "article_count": 21,
   "articles": [
     {
       "issue": 1,
@@ -172,9 +172,18 @@
       "issue": 19,
       "slug": "ai-for-doctors",
       "title": "Doctors Don't Need a Better Receptionist — They Need a Better Revenue Cycle",
-      "category": "NEW",
+      "category": "HEALTHCARE",
       "date": "August 2026",
       "url": "/articles/ai-for-doctors.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 20,
+      "slug": "your-construction-company-is-missing-calls",
+      "title": "Your Construction Company Is Missing Calls — and Bids",
+      "category": "CONSTRUCTION",
+      "date": "August 2026",
+      "url": "/articles/your-construction-company-is-missing-calls.html",
       "unnumbered": false
     },
     {
