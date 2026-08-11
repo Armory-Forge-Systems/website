@@ -355,6 +355,19 @@ nav a:hover::after {
         color: var(--forge-light-gray);
         line-height: 1.8;
     }
+
+    .about-text .mission {
+        color: var(--forge-white);
+        font-size: 1.15rem;
+        line-height: 1.7;
+        border-left: 3px solid var(--forge-orange);
+        padding-left: 16px;
+        margin-bottom: 24px;
+    }
+
+    .about-text .mission strong {
+        color: var(--forge-orange);
+    }
     /* ===== Forge Banner ===== */
 
     .forge-banner {
