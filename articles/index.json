@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 21,
+  "article_count": 22,
   "articles": [
     {
       "issue": 1,
@@ -184,6 +184,15 @@
       "category": "CONSTRUCTION",
       "date": "August 2026",
       "url": "/articles/your-construction-company-is-missing-calls.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 21,
+      "slug": "your-auto-shop-is-missing-calls",
+      "title": "Your Auto Shop Is Missing the Calls That Pay the Bills",
+      "category": "AUTO REPAIR",
+      "date": "August 2026",
+      "url": "/articles/your-auto-shop-is-missing-calls.html",
       "unnumbered": false
     },
     {
