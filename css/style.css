@@ -368,6 +368,14 @@ nav a:hover::after {
     .about-text .mission strong {
         color: var(--forge-orange);
     }
+
+    .about-text .lead {
+        color: var(--forge-white);
+        font-size: 1.3rem;
+        font-weight: 700;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
     /* ===== Forge Banner ===== */
 
     .forge-banner {
