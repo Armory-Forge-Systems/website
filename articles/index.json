@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 22,
+  "article_count": 23,
   "articles": [
     {
       "issue": 1,
@@ -193,6 +193,15 @@
       "category": "AUTO REPAIR",
       "date": "August 2026",
       "url": "/articles/your-auto-shop-is-missing-calls.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 22,
+      "slug": "the-great-equalizer-small-business",
+      "title": "The Great Equalizer: Small Business Finally Has a Fighting Chance",
+      "category": "BUSINESS",
+      "date": "August 2026",
+      "url": "/articles/the-great-equalizer-small-business.html",
       "unnumbered": false
     },
     {
