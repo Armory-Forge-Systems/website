@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 23,
+  "article_count": 24,
   "articles": [
     {
       "issue": 1,
@@ -202,6 +202,15 @@
       "category": "BUSINESS",
       "date": "August 2026",
       "url": "/articles/the-great-equalizer-small-business.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 23,
+      "slug": "your-plumbing-company-is-missing-calls",
+      "title": "Your Plumbing Company Is Missing the Calls That Pay the Bills",
+      "category": "PLUMBING",
+      "date": "August 2026",
+      "url": "/articles/your-plumbing-company-is-missing-calls.html",
       "unnumbered": false
     },
     {
