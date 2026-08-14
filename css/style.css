@@ -1621,13 +1621,13 @@ header::after {
 }
 
 .header-top {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 18px 32px 12px;
+    max-width: none;
+    margin: 0;
+    padding: 20px 32px 14px;
 }
 
 .branding h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     line-height: 1.1;
     letter-spacing: .04em;
     margin: 0 0 5px;
@@ -1635,7 +1635,7 @@ header::after {
 
 .branding p {
     color: #7e858a;
-    font-size: .82rem;
+    font-size: .9rem;
     letter-spacing: .01em;
     margin: 0;
 }
@@ -1796,9 +1796,18 @@ footer::before { height: 1px; left: 10%; right: 10%; opacity: .7; }
 .footer-nav a, .footer-social a { color: #a4a7aa; }
 
 @media (max-width: 768px) {
-    .header-top { padding: 15px 14px 12px 20px; }
-    .branding h1 { font-size: 1.2rem; }
-    .branding p { font-size: .7rem; }
+    header {
+        width: 100%;
+        isolation: isolate;
+        background: rgba(20,20,20,.99);
+        -webkit-backdrop-filter: blur(24px) saturate(120%);
+        backdrop-filter: blur(24px) saturate(120%);
+    }
+    .header-top { position: relative; z-index: 2; }
+    header > nav { z-index: 3; }
+    .header-top { padding: 17px 14px 14px 20px; }
+    .branding h1 { font-size: 1.3rem; }
+    .branding p { font-size: .75rem; }
     .menu-toggle {
         margin: 0 0 0 auto;
         padding: 6px 0 6px 12px;
