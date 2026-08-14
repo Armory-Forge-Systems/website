@@ -412,7 +412,7 @@ nav a:hover::after {
                 rgba(15,15,15,.75),
                 rgba(15,15,15,.75)
             ),
-            url("../assets/images/afs-metal-logo.png");
+            url("../assets/logos/afs-wordmark.svg");
 
         background-size: cover;
 
