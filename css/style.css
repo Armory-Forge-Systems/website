@@ -1623,19 +1623,19 @@ header::after {
 .header-top {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 14px 32px 9px;
+    padding: 18px 32px 12px;
 }
 
 .branding h1 {
-    font-size: 1.05rem;
+    font-size: 1.6rem;
     line-height: 1.1;
-    letter-spacing: .08em;
-    margin: 0 0 3px;
+    letter-spacing: .04em;
+    margin: 0 0 5px;
 }
 
 .branding p {
     color: #7e858a;
-    font-size: .68rem;
+    font-size: .82rem;
     letter-spacing: .01em;
     margin: 0;
 }
@@ -1643,7 +1643,7 @@ header::after {
 header > nav {
     max-width: 1180px;
     margin: 0 auto;
-    padding: 0 32px 12px;
+    padding: 0 32px 16px;
     justify-content: center;
     align-items: center;
     gap: 3px;
@@ -1651,10 +1651,10 @@ header > nav {
 
 nav a {
     color: #a4a7aa;
-    padding: 7px 10px;
+    padding: 8px 12px;
     border: 1px solid transparent;
     border-radius: 8px;
-    font-size: .78rem;
+    font-size: .86rem;
     font-weight: 600;
 }
 
@@ -1796,7 +1796,14 @@ footer::before { height: 1px; left: 10%; right: 10%; opacity: .7; }
 .footer-nav a, .footer-social a { color: #a4a7aa; }
 
 @media (max-width: 768px) {
-    .header-top { padding: 13px 20px; }
+    .header-top { padding: 15px 14px 12px 20px; }
+    .branding h1 { font-size: 1.2rem; }
+    .branding p { font-size: .7rem; }
+    .menu-toggle {
+        margin: 0 0 0 auto;
+        padding: 6px 0 6px 12px;
+        line-height: 1;
+    }
     header > nav { padding: 16px 20px 20px; gap: 8px; }
     nav a { width: auto; }
     .services, .technology { padding: 68px 20px; }
