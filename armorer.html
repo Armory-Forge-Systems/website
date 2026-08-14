@@ -53,10 +53,71 @@
     Armorer Hero
 ========================= -->
 <section class="armorer-hero">
-    <div class="hero-intro">
-        <h2 class="forge-text">The Armorer</h2>
-        <p class="hero-subtitle">AI Receptionist · Armory Forge Systems</p>
-        <p class="hero-desc">I handle onboarding, pricing questions, and project inquiries. Tell me about your business and I'll forge a path forward.</p>
+    <div class="armorer-hero__surface">
+        <div class="hero-intro">
+            <p class="armorer-eyebrow"><span></span> AI operations desk / online</p>
+            <h2 class="forge-text">The Armorer</h2>
+            <p class="hero-subtitle">AI Receptionist · Armory Forge Systems</p>
+            <p class="hero-desc">I handle onboarding, pricing questions, and project inquiries. Tell me about your business and I'll forge a path forward.</p>
+        </div>
+
+        <div class="forge-core-wrap">
+            <div class="forge-core-label">F.O.R.G.E. CORE</div>
+            <div class="forge-core" role="img" aria-label="F.O.R.G.E. Core, online">
+                <div class="forge-core__halo"></div>
+                <svg viewBox="0 0 200 200" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="core-blade-metal" x1="18" y1="16" x2="178" y2="184" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#686868" />
+                            <stop offset="18%" stop-color="#242424" />
+                            <stop offset="58%" stop-color="#111111" />
+                            <stop offset="82%" stop-color="#3d3d3d" />
+                            <stop offset="100%" stop-color="#101010" />
+                        </linearGradient>
+                        <linearGradient id="core-housing-metal" x1="40" y1="10" x2="160" y2="190" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#777" />
+                            <stop offset="14%" stop-color="#252525" />
+                            <stop offset="52%" stop-color="#111" />
+                            <stop offset="76%" stop-color="#4b4b4b" />
+                            <stop offset="100%" stop-color="#171717" />
+                        </linearGradient>
+                        <radialGradient id="core-molten" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#ff6b00" stop-opacity=".72" />
+                            <stop offset="44%" stop-color="#ff6b00" stop-opacity=".22" />
+                            <stop offset="100%" stop-color="#ff6b00" stop-opacity="0" />
+                        </radialGradient>
+                        <radialGradient id="core-cavity" cx="42%" cy="35%" r="65%">
+                            <stop offset="0%" stop-color="#020202" />
+                            <stop offset="70%" stop-color="#090909" />
+                            <stop offset="100%" stop-color="#292929" />
+                        </radialGradient>
+                    </defs>
+                    <circle class="forge-core__backplate" cx="100" cy="100" r="88" />
+                    <circle class="forge-core__glow-disc" cx="100" cy="100" r="82" fill="url(#core-molten)" />
+                    <g class="forge-core__service-ring"><circle cx="100" cy="100" r="86" /></g>
+                    <g class="forge-core__blades">
+                        <path d="M 176.2 69.8 L 176.2 130.2 L 126 110.2 L 126 89.8 Z" transform="rotate(0 100 100)" />
+                        <path d="M 176.2 69.8 L 176.2 130.2 L 126 110.2 L 126 89.8 Z" transform="rotate(51.43 100 100)" />
+                        <path d="M 176.2 69.8 L 176.2 130.2 L 126 110.2 L 126 89.8 Z" transform="rotate(102.86 100 100)" />
+                        <path d="M 176.2 69.8 L 176.2 130.2 L 126 110.2 L 126 89.8 Z" transform="rotate(154.29 100 100)" />
+                        <path d="M 176.2 69.8 L 176.2 130.2 L 126 110.2 L 126 89.8 Z" transform="rotate(205.71 100 100)" />
+                        <path d="M 176.2 69.8 L 176.2 130.2 L 126 110.2 L 126 89.8 Z" transform="rotate(257.14 100 100)" />
+                        <path d="M 176.2 69.8 L 176.2 130.2 L 126 110.2 L 126 89.8 Z" transform="rotate(308.57 100 100)" />
+                    </g>
+                    <circle cx="100" cy="100" r="34" fill="url(#core-cavity)" class="forge-core__cavity" />
+                    <circle cx="100" cy="100" r="34" class="forge-core__cavity-rim" />
+                    <circle cx="100" cy="100" r="20" class="forge-core__center" />
+                    <circle cx="100" cy="100" r="94" fill="none" stroke="url(#core-housing-metal)" stroke-width="11" />
+                    <circle cx="100" cy="100" r="94" class="forge-core__housing-edge" />
+                    <g class="forge-core__bolts">
+                        <circle cx="188" cy="100" r="3.4" /><circle cx="162.2" cy="162.2" r="3.4" />
+                        <circle cx="100" cy="188" r="3.4" /><circle cx="37.8" cy="162.2" r="3.4" />
+                        <circle cx="12" cy="100" r="3.4" /><circle cx="37.8" cy="37.8" r="3.4" />
+                        <circle cx="100" cy="12" r="3.4" /><circle cx="162.2" cy="37.8" r="3.4" />
+                    </g>
+                </svg>
+            </div>
+        </div>
     </div>
     <div class="hero-rule"></div>
 </section>
@@ -168,12 +229,17 @@
 <script src="js/app.js"></script>
 <script src="js/armorer-chat.js"></script>
 <script>
-  // Scroll to first message on page load
+  // Land at the start of the chat panel, clear of the sticky header.
   window.addEventListener('load', () => {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        const el = document.getElementById('chat-start');
-        if (el) el.scrollIntoView({ block: 'start' });
+        const chatSection = document.querySelector('.chat-section');
+        const header = document.querySelector('header');
+        if (!chatSection) return;
+
+        const headerHeight = header ? header.getBoundingClientRect().height : 0;
+        const top = chatSection.getBoundingClientRect().top + window.scrollY - headerHeight - 40;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
       });
     });
   });

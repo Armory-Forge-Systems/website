@@ -1116,3 +1116,45 @@ section{
     50%  { box-shadow: 0 20px 40px rgba(255,107,0,.22), 0 0 22px rgba(255,107,0,.45); }
     100% { box-shadow: 0 20px 40px rgba(255,107,0,.12), 0 0 12px rgba(255,107,0,.20); }
 }
+
+/* ── F.O.R.G.E. command-surface refinement ───────────── */
+.signet-hero, .category-hero, .article-hero { background: transparent; }
+
+.signet-hero h1, .category-hero h1, .article-hero h1 {
+    letter-spacing: -.045em;
+}
+
+.section-title::after { width: 72px; height: 1px; }
+
+.service-card {
+    border-color: var(--forge-border);
+    border-radius: 12px;
+    background: #171819;
+    box-shadow: 0 8px 24px rgba(0,0,0,.22);
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--forge-border-glow);
+    box-shadow: 0 10px 32px rgba(255,107,0,.16);
+    animation: none;
+}
+
+/* The circuit-board card texture is deliberately retained for Signet stories. */
+.article-card {
+    border-color: var(--forge-border);
+    border-radius: 12px;
+    background:
+        linear-gradient(180deg, rgba(28,30,32,.88), rgba(13,14,15,.94)),
+        url("../assets/textures-and-bg/steel-circuit-board.png");
+    box-shadow: 0 8px 24px rgba(0,0,0,.22);
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--forge-border-glow);
+    box-shadow: 0 10px 32px rgba(255,107,0,.16);
+    animation: none;
+}
+
+.featured-articles { background: #101112; }

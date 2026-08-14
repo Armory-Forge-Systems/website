@@ -9,12 +9,45 @@
 
 .armorer-hero {
     text-align: center;
-    padding: 100px 20px 40px;
+    padding: 72px 20px 28px;
+}
+
+.armorer-hero__surface {
+    max-width: 980px;
+    min-height: 236px;
+    margin: 0 auto;
+    padding: 32px 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--forge-border, rgba(255,255,255,.09));
+    border-radius: 16px;
+    background:
+        linear-gradient(105deg, rgba(255,107,0,.07), transparent 45%),
+        #171819;
+    box-shadow: 0 8px 24px rgba(0,0,0,.22);
+}
+
+.armorer-hero__surface::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42%;
+    height: 100%;
+    pointer-events: none;
+    opacity: .8;
+    background: linear-gradient(135deg, transparent 25%, rgba(255,255,255,.025) 25% 26%, transparent 26% 50%, rgba(255,255,255,.025) 50% 51%, transparent 51%);
 }
 
 .hero-intro {
-    max-width: 640px;
-    margin: 0 auto;
+    max-width: 590px;
+    position: relative;
+    z-index: 1;
 }
 
 .armorer-hero h2 {
@@ -28,7 +61,7 @@
     letter-spacing: 3px;
     color: var(--forge-orange, #ff6b00);
     font-weight: 600;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .hero-desc {
@@ -38,12 +71,74 @@
 }
 
 .hero-rule {
-    width: 80px;
+    width: 108px;
     height: 2px;
     background: var(--forge-orange, #ff6b00);
-    margin: 30px auto 0;
+    margin: 22px auto 0;
     border-radius: 2px;
 }
+
+.armorer-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0 0 12px;
+    color: #7e858a;
+    text-transform: uppercase;
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .11em;
+}
+
+.armorer-eyebrow span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 6px #22c55e;
+}
+
+.forge-core-wrap {
+    flex: 0 0 176px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.forge-core-label {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    bottom: -2px;
+    width: max-content;
+    transform: translateX(-50%);
+    color: #7e858a;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: .57rem;
+    letter-spacing: .14em;
+}
+
+.forge-core {
+    width: 176px;
+    height: 176px;
+    position: relative;
+    isolation: isolate;
+}
+
+.forge-core svg { position: relative; z-index: 1; width: 100%; height: 100%; overflow: visible; }
+.forge-core__halo { position: absolute; inset: -13%; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,0,.34), transparent 68%); filter: blur(8px); opacity: .13; pointer-events: none; animation: forgeCoreEnergy 4.8s ease-in-out infinite; }
+.forge-core__backplate { fill: #0c0c0c; stroke: #020202; stroke-width: 2; }
+.forge-core__glow-disc { opacity: .13; animation: forgeCoreEnergy 4.8s ease-in-out infinite; transform-origin: center; }
+.forge-core__service-ring { transform-box: fill-box; transform-origin: center; animation: forgeCoreRing 28s linear infinite; }
+.forge-core__service-ring circle { fill: none; stroke: #777; stroke-width: 1.1; stroke-dasharray: 2 7; opacity: .58; }
+.forge-core__blades path { fill: url(#core-blade-metal); stroke: #090909; stroke-width: 1; }
+.forge-core__cavity-rim { fill: none; stroke: #030303; stroke-width: 1.7; }
+.forge-core__center { fill: #010101; stroke: #242424; stroke-width: 1; }
+.forge-core__housing-edge { fill: none; stroke: #050505; stroke-width: 1.2; }
+.forge-core__bolts circle { fill: #080808; stroke: #505050; stroke-width: .75; }
+
+@keyframes forgeCoreEnergy { 0%, 100% { opacity: .13; transform: scale(1); } 50% { opacity: .34; transform: scale(1.018); } }
+@keyframes forgeCoreRing { to { transform: rotate(360deg); } }
 
 /* ═══════════════════════════════════════════
    CHAT INTERFACE
@@ -329,6 +424,11 @@
    ═══════════════════════════════════════════ */
 
 @media (max-width: 700px) {
+    .armorer-hero { padding-top: 42px; }
+    .armorer-hero__surface { min-height: 0; padding: 28px 22px 32px; display: block; text-align: center; }
+    .hero-intro { margin: 0 auto; }
+    .forge-core-wrap { margin: 24px auto 0; }
+    .armorer-eyebrow { justify-content: center; }
     .armorer-hero h2 {
         font-size: 2rem;
     }

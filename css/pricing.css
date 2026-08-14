@@ -557,3 +557,27 @@
         padding: 28px 20px;
     }
 }
+
+/* ── F.O.R.G.E. command-surface refinement ───────────── */
+.pricing-hero { padding-top: 88px; }
+.pricing-card, .cloud-card, .faq-item, .faq-cta {
+    border-color: var(--forge-border, rgba(255,255,255,.09));
+    border-radius: 12px;
+    background: #171819;
+    box-shadow: 0 8px 24px rgba(0,0,0,.22);
+}
+
+.pricing-card--featured {
+    border-color: rgba(255,107,0,.28);
+    background: linear-gradient(105deg, rgba(255,107,0,.07), transparent 48%), #171819;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--forge-border-glow, rgba(255,122,30,.42));
+    box-shadow: 0 10px 32px rgba(255,107,0,.16);
+}
+
+.tier-table thead th { background: #171819; border-color: var(--forge-border, rgba(255,255,255,.09)); }
+.tier-table tbody td { background: rgba(255,255,255,.018); }
+.tier-enterprise { background: linear-gradient(105deg, rgba(255,107,0,.07), transparent 48%), #171819 !important; }

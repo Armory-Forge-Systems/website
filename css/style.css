@@ -399,7 +399,7 @@ nav a:hover::after {
                 rgba(15,15,15,.75),
                 rgba(15,15,15,.75)
             ),
-            url("assets/images/afs-metal-logo.png");
+            url("../assets/images/afs-metal-logo.png");
 
         background-size: cover;
 
@@ -1549,4 +1549,250 @@ header.forge-scorched {
 @keyframes forgeBannerGlow {
     0%, 100% { box-shadow: inset 0 0 60px rgba(255,107,0,.03); }
     50%      { box-shadow: inset 0 0 100px rgba(255,107,0,.08); }
+}
+
+/* ==========================================================
+   F.O.R.G.E. COMMAND SURFACE
+   A quieter, more deliberate application of the forge system.
+   Textures remain reserved for story-bearing surfaces.
+   ========================================================== */
+
+:root {
+    --forge-black: #0a0a0a;
+    --forge-dark: #141414;
+    --forge-panel: #171819;
+    --forge-card: #1c1e20;
+    --forge-raised: #222528;
+    --forge-border: rgba(255,255,255,.09);
+    --forge-border-glow: rgba(255,122,30,.42);
+    --forge-white: #ffffff;
+    --forge-gray: #a4a7aa;
+    --forge-light-gray: #c6c8ca;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    background:
+        radial-gradient(circle at 72% -12%, rgba(255,107,0,.08), transparent 30%),
+        linear-gradient(180deg, #101112 0%, #0a0a0a 46%, #080808 100%);
+    color: #e7e9ea;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+    opacity: .025;
+    mix-blend-mode: soft-light;
+}
+
+::selection { background: rgba(255,107,0,.3); color: #fff; }
+
+:focus-visible {
+    outline: 2px solid var(--forge-orange);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+header {
+    background: rgba(20,20,20,.92);
+    border-bottom: 1px solid var(--forge-border);
+    box-shadow: 0 6px 24px rgba(0,0,0,.22);
+}
+
+header::after {
+    bottom: -2px;
+    height: 2px;
+    opacity: 1;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,107,0,.22) 16%, var(--forge-orange) 50%, rgba(255,107,0,.22) 84%, transparent 100%);
+}
+
+.header-top {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 14px 32px 9px;
+}
+
+.branding h1 {
+    font-size: 1.05rem;
+    line-height: 1.1;
+    letter-spacing: .08em;
+    margin: 0 0 3px;
+}
+
+.branding p {
+    color: #7e858a;
+    font-size: .68rem;
+    letter-spacing: .01em;
+    margin: 0;
+}
+
+header > nav {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+nav a {
+    color: #a4a7aa;
+    padding: 7px 10px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+nav a::after { display: none; }
+nav a:hover, nav a.active {
+    color: #ff913e;
+    background: rgba(255,107,0,.09);
+    border-color: rgba(255,107,0,.22);
+}
+
+.hero {
+    min-height: 510px;
+    padding: 130px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+}
+
+.hero h2 {
+    max-width: 820px;
+    margin: 0 auto 16px;
+    font-size: clamp(2rem, 4vw, 3.35rem);
+    line-height: 1.1;
+    letter-spacing: -.04em;
+}
+
+.hero p {
+    max-width: 620px;
+    margin-bottom: 30px;
+    color: #c6c8ca;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #ff8c2a, #e65608);
+    box-shadow: 0 6px 16px rgba(222,76,0,.22);
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(180deg, #ff9b42, #e65608);
+    box-shadow: 0 0 28px rgba(255,107,0,.4);
+    transform: translateY(-1px);
+}
+
+.services, .about, .contact, .technology { border-top-color: var(--forge-border); }
+.services::before, .about::before, .contact::before, .technology::before { left: 15%; right: 15%; background: linear-gradient(90deg, transparent, rgba(255,107,0,.2), transparent); }
+
+.services { padding: 96px 32px; }
+.services > h2, .about h2, .contact h2, .technology h2 { letter-spacing: -.035em; }
+.service-container { max-width: 1000px; margin: 34px auto 0; gap: 16px; }
+
+/* The bolted steel surface stays: it is one of the story-bearing materials. */
+.card {
+    width: min(100%, 300px);
+    min-height: 190px;
+    padding: 28px;
+    border: 1px solid var(--forge-border);
+    border-radius: 12px;
+    background:
+        linear-gradient(180deg, rgba(28,30,32,.86), rgba(13,14,15,.93)),
+        url("../assets/textures-and-bg/bolted-sleel-card.png");
+    box-shadow: 0 8px 24px rgba(0,0,0,.22);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--forge-border-glow);
+    box-shadow: 0 10px 32px rgba(255,107,0,.16);
+    animation: none;
+}
+
+.card::before { opacity: .38; }
+.card:hover::before { opacity: .7; transform: none; }
+
+.about { max-width: 1160px; margin: 0 auto; padding: 96px 32px; gap: 64px; }
+.about-text { max-width: 580px; }
+.about-text p { color: #a4a7aa; }
+.about-text .lead { color: #e7e9ea; }
+.about-image img { border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.22); }
+
+.contact { padding: 96px 24px; }
+.contact-intro { margin-bottom: 34px; color: #a4a7aa; }
+
+/* Carbon fiber remains intentionally visible on the contact surface. */
+.contact-card {
+    padding: 32px;
+    border-color: var(--forge-border);
+    border-radius: 16px;
+    background:
+        linear-gradient(180deg, rgba(28,30,32,.88), rgba(13,14,15,.94)),
+        url("../assets/textures-and-bg/cybersecurity-carbon-fiberpng.png");
+    box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+.contact-card:hover { border-color: var(--forge-border-glow); }
+
+/* Hammered steel remains the backdrop for the technology conveyor. */
+.technology {
+    padding: 96px 32px;
+    background:
+        linear-gradient(180deg, rgba(20,21,22,.94), rgba(12,13,14,.97)),
+        url("../assets/textures-and-bg/hammered-steel.png") center / cover;
+}
+
+.technology-intro { color: #a4a7aa; margin-bottom: 46px; }
+.tech-track { gap: 16px; }
+.tech-card {
+    width: 168px;
+    height: 132px;
+    border-color: var(--forge-border);
+    border-radius: 12px;
+    background:
+        linear-gradient(180deg, rgba(28,30,32,.84), rgba(13,14,15,.92)),
+        url("../assets/textures-and-bg/hammered-steel.png");
+    box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+
+.tech-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--forge-border-glow);
+    box-shadow: 0 10px 30px rgba(255,107,0,.16);
+    animation: none;
+}
+
+footer {
+    background: #101112;
+    border-top-color: var(--forge-border);
+    padding: 64px 24px 32px;
+}
+
+footer::before { height: 1px; left: 10%; right: 10%; opacity: .7; }
+.footer-nav { gap: .5rem; }
+.footer-nav a, .footer-social a { color: #a4a7aa; }
+
+@media (max-width: 768px) {
+    .header-top { padding: 13px 20px; }
+    header > nav { padding: 16px 20px 20px; gap: 8px; }
+    nav a { width: auto; }
+    .services, .technology { padding: 68px 20px; }
+    .about { padding: 68px 20px; }
+    .contact { padding: 68px 20px; }
+    .hero { min-height: 460px; padding: 96px 20px; }
+    .hero h2 { font-size: 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
