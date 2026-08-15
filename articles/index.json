@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 24,
+  "article_count": 25,
   "articles": [
     {
       "issue": 1,
@@ -211,6 +211,15 @@
       "category": "PLUMBING",
       "date": "August 2026",
       "url": "/articles/your-plumbing-company-is-missing-calls.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 24,
+      "slug": "small-business-has-a-new-army",
+      "title": "Small Business Has a New Army — Don't Build a God Agent",
+      "category": "AI AGENTS",
+      "date": "August 2026",
+      "url": "/articles/small-business-has-a-new-army.html",
       "unnumbered": false
     },
     {
