@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 25,
+  "article_count": 26,
   "articles": [
     {
       "issue": 1,
@@ -220,6 +220,15 @@
       "category": "AI AGENTS",
       "date": "August 2026",
       "url": "/articles/small-business-has-a-new-army.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 25,
+      "slug": "we-found-a-leak-in-our-own-code",
+      "title": "We Found a Real Leak in Our Own Code — and Spent the Rest of the Day Locking the Door",
+      "category": "CYBERSECURITY",
+      "date": "August 2026",
+      "url": "/articles/we-found-a-leak-in-our-own-code.html",
       "unnumbered": false
     },
     {

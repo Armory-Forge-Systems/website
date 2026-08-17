@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <title>We Found a Real Leak in Our Own Code — and Spent the Rest of the Day Locking the Door — Signet Article #025 | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="We found a live credential sitting in our own repository — then spent the day hardening the machine. Here's the exact checklist any small business can copy: vault your secrets, kill password logins, close the ports, patch the boring stuff.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/signet.css">
+</head>
+
+<body>
+<!-- SVG filters for forge effects -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-heat-haze" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<!-- =========================
+    Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1 class="forge-text">Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../signet.html" class="active">The Signet</a>
+        <a href="../armorer.html">The Armorer</a>
+        <a href="../index.html#about">About</a>
+        <a href="../armorer.html">Contact</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Article Hero
+========================= -->
+<section class="article-hero">
+    <div class="hero-content">
+        <div class="article-meta-bar">
+            <span class="category">Cybersecurity</span>
+            <span class="date">August 2026</span>
+        </div>
+        <h1>We Found a Real Leak in Our Own Code — and Spent the Rest of the Day Locking the Door — Signet Article #025</h1>
+    </div>
+</section>
+
+<!-- =========================
+    Article Hero Image
+========================= -->
+<div class="article-hero-image">
+    <img src="../assets/images/we-found-a-real-leak-in-our-own-code-hero.png"
+         alt="A terminal window showing a leaked credential inside a git repository — the moment we found our own security leak and started hardening the machine">
+</div>
+
+<!-- =========================
+    Article Body
+========================= -->
+<article class="article-body">
+
+<p class="forge-note"><em>The Forge — Armory Forge Systems — Signet Article #025</em></p>
+
+<p>Yesterday, we found one of our own credentials sitting in a file we'd committed to a repository. A live key. In a codebase. It had been there for a while, quietly, because the repo was private and nobody had looked.</p>
+
+<p>We fixed it the same day. Then we kept going — because finding one leak makes you wonder what else is hiding.</p>
+
+<p>This is the checklist that followed. It took us about a day, it cost almost nothing, and any small business can do the same.</p>
+
+<h2>The Find</h2>
+
+<p>It started with a cleanup. We were moving credentials out of scattered config files and into a proper vault — the kind of chore every company keeps meaning to do. And during the move, we found it: a config file with a live shared secret, tracked in git, pushed to the repo weeks earlier.</p>
+
+<p>The repo was private. That's the trap — private feels safe. But a committed secret doesn't stay in one place. It rides along in forks, in clones on laptops, in CI logs, in backups, in the hands of anyone who ever had access. The rule we now live by: <strong>if a secret ever touches a repository, assume it's compromised and rotate it.</strong> No exceptions, no "it was only private."</p>
+
+<p>The bots don't care how private you think you are. Automated scanners crawl public code around the clock looking for exactly these files — configs, <code>.env</code> files, connection strings — and one copy anywhere public is all they need. Most attacks on small businesses don't start with a genius exploit. They start with a credential that was already lying around.</p>
+
+<h2>Why Small Businesses Are the Target</h2>
+
+<p>Not because you're interesting. Because you're soft.</p>
+
+<p>Big companies have security teams, budgets, and compliance deadlines forcing them to patch. A small business has an owner who's trying to run payroll and answer email at the same time. The attacker isn't picking a fight with a bank — they're scanning for the easiest door on the street, and the small business with a spreadsheet of passwords is the easiest door.</p>
+
+<p>The good news: you don't need a security team to stop being the easiest door. You need a checklist and one honest afternoon.</p>
+
+<h2>The Hardening Checklist</h2>
+
+<p>Here's exactly what we did, in order:</p>
+
+<ol>
+    <li><strong>Get the secrets out of the repo.</strong> Every credential moved to a vault (we use AWS Secrets Manager) with access controls and rotation. The file in git history was scrubbed and replaced with placeholders. The old key? Rotated the moment we found it. From now on, credentials live in one locked place — not in config files, not in code, not in a shared drive with the company name on it.</li>
+    <li><strong>Kill password logins.</strong> Our machines are keys-only SSH now. No password will ever get you in, which means no brute-force attack on a weak password will either.</li>
+    <li><strong>Add the tripwire.</strong> We installed fail2ban — a small watchman that watches the login logs and bans the IPs that hammer at the door. Keys-only already blocks the brute force; this makes the noise stop too.</li>
+    <li><strong>Close the ports.</strong> Firewall active, default deny, only port 22 open. If you don't need a door, it doesn't exist. Most small businesses have a half-dozen services exposed that nobody remembers why they opened.</li>
+    <li><strong>Patch the boring stuff.</strong> Five pending updates, including the bootloader. The updates that fix known vulnerabilities aren't glamorous, but they're the ones the scanners check for. Patch, reboot, move on.</li>
+    <li><strong>Fix the routing.</strong> While auditing, we found a database sitting in a network path that could theoretically reach the internet. It wasn't publicly reachable — but the routing was wrong, and wrong routing is one misconfiguration away from a real exposure. We moved it to a private network where it belongs.</li>
+    <li><strong>Back up the backups.</strong> Retention bumped from one day to seven — cheap insurance, and it makes the difference between "annoying Tuesday" and "we lost everything."</li>
+    <li><strong>Turn on the alarm.</strong> We triaged the security findings on our infrastructure — about fifty of them — and sorted them into noise, quick wins, and real fixes. Noise gets suppressed so it stops wasting attention. Real fixes get scheduled. Now the alarm only rings when something actually matters.</li>
+</ol>
+
+<h2>The Honest Catch</h2>
+
+<p>None of this makes us unhackable. Nothing does. Security isn't a state you reach — it's a practice you keep. The goal isn't to be impenetrable; it's to be the hard target, the house with the lights on and the dog, the one the scanner skips because the next door is easier.</p>
+
+<p>And the maintenance is real. New code means new secrets to protect. New machines mean new configs to lock. That's why we didn't stop at a checklist — we built a system that watches for us. We run our own security agent on our own infrastructure, monitoring, triaging, and flagging the findings so a human only gets involved when it matters. We call it Bastion, and we run it on ourselves first. We'd rather eat our own cooking before we serve it to anyone else.</p>
+
+<h2>Why This Matters for Your Company</h2>
+
+<p>You don't need an IT department to stop being an easy target. You need one honest afternoon, a checklist, and somebody who keeps the practice going — because the threat landscape doesn't take weekends off, and neither does the scanner looking for your credentials.</p>
+
+<h2>The Closing Thought</h2>
+
+<p>Steel doesn't get strong once in the forge. It gets heated, hammered, quenched, and tested — then it goes back in the fire. Security is the same. You'll never finish. But you can absolutely get to the point where the bots move on to an easier door.</p>
+
+<p>And that's the whole game: not being the easiest door on the street.</p>
+
+<p><em>Want to know what's actually exposed in your business? The Armorer can walk you through it — no pressure, just answers.</em></p>
+
+</article>
+
+<!-- =========================
+    The Signet Certification
+========================= -->
+<div class="signet-approval hidden">
+
+<section class="signet-certification">
+    <div class="seal-line"></div>
+    
+    <div class="seal-header">
+        <span class="seal-title">SEALED BY THE SIGNET</span>
+        <span class="seal-number">Issue #025</span>
+    </div>
+    
+    <div class="seal-body">
+        <img src="../assets/images/signet-seal.png" alt="The Signet" class="seal-image">
+        <div class="seal-copy">
+            <blockquote>Every system we deliver is forged with intent, tested with rigor, and sealed with our mark.</blockquote>
+            <div class="seal-author">
+                <strong>Armory Forge Systems</strong>
+                <span>You imagine. We build.</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="seal-line seal-line-bottom"></div>
+</section>
+
+<div class="seal-glow"></div>
+
+<!-- =========================
+    Article CTA
+========================= -->
+<div class="article-cta">
+    <h3>Ready to forge your next system?</h3>
+    <p>Whether you're deploying AI agents, automating workflows, or modernizing infrastructure, we're ready to help.</p>
+    <a href="../armorer.html" class="btn-primary cta-button">💬 Chat with The Armorer</a>
+    <a href="mailto:info@armoryforgesystems.com" class="btn-primary cta-button">Schedule a Discovery Call</a>
+    <a href="../signet.html" class="cta-secondary">Read another Signet article →</a>
+</div>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine.<br>We build.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="../index.html#hero">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../index.html#about">About</a>
+            <a href="../armorer.html">Contact</a>
+            <a href="../signet.html">The Signet</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="../js/forge-effects.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
