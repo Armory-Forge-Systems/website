@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 26,
+  "article_count": 27,
   "articles": [
     {
       "issue": 1,
@@ -229,6 +229,15 @@
       "category": "CYBERSECURITY",
       "date": "August 2026",
       "url": "/articles/we-found-a-leak-in-our-own-code.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 26,
+      "slug": "your-first-ai-employee",
+      "title": "How to Hire Your First AI Employee — Start With One Job, Not a God Agent",
+      "category": "AI AGENTS",
+      "date": "August 2026",
+      "url": "/articles/your-first-ai-employee.html",
       "unnumbered": false
     },
     {
