@@ -143,6 +143,25 @@
 @keyframes forgeCoreEnergy { 0%, 100% { opacity: .13; transform: scale(1); } 50% { opacity: .34; transform: scale(1.018); } }
 @keyframes forgeCoreRing { to { transform: rotate(360deg); } }
 
+/* Alternative turbine Forge Core: AFS monogram cut through the shield */
+.forge-core-wrap > .forge-core:not(.forge-core--alternative) { display: none; }
+.forge-core--alternative { width: 176px; height: 176px; position: relative; margin: 0 auto; overflow: visible; }
+.forge-core--alternative svg { position: relative; z-index: 1; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 0 7px rgba(255,107,0,.22)); }
+.forge-core--alternative .forge-core__halo { inset: -17%; opacity: .3; filter: blur(9px); animation: forgeAltPulse 4.8s ease-in-out infinite; }
+.forge-alt__ambient { opacity: .26; animation: forgeAltPulse 4.8s ease-in-out infinite; transform-origin: 120px 120px; }
+.forge-alt__plates { transform-box: fill-box; transform-origin: center; animation: forgeAltRotate 28s linear infinite; }
+.forge-alt__seams { transform-box: fill-box; transform-origin: center; animation: forgeAltArc 4.2s ease-in-out infinite; }
+.forge-alt__energy { opacity: .9; animation: forgeAltPulse 3.5s ease-in-out infinite; transform-origin: 120px 120px; }
+.forge-alt__energy-rim { opacity: .9; animation: forgeAltArc 3.2s ease-in-out infinite; }
+.forge-alt__shield { filter: drop-shadow(0 0 5px rgba(255,107,0,.5)); }
+.forge-alt__logo-light { fill: #ff6b00; opacity: .9; filter: drop-shadow(0 0 4px rgba(255,107,0,.85)); animation: forgeAltLogo 3.8s ease-in-out infinite; }
+.forge-alt__logo-bevel { fill: none; stroke: #ffcf9c; stroke-width: 1.2; opacity: .8; }
+.forge-alt__bolts circle { fill: #0b0d0e; stroke: #aeb8bc; stroke-width: 1; }
+@keyframes forgeAltPulse { 0%,100% { opacity: .22; transform: scale(1); } 50% { opacity: .5; transform: scale(1.025); } }
+@keyframes forgeAltRotate { to { transform: rotate(360deg); } }
+@keyframes forgeAltArc { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+@keyframes forgeAltLogo { 0%,100% { opacity: .7; } 50% { opacity: 1; } }
+
 /* ═══════════════════════════════════════════
    CHAT INTERFACE
    ═══════════════════════════════════════════ */
