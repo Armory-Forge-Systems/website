@@ -109,13 +109,16 @@
     position: absolute;
     z-index: 2;
     left: 50%;
-    bottom: -18px;
-    width: max-content;
+    bottom: -22px;
+    width: min(250px, calc(100vw - 44px));
     transform: translateX(-50%);
     color: #7e858a;
     font-family: "SF Mono", "Fira Code", monospace;
     font-size: .57rem;
     letter-spacing: .14em;
+    line-height: 1.35;
+    text-align: center;
+    white-space: normal;
 }
 
 .forge-core {
@@ -430,6 +433,10 @@
     .forge-core-wrap {
         width: 176px;
         margin: 24px auto 0;
+    }
+    .forge-core-label {
+        bottom: -26px;
+        width: 176px;
     }
     .forge-core { margin: 0 auto; }
     .armorer-eyebrow { justify-content: center; }
