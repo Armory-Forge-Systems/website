@@ -98,6 +98,11 @@
     box-shadow: 0 0 6px #22c55e;
 }
 
+.armorer-eyebrow strong { color: #aeb7bc; font-weight: 700; }
+.armorer-eyebrow[data-state="checking"] span { background: #f5a623; box-shadow: 0 0 6px #f5a623; }
+.armorer-eyebrow[data-state="offline"] span { background: #ef4444; box-shadow: 0 0 6px #ef4444; }
+.armorer-eyebrow[data-state="offline"] strong { color: #f87171; }
+
 .forge-core-wrap {
     flex: 0 0 176px;
     position: relative;

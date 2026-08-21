@@ -8,6 +8,7 @@
 
   // ── Configuration ────────────────────────────────────────
   const API_URL = 'https://api.armoryforgesystems.com/armorer/api/chat';
+  const HEALTH_URL = 'https://api.armoryforgesystems.com/armorer/health';
   const DEV_MODE = false;  // set true for local testing without server
   let currentSessionId = null;  // tracks conversation session
 
@@ -16,8 +17,33 @@
   const inputEl = document.getElementById('chat-input');
   const sendBtn = document.getElementById('chat-send');
   const typingEl = document.getElementById('typing-indicator');
+  const statusEl = document.getElementById('armorer-status');
 
   let isWaiting = false;
+
+  async function updateServiceStatus() {
+    if (!statusEl) return;
+    const statusText = statusEl.querySelector('strong');
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+
+    try {
+      const response = await fetch(HEALTH_URL, {
+        method: 'GET',
+        cache: 'no-store',
+        signal: controller.signal
+      });
+      if (!response.ok) throw new Error(`Health check failed: ${response.status}`);
+      statusEl.dataset.state = 'online';
+      statusText.textContent = 'online';
+    } catch (error) {
+      statusEl.dataset.state = 'offline';
+      statusText.textContent = 'offline';
+      console.warn('Armorer health check failed:', error);
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
 
   // ── Helpers ──────────────────────────────────────────────
 
@@ -222,6 +248,7 @@
   }
 
   // ── Event listeners ──────────────────────────────────────
+  updateServiceStatus();
   sendBtn.addEventListener('click', sendMessage);
 
   inputEl.addEventListener('keydown', (e) => {
