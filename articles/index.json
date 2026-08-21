@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 27,
+  "article_count": 28,
   "articles": [
     {
       "issue": 1,
@@ -238,6 +238,15 @@
       "category": "AI AGENTS",
       "date": "August 2026",
       "url": "/articles/your-first-ai-employee.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 27,
+      "slug": "how-ai-pays-for-itself",
+      "title": "5 Ways AI Pays for Itself in 90 Days",
+      "category": "BUSINESS",
+      "date": "August 2026",
+      "url": "/articles/how-ai-pays-for-itself.html",
       "unnumbered": false
     },
     {
