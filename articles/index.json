@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 28,
+  "article_count": 29,
   "articles": [
     {
       "issue": 1,
@@ -247,6 +247,15 @@
       "category": "BUSINESS",
       "date": "August 2026",
       "url": "/articles/how-ai-pays-for-itself.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 28,
+      "slug": "your-dental-practice-is-missing-calls",
+      "title": "Your Dental Practice Is Missing the Calls That Pay for the Chair",
+      "category": "DENTAL",
+      "date": "August 2026",
+      "url": "/articles/your-dental-practice-is-missing-calls.html",
       "unnumbered": false
     },
     {
