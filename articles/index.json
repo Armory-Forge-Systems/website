@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 29,
+  "article_count": 30,
   "articles": [
     {
       "issue": 1,
@@ -256,6 +256,15 @@
       "category": "DENTAL",
       "date": "August 2026",
       "url": "/articles/your-dental-practice-is-missing-calls.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 29,
+      "slug": "your-ai-executive-assistant",
+      "title": "Meet the Enterprise Worker: Your AI Executive Assistant",
+      "category": "AI AGENTS",
+      "date": "August 2026",
+      "url": "/articles/your-ai-executive-assistant.html",
       "unnumbered": false
     },
     {
