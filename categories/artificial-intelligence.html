@@ -6,14 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
-    <title>Artificial Intelligence | The Signet | Armory Forge Systems</title>
-    <meta name="description" content="AI models, prompt engineering, machine learning, and intelligent systems — exploring how AI actually works and where it delivers real value.">
+    <title>Meet the Enterprise Worker: Your AI Receptionist — Signet Article #030 | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="Every call that goes unanswered is a customer that went somewhere else. Meet the AI receptionist — an enterprise worker that answers every call, books every appointment, and never misses a customer.">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/signet.css">
 </head>
 
 <body>
+<!-- SVG filters for forge effects -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-heat-haze" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
 
 <!-- =========================
     Header
@@ -21,7 +37,7 @@
 <header>
     <div class="header-top">
         <div class="branding">
-            <h1>Armory Forge Systems</h1>
+            <h1 class="forge-text">Armory Forge Systems</h1>
             <p>You imagine. We build. To the victor, the spoils.</p>
         </div>
         <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
@@ -29,12 +45,14 @@
     <nav>
         <a href="../index.html#hero">Home</a>
         <a href="../index.html#services">Services</a>
+        <a href="../pricing.html">Pricing</a>
         <a href="../signet.html" class="active">The Signet</a>
-        <a href="../signet.html#featured">Articles</a>
+        <a href="../armorer.html">The Armorer</a>
         <a href="../index.html#about">About</a>
-        <a href="../index.html#contact">Contact</a>
+        <a href="../armorer.html">Contact</a>
     </nav>
 </header>
+
 
 <!-- ========================================
      CATEGORY HERO
@@ -45,7 +63,7 @@
     <div class="hero-content">
         <p class="hero-tagline">The Signet</p>
         <h1>Artificial Intelligence</h1>
-        <p class="hero-description">AI models, prompt engineering, machine learning, and intelligent systems — exploring how AI actually works and where it delivers real value.</p>
+        <p class="hero-description">AI models, agents, prompt engineering, and intelligent systems — exploring how AI actually works and where it delivers real value.</p>
     </div>
 
 </section>
@@ -63,7 +81,7 @@
 
     <p class="archive-subtitle">Exploring the frontier of machine intelligence — models, agents, and the systems that make them useful.</p>
 
-    <div class="archive-count">5 Articles</div>
+    <div class="archive-count">8 Articles</div>
 
 </section>
 
@@ -75,7 +93,83 @@
 
     <div class="article-grid">
 
-        <!-- AI: Article 1 -->
+        <!-- AI: ai-for-law-firms -->
+        <article class="article-card">
+            <div class="article-category">AI</div>
+            <h3 class="article-title">
+                <a href="../articles/ai-for-law-firms.html">
+                    Your Law Firm Is Missing Calls — and Cases
+                </a>
+            </h3>
+            <p class="article-summary">
+                Every call your law firm misses is a case that walks to the next firm. AI intake answers 24/7, screens and qualifies leads, and books consultations — so the case that calls at 5:01 PM stays yours.
+            </p>
+            <div class="article-meta">
+                <span>August 2026</span>
+                <span>15 · Signet</span>
+            </div>
+            <a class="read-more" href="../articles/ai-for-law-firms.html">
+                Read Article &rarr;
+            </a>
+        </article>
+        <!-- AI: your-ai-makes-things-up -->
+        <article class="article-card">
+            <div class="article-category">AI</div>
+            <h3 class="article-title">
+                <a href="../articles/your-ai-makes-things-up.html">
+                    Why Your AI Assistant Makes Things Up — and How RAG Fixes It
+                </a>
+            </h3>
+            <p class="article-summary">
+                Out-of-the-box AI answers with confident guesses. RAG connects your AI to your actual data — your prices, policies, and files — so it stops hallucinating and starts being useful.
+            </p>
+            <div class="article-meta">
+                <span>August 2026</span>
+                <span>14 · Signet</span>
+            </div>
+            <a class="read-more" href="../articles/your-ai-makes-things-up.html">
+                Read Article &rarr;
+            </a>
+        </article>
+        <!-- AI: ai-for-hvac-companies -->
+        <article class="article-card">
+            <div class="article-category">AI</div>
+            <h3 class="article-title">
+                <a href="../articles/ai-for-hvac-companies.html">
+                    Your HVAC Company Is Missing Calls This Summer
+                </a>
+            </h3>
+            <p class="article-summary">
+                Florida HVAC companies double their call volume in summer — and every missed call becomes a customer who books a competitor. Here&#x27;s how AI answers every call and tracks every tech.
+            </p>
+            <div class="article-meta">
+                <span>August 2026</span>
+                <span>12 · Signet</span>
+            </div>
+            <a class="read-more" href="../articles/ai-for-hvac-companies.html">
+                Read Article &rarr;
+            </a>
+        </article>
+        <!-- AI & Automation: ai-receptionist-vs-hiring -->
+        <article class="article-card">
+            <div class="article-category">AI &amp; Automation</div>
+            <h3 class="article-title">
+                <a href="../articles/ai-receptionist-vs-hiring.html">
+                    AI Receptionist vs Hiring Another Employee
+                </a>
+            </h3>
+            <p class="article-summary">
+                The real cost comparison between hiring a human receptionist and deploying an AI phone agent. Spoiler: it&#x27;s not a competition.
+            </p>
+            <div class="article-meta">
+                <span>July 2026</span>
+                <span>10 · Signet</span>
+            </div>
+            <a class="read-more" href="../articles/ai-receptionist-vs-hiring.html">
+                Read Article &rarr;
+            </a>
+        </article>
+        <!-- Artificial Intelligence: future-of-ai-receptionists -->
         <article class="article-card">
             <div class="article-category">Artificial Intelligence</div>
             <h3 class="article-title">
@@ -84,83 +178,17 @@
                 </a>
             </h3>
             <p class="article-summary">
-                How AI-powered receptionists are transforming customer interactions,
-                reducing costs, and providing 24/7 support for modern businesses.
+                How AI-powered receptionists are transforming customer interactions, reducing costs, and providing 24/7 support for modern businesses.
             </p>
             <div class="article-meta">
-                <span>July 26, 2026</span>
-                <span>6 min read</span>
+                <span>July 2026</span>
+                <span>6 · Signet</span>
             </div>
             <a class="read-more" href="../articles/future-of-ai-receptionists.html">
                 Read Article &rarr;
             </a>
         </article>
-
-        <!-- AI: Article 2 -->
-        <article class="article-card">
-            <div class="article-category">Artificial Intelligence</div>
-            <h3 class="article-title">
-                <a href="../articles/ai-for-hvac-companies.html">
-                    Your HVAC Company Is Missing Calls This Summer
-                </a>
-            </h3>
-            <p class="article-summary">
-                Florida HVAC companies double their call volume in summer — and every
-                missed call becomes a customer who books a competitor. Here's how AI
-                answers every call and tracks every tech.
-            </p>
-            <div class="article-meta">
-                <span>August 3, 2026</span>
-                <span>7 min read</span>
-            </div>
-            <a class="read-more" href="../articles/ai-for-hvac-companies.html">
-                Read Article &rarr;
-            </a>
-        </article>
-
-        <!-- AI: Article 2 -->
-        <article class="article-card">
-            <div class="article-category">AI &amp; Automation</div>
-            <h3 class="article-title">
-                <a href="../articles/ai-agents-what-they-actually-are.html">
-                    What Is an AI Agent?<br>(Without the Hype)
-                </a>
-            </h3>
-            <p class="article-summary">
-                AI agents explained without buzzwords. Learn what an AI agent actually
-                is, what it isn't, and why the distinction matters for your business.
-            </p>
-            <div class="article-meta">
-                <span>July 16, 2026</span>
-                <span>6 min read</span>
-            </div>
-            <a class="read-more" href="../articles/ai-agents-what-they-actually-are.html">
-                Read Article &rarr;
-            </a>
-        </article>
-
-        <!-- AI: Article 3 -->
-        <article class="article-card">
-            <div class="article-category">AI &amp; Automation</div>
-            <h3 class="article-title">
-                <a href="../articles/can-ai-answer-your-business-phone.html">
-                    Can AI Answer Your Business Phone While You Sleep?
-                </a>
-            </h3>
-            <p class="article-summary">
-                Yes, AI can answer your business phone. Here's what it actually looks
-                like, when it makes sense, and when it doesn't.
-            </p>
-            <div class="article-meta">
-                <span>July 14, 2026</span>
-                <span>5 min read</span>
-            </div>
-            <a class="read-more" href="../articles/can-ai-answer-your-business-phone.html">
-                Read Article &rarr;
-            </a>
-        </article>
-
-        <!-- AI: Article 4 -->
+        <!-- AI & Automation: how-much-does-ai-receptionist-cost -->
         <article class="article-card">
             <div class="article-category">AI &amp; Automation</div>
             <h3 class="article-title">
@@ -169,14 +197,51 @@
                 </a>
             </h3>
             <p class="article-summary">
-                A breakdown of what AI receptionist services actually cost, what
-                you get for the price, and how it compares to hiring.
+                The real cost of an AI receptionist — from free DIY options to full-service solutions. Plus the break-even math for your business.
             </p>
             <div class="article-meta">
-                <span>July 12, 2026</span>
-                <span>5 min read</span>
+                <span>July 2026</span>
+                <span>4 · Signet</span>
             </div>
             <a class="read-more" href="../articles/how-much-does-ai-receptionist-cost.html">
+                Read Article &rarr;
+            </a>
+        </article>
+        <!-- AI & Automation: can-ai-answer-your-business-phone -->
+        <article class="article-card">
+            <div class="article-category">AI &amp; Automation</div>
+            <h3 class="article-title">
+                <a href="../articles/can-ai-answer-your-business-phone.html">
+                    Can AI Answer Your Business Phone While You Sleep?
+                </a>
+            </h3>
+            <p class="article-summary">
+                Yes, AI can answer your business phone. Here&#x27;s what it actually looks like, when it makes sense, and when it doesn&#x27;t.
+            </p>
+            <div class="article-meta">
+                <span>July 2026</span>
+                <span>2 · Signet</span>
+            </div>
+            <a class="read-more" href="../articles/can-ai-answer-your-business-phone.html">
+                Read Article &rarr;
+            </a>
+        </article>
+        <!-- AI & Automation: ai-agents-what-they-actually-are -->
+        <article class="article-card">
+            <div class="article-category">AI &amp; Automation</div>
+            <h3 class="article-title">
+                <a href="../articles/ai-agents-what-they-actually-are.html">
+                    What Is an AI Agent? (Without the Hype)
+                </a>
+            </h3>
+            <p class="article-summary">
+                AI agents explained without buzzwords. Learn what an AI agent actually is, what it isn&#x27;t, and why the distinction matters for your business.
+            </p>
+            <div class="article-meta">
+                <span>July 2026</span>
+                <span>1 · Signet</span>
+            </div>
+            <a class="read-more" href="../articles/ai-agents-what-they-actually-are.html">
                 Read Article &rarr;
             </a>
         </article>
@@ -189,46 +254,34 @@
     <a href="../signet.html">&larr; Back to The Signet</a>
 </div>
 
-<!-- ========================================
-     FOOTER
-======================================== -->
 <footer>
-
     <div class="footer-container">
-
         <div class="footer-brand">
             <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
             <p class="footer-tagline">You Imagine. We Build. To the Victor, the Spoils.</p>
         </div>
-
         <nav class="footer-nav">
             <a href="../index.html#hero">Home</a>
             <a href="../index.html#services">Services</a>
+            <a href="../pricing.html">Pricing</a>
             <a href="../index.html#about">About</a>
-            <a href="../index.html#contact">Contact</a>
+            <a href="../armorer.html">Contact</a>
             <a href="../signet.html">The Signet</a>
         </nav>
-
         <div class="footer-social">
             <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
             <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
             <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
             <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
         </div>
-
-        <p class="footer-copy">&copy; 2026 Armory Forge Systems</p>
-
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
     </div>
-
 </footer>
 
-<!-- =========================
-    Scripts
-========================= -->
+<script src="../js/forge-effects.js"></script>
 <script src="../js/app.js"></script>
-
 <script data-goatcounter="https://armoryforgesystems.goatcounter.com/count"
  async src="//gc.zgo.at/count.js"></script>
 </body>
-
 </html>

@@ -6,14 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../assets/images/favicon.png">
     <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
-    <title>Networking | The Signet | Armory Forge Systems</title>
-    <meta name="description" content="Routing, switching, VLANs, Wi-Fi, enterprise networking, SD-WAN, and network troubleshooting.">
+    <title>Meet the Enterprise Worker: Your AI Receptionist — Signet Article #030 | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="Every call that goes unanswered is a customer that went somewhere else. Meet the AI receptionist — an enterprise worker that answers every call, books every appointment, and never misses a customer.">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/signet.css">
 </head>
 
 <body>
+<!-- SVG filters for forge effects -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-heat-haze" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
 
 <!-- =========================
     Header
@@ -21,7 +37,7 @@
 <header>
     <div class="header-top">
         <div class="branding">
-            <h1>Armory Forge Systems</h1>
+            <h1 class="forge-text">Armory Forge Systems</h1>
             <p>You imagine. We build. To the victor, the spoils.</p>
         </div>
         <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
@@ -29,12 +45,14 @@
     <nav>
         <a href="../index.html#hero">Home</a>
         <a href="../index.html#services">Services</a>
+        <a href="../pricing.html">Pricing</a>
         <a href="../signet.html" class="active">The Signet</a>
-        <a href="../signet.html#featured">Articles</a>
+        <a href="../armorer.html">The Armorer</a>
         <a href="../index.html#about">About</a>
-        <a href="../index.html#contact">Contact</a>
+        <a href="../armorer.html">Contact</a>
     </nav>
 </header>
+
 
 <!-- ========================================
      CATEGORY HERO
@@ -45,7 +63,7 @@
     <div class="hero-content">
         <p class="hero-tagline">The Signet</p>
         <h1>Networking</h1>
-        <p class="hero-description">Routing, switching, VLANs, Wi-Fi, enterprise networking, SD-WAN, and network troubleshooting.</p>
+        <p class="hero-description">Routing, switching, VLANs, Wi-Fi, enterprise networking, and troubleshooting.</p>
     </div>
 
 </section>
@@ -59,9 +77,9 @@
 
     <h1 class="archive-title">Networking</h1>
 
-    <p class="archive-description">The invisible architecture that connects everything. Routing, switching, wireless, and the protocols that keep business moving.</p>
+    <p class="archive-description">The invisible layer that makes everything else work — networking, explained.</p>
 
-    <p class="archive-subtitle">From packet-level fundamentals to enterprise topology — the networks that run the world.</p>
+    <p class="archive-subtitle">Network fundamentals and the infrastructure that keeps your business connected.</p>
 
     <div class="archive-count">2 Articles</div>
 
@@ -73,8 +91,9 @@
 
 <section class="archive-list">
 
-    <div class="archive-list-items">
+    <div class="article-grid">
 
+        <!-- Networking: networking-ai-agents -->
         <article class="article-card">
             <div class="article-category">Networking</div>
             <h3 class="article-title">
@@ -83,34 +102,30 @@
                 </a>
             </h3>
             <p class="article-summary">
-                Most businesses end up with a drawer full of AI gadgets that don't
-                talk to each other. The real leap happens when your agents start
-                passing work between them — like a team that never sleeps.
+                Most businesses end up with a drawer full of AI gadgets that don&#x27;t talk to each other. The real leap happens when your agents start passing work between them — like a team that never sleeps.
             </p>
             <div class="article-meta">
-                <span>August 7, 2026</span>
-                <span>7 min read</span>
+                <span>August 2026</span>
+                <span>17 · Signet</span>
             </div>
             <a class="read-more" href="../articles/networking-ai-agents.html">
                 Read Article &rarr;
             </a>
         </article>
-
+        <!-- Networking: network-security-for-small-teams -->
         <article class="article-card">
             <div class="article-category">Networking</div>
             <h3 class="article-title">
                 <a href="../articles/network-security-for-small-teams.html">
-                    Network Security for Small Teams That Can't Afford a Breach
+                    Network Security for Small Teams
                 </a>
             </h3>
             <p class="article-summary">
-                Practical network security strategies for small teams — segmentation,
-                access control, monitoring, and breach response — without requiring
-                enterprise budgets or dedicated security staff.
+                Practical network security strategies for small teams who cannot afford a breach — segmentation, access control, monitoring, and more.
             </p>
             <div class="article-meta">
-                <span>July 28, 2026</span>
-                <span>8 min read</span>
+                <span>July 2026</span>
+                <span>9 · Signet</span>
             </div>
             <a class="read-more" href="../articles/network-security-for-small-teams.html">
                 Read Article &rarr;
@@ -125,46 +140,34 @@
     <a href="../signet.html">&larr; Back to The Signet</a>
 </div>
 
-<!-- ========================================
-     FOOTER
-======================================== -->
 <footer>
-
     <div class="footer-container">
-
         <div class="footer-brand">
             <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
             <p class="footer-tagline">You Imagine. We Build. To the Victor, the Spoils.</p>
         </div>
-
         <nav class="footer-nav">
             <a href="../index.html#hero">Home</a>
             <a href="../index.html#services">Services</a>
+            <a href="../pricing.html">Pricing</a>
             <a href="../index.html#about">About</a>
-            <a href="../index.html#contact">Contact</a>
+            <a href="../armorer.html">Contact</a>
             <a href="../signet.html">The Signet</a>
         </nav>
-
         <div class="footer-social">
             <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
             <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
             <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
             <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
         </div>
-
-        <p class="footer-copy">&copy; 2026 Armory Forge Systems</p>
-
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
     </div>
-
 </footer>
 
-<!-- =========================
-    Scripts
-========================= -->
+<script src="../js/forge-effects.js"></script>
 <script src="../js/app.js"></script>
-
 <script data-goatcounter="https://armoryforgesystems.goatcounter.com/count"
  async src="//gc.zgo.at/count.js"></script>
 </body>
-
 </html>
