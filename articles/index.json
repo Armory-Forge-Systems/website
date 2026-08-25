@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 30,
+  "article_count": 31,
   "articles": [
     {
       "issue": 1,
@@ -265,6 +265,15 @@
       "category": "AI AGENTS",
       "date": "August 2026",
       "url": "/articles/your-ai-executive-assistant.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 30,
+      "slug": "your-ai-receptionist",
+      "title": "Meet the Enterprise Worker: Your AI Receptionist",
+      "category": "AI AGENTS",
+      "date": "August 2026",
+      "url": "/articles/your-ai-receptionist.html",
       "unnumbered": false
     },
     {
