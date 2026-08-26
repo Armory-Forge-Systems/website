@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 31,
+  "article_count": 32,
   "articles": [
     {
       "issue": 1,
@@ -274,6 +274,15 @@
       "category": "AI AGENTS",
       "date": "August 2026",
       "url": "/articles/your-ai-receptionist.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 31,
+      "slug": "your-ai-customer-support-specialist",
+      "title": "Meet the Enterprise Worker: Your AI Customer Support Specialist",
+      "category": "AI AGENTS",
+      "date": "August 2026",
+      "url": "/articles/your-ai-customer-support-specialist.html",
       "unnumbered": false
     },
     {
