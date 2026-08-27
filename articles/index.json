@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 32,
+  "article_count": 33,
   "articles": [
     {
       "issue": 1,
@@ -283,6 +283,15 @@
       "category": "AI AGENTS",
       "date": "August 2026",
       "url": "/articles/your-ai-customer-support-specialist.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 32,
+      "slug": "the-age-of-agents-is-here",
+      "title": "The Age of Agents Is Here — Apple Is Selling the Hardware for It",
+      "category": "AI AGENTS",
+      "date": "August 2026",
+      "url": "/articles/the-age-of-agents-is-here.html",
       "unnumbered": false
     },
     {
