@@ -130,11 +130,34 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     reply: str
     lead_captured: bool = False
+    support_intent: bool = False
     session_id: str
+
+
+class SupportRequest(BaseModel):
+    company_name: str = Field(..., min_length=1, max_length=200)
+    your_name: str = Field(..., min_length=1, max_length=200)
+    contact_number: str = Field('', max_length=50)
+    email: str = Field(..., min_length=3, max_length=200)
+    session_id: Optional[str] = None
 
 # ── Lead detection ──────────────────────────────────────────
 
 LEAD_TRIGGER = 'LEAD_CAPTURE_COMPLETE'
+
+# ── Support intent (persona switch) ──────────────────────
+SUPPORT_TRIGGERS = [
+    'support', 'issue', 'problem', 'billing', 'invoice', 'refund',
+    'my account', 'my subscription', 'existing customer', 'customer support',
+    'not working', 'error', 'bug', 'broken', 'password', 'login',
+    'talk to a human', 'talk to someone', 'complaint', 'outage', 'down',
+]
+
+def detect_support_intent(message: str) -> bool:
+    """True when a visitor sounds like an existing customer needing support
+    (routes to the support intake form) rather than a new prospect (routes to The Armorer)."""
+    lower = message.lower()
+    return any(trigger in lower for trigger in SUPPORT_TRIGGERS)
 
 def extract_lead_info(reply: str) -> Optional[dict]:
     """Extract lead fields from the AI response if LEAD_CAPTURE_COMPLETE is present."""
@@ -235,6 +258,42 @@ Captured: {now}
     except Exception as e:
         log.error(f'[LEAD] Failed to send email: {e}')
         log.info(f'[LEAD] Fallback transcript:\n{transcript}')
+
+
+# ── Support email ──────────────────────────────────────────
+
+def send_support_email(company_name, your_name, contact_number, email, issue):
+    """Email the team when a customer submits a support intake form."""
+    now = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+    NL = chr(10)
+
+    lines = ['New support request from the website.', '',
+             'Company Name: ' + company_name,
+             'Your Name: ' + your_name,
+             'Best contact number: ' + (contact_number or '—'),
+             'Email: ' + email]
+    if issue:
+        lines += ['', 'What they said:', issue]
+    lines += ['', 'Captured: ' + now]
+    body = NL.join(lines)
+
+    if not SMTP_HOST or SMTP_HOST == 'localhost':
+        log.info('[SUPPORT] Would send email:' + NL + body[:300])
+        return
+
+    try:
+        msg = MIMEText(body, 'plain')
+        msg['Subject'] = 'New Support Request — ' + company_name
+        msg['From'] = SMTP_USER or 'armorer@armoryforgesystems.com'
+        msg['To'] = NOTIFY_EMAIL
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
+            server.starttls()
+            if SMTP_USER and SMTP_PASS:
+                server.login(SMTP_USER, SMTP_PASS)
+            server.send_message(msg)
+        log.info('[SUPPORT] Support email sent')
+    except Exception as e:
+        log.error('[SUPPORT] Failed to send email: ' + str(e))
 
 
 # ── AI call ─────────────────────────────────────────────────
@@ -375,6 +434,14 @@ async def chat(req: ChatRequest, request: Request):
     # Add user message
     conversations[session_id].append({'role': 'user', 'content': req.message})
 
+    # Support intent — route existing customers to the intake form (no AI needed)
+    if detect_support_intent(req.message):
+        reply = ("I'll get our support team on it. Leave your details below and "
+                 "someone will reach out to you soon.")
+        conversations[session_id].append({'role': 'assistant', 'content': reply})
+        log.info(f'[SUPPORT] Routed {session_id[:20]}... to intake form')
+        return ChatResponse(reply=reply, support_intent=True, session_id=session_id)
+
     # Trim history
     if len(conversations[session_id]) > 35:
         conversations[session_id] = [
@@ -419,6 +486,31 @@ async def chat(req: ChatRequest, request: Request):
         lead_captured=lead_captured,
         session_id=session_id,
     )
+
+
+@app.post('/armorer/api/support')
+async def submit_support(req: SupportRequest, request: Request):
+    client_ip = request.client.host if request.client else 'unknown'
+    if not check_rate_limit(client_ip):
+        raise HTTPException(status_code=429, detail='Too many requests. Please slow down.')
+
+    email = req.email.strip()
+    if '@' not in email or '.' not in email:
+        raise HTTPException(status_code=400, detail='Please enter a valid email address.')
+
+    issue = ''
+    if req.session_id and req.session_id in conversations:
+        user_msgs = [m['content'] for m in conversations[req.session_id] if m['role'] == 'user']
+        issue = user_msgs[-1] if user_msgs else ''
+
+    send_support_email(
+        company_name=req.company_name.strip(),
+        your_name=req.your_name.strip(),
+        contact_number=req.contact_number.strip(),
+        email=email,
+        issue=issue,
+    )
+    return {'status': 'received', 'message': 'Someone from our team will reach out to you soon.'}
 
 
 # ═══════════════════════════════════════════════════════════════

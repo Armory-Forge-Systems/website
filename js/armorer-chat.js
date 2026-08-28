@@ -1,6 +1,7 @@
 /**
  * Armory Forge Systems — The Armorer Chat Client
  * Handles message sending, display, typing indicator, and API communication.
+ * Also routes support intent to a simple intake form.
  */
 
 (function () {
@@ -9,6 +10,7 @@
   // ── Configuration ────────────────────────────────────────
   const API_URL = 'https://api.armoryforgesystems.com/armorer/api/chat';
   const HEALTH_URL = 'https://api.armoryforgesystems.com/armorer/health';
+  const SUPPORT_URL = 'https://api.armoryforgesystems.com/armorer/api/support';
   const DEV_MODE = false;  // set true for local testing without server
   let currentSessionId = null;  // tracks conversation session
 
@@ -18,6 +20,11 @@
   const sendBtn = document.getElementById('chat-send');
   const typingEl = document.getElementById('typing-indicator');
   const statusEl = document.getElementById('armorer-status');
+  const inputAreaEl = document.querySelector('.chat-input-area');
+  const supportPanelEl = document.getElementById('support-panel');
+  const supportFormWrapEl = document.getElementById('support-form-wrap');
+  const supportFormEl = document.getElementById('support-form-fields');
+  const supportConfirmEl = document.getElementById('support-confirm');
 
   let isWaiting = false;
 
@@ -88,6 +95,11 @@
     typingEl.style.display = 'none';
   }
 
+  function showSupportForm() {
+    if (inputAreaEl) inputAreaEl.style.display = 'none';
+    if (supportPanelEl) supportPanelEl.style.display = 'block';
+  }
+
   function setSending(state) {
     isWaiting = state;
     sendBtn.disabled = state;
@@ -120,6 +132,9 @@
       const response = await callArmorer(text);
       hideTyping();
       addArmorerHtml(formatResponse(response));
+      if (response.support_intent) {
+        showSupportForm();
+      }
     } catch (err) {
       hideTyping();
       addMessage('The forge is cooling down. Please try again in a moment. If this persists, email us at info@armoryforgesystems.com.', 'armorer');
@@ -245,6 +260,40 @@
     }
 
     return { reply, lead_captured: leadCaptured };
+  }
+
+  // ── Support intake form submission ────────────────────────
+  if (supportFormEl) {
+    supportFormEl.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = supportFormEl.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
+      const fields = Object.fromEntries(new FormData(supportFormEl).entries());
+
+      try {
+        const res = await fetch(SUPPORT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            company_name: fields.company_name || '',
+            your_name: fields.your_name || '',
+            contact_number: fields.contact_number || '',
+            email: fields.email || '',
+            session_id: currentSessionId
+          })
+        });
+
+        if (!res.ok) throw new Error('Support submit failed: ' + res.status);
+
+        if (supportFormWrapEl) supportFormWrapEl.style.display = 'none';
+        if (supportConfirmEl) supportConfirmEl.style.display = 'block';
+      } catch (err) {
+        console.error('Support submit error:', err);
+        if (submitBtn) submitBtn.disabled = false;
+        addMessage('Something went wrong sending your details. Please try again, or email us at info@armoryforgesystems.com.', 'armorer');
+      }
+    });
   }
 
   // ── Event listeners ──────────────────────────────────────

@@ -193,6 +193,36 @@
             </button>
         </div>
 
+        <!-- Support intake form (shown when a visitor needs help) -->
+        <div class="support-panel" id="support-panel" style="display:none;">
+            <div id="support-form-wrap">
+                <h3 class="support-form__title">Let's get you some help</h3>
+                <p class="support-form__sub">Leave your details and our team will reach out to you soon.</p>
+                <form id="support-form-fields">
+                    <label class="support-field">
+                        <span>Company Name</span>
+                        <input type="text" name="company_name" autocomplete="organization" required>
+                    </label>
+                    <label class="support-field">
+                        <span>Your Name</span>
+                        <input type="text" name="your_name" autocomplete="name" required>
+                    </label>
+                    <label class="support-field">
+                        <span>Best contact number</span>
+                        <input type="tel" name="contact_number" autocomplete="tel">
+                    </label>
+                    <label class="support-field">
+                        <span>Email</span>
+                        <input type="email" name="email" autocomplete="email" required>
+                    </label>
+                    <button type="submit" class="support-submit">Send</button>
+                </form>
+            </div>
+            <div class="support-confirm" id="support-confirm" style="display:none;">
+                <p>✓ Someone from our team will reach out to you soon.</p>
+            </div>
+        </div>
+
         <!-- Powered by -->
         <div class="chat-footer">
             <span>⚒️ The Armorer · Armory Forge Systems</span>
