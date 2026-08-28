@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 33,
+  "article_count": 34,
   "articles": [
     {
       "issue": 1,
@@ -292,6 +292,15 @@
       "category": "AI AGENTS",
       "date": "August 2026",
       "url": "/articles/the-age-of-agents-is-here.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 33,
+      "slug": "meet-the-enterprise-worker-your-ai-security-department",
+      "title": "Meet the Enterprise Worker: Your AI Security Department",
+      "category": "CYBERSECURITY",
+      "date": "August 2026",
+      "url": "/articles/meet-the-enterprise-worker-your-ai-security-department.html",
       "unnumbered": false
     },
     {
