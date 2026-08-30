@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 34,
+  "article_count": 35,
   "articles": [
     {
       "issue": 1,
@@ -301,6 +301,15 @@
       "category": "CYBERSECURITY",
       "date": "August 2026",
       "url": "/articles/meet-the-enterprise-worker-your-ai-security-department.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 34,
+      "slug": "meet-the-enterprise-worker-your-ai-finance-department",
+      "title": "Meet the Enterprise Worker: Your AI Finance Department",
+      "category": "BUSINESS",
+      "date": "August 2026",
+      "url": "/articles/meet-the-enterprise-worker-your-ai-finance-department.html",
       "unnumbered": false
     },
     {
