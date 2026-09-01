@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 35,
+  "article_count": 36,
   "articles": [
     {
       "issue": 1,
@@ -310,6 +310,15 @@
       "category": "BUSINESS",
       "date": "August 2026",
       "url": "/articles/meet-the-enterprise-worker-your-ai-finance-department.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 35,
+      "slug": "meet-the-enterprise-worker-your-ai-hr-department",
+      "title": "Meet the Enterprise Worker: Your AI HR Department",
+      "category": "BUSINESS",
+      "date": "August 2026",
+      "url": "/articles/meet-the-enterprise-worker-your-ai-hr-department.html",
       "unnumbered": false
     },
     {
