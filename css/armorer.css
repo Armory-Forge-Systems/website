@@ -449,6 +449,28 @@
     color: #666;
 }
 
+.sms-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    color: #aaa;
+    font-size: .75rem;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.sms-consent input {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+    margin: 2px 0 0;
+    accent-color: var(--forge-orange, #ff6b00);
+}
+
+.sms-consent a {
+    color: #ff8f45;
+}
+
 .support-submit {
     margin-top: 4px;
     background: var(--forge-orange, #ff6b00);
