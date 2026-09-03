@@ -280,6 +280,8 @@
             your_name: fields.your_name || '',
             contact_number: fields.contact_number || '',
             email: fields.email || '',
+            sms_consent: fields.sms_consent === 'true',
+            sms_consent_version: fields.sms_consent === 'true' ? '2026-09-02' : '',
             session_id: currentSessionId
           })
         });
