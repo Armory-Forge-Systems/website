@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 37,
+  "article_count": 38,
   "articles": [
     {
       "issue": 1,
@@ -316,7 +316,7 @@
       "issue": 35,
       "slug": "meet-the-enterprise-worker-your-ai-hr-department",
       "title": "Meet the Enterprise Worker: Your AI HR Department",
-      "category": null,
+      "category": "BUSINESS",
       "date": "August 2026",
       "url": "/articles/meet-the-enterprise-worker-your-ai-hr-department.html",
       "unnumbered": false
@@ -328,6 +328,15 @@
       "category": "BUSINESS",
       "date": "September 2026",
       "url": "/articles/meet-the-enterprise-worker-your-ai-it-department.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 37,
+      "slug": "meet-the-enterprise-worker-your-ai-knowledge-base",
+      "title": "Meet the Enterprise Worker: Your AI Knowledge Base",
+      "category": "BUSINESS",
+      "date": "September 2026",
+      "url": "/articles/meet-the-enterprise-worker-your-ai-knowledge-base.html",
       "unnumbered": false
     },
     {
