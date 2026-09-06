@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 38,
+  "article_count": 39,
   "articles": [
     {
       "issue": 1,
@@ -337,6 +337,15 @@
       "category": "BUSINESS",
       "date": "September 2026",
       "url": "/articles/meet-the-enterprise-worker-your-ai-knowledge-base.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 38,
+      "slug": "you-had-enough-compute-to-run-a-business",
+      "title": "You Had Enough Compute to Run a Business Before Astra and Fable 5.1 Were Even Out",
+      "category": "AI",
+      "date": "September 2026",
+      "url": "/articles/you-had-enough-compute-to-run-a-business.html",
       "unnumbered": false
     },
     {
