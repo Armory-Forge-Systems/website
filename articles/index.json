@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 39,
+  "article_count": 40,
   "articles": [
     {
       "issue": 1,
@@ -346,6 +346,15 @@
       "category": "AI",
       "date": "September 2026",
       "url": "/articles/you-had-enough-compute-to-run-a-business.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 39,
+      "slug": "meet-the-enterprise-worker-your-ai-research-department",
+      "title": "Meet the Enterprise Worker: Your AI Research Department",
+      "category": "BUSINESS",
+      "date": "September 2026",
+      "url": "/articles/meet-the-enterprise-worker-your-ai-research-department.html",
       "unnumbered": false
     },
     {
