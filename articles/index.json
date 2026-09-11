@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 40,
+  "article_count": 41,
   "articles": [
     {
       "issue": 1,
@@ -355,6 +355,15 @@
       "category": "BUSINESS",
       "date": "September 2026",
       "url": "/articles/meet-the-enterprise-worker-your-ai-research-department.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 40,
+      "slug": "you-dont-need-a-superintelligence-to-add-something-to-your-calendar",
+      "title": "You Don't Need a Superintelligence to Add Something to Your Calendar",
+      "category": "AI",
+      "date": "September 2026",
+      "url": "/articles/you-dont-need-a-superintelligence-to-add-something-to-your-calendar.html",
       "unnumbered": false
     },
     {
