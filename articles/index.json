@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 41,
+  "article_count": 42,
   "articles": [
     {
       "issue": 1,
@@ -364,6 +364,15 @@
       "category": "AI",
       "date": "September 2026",
       "url": "/articles/you-dont-need-a-superintelligence-to-add-something-to-your-calendar.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 41,
+      "slug": "the-doom-headlines-are-about-a-different-machine",
+      "title": "The AI Doom Headlines Are About a Different Machine",
+      "category": "AI",
+      "date": "September 2026",
+      "url": "/articles/the-doom-headlines-are-about-a-different-machine.html",
       "unnumbered": false
     },
     {
