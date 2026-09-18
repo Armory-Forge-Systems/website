@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 42,
+  "article_count": 43,
   "articles": [
     {
       "issue": 1,
@@ -373,6 +373,15 @@
       "category": "AI",
       "date": "September 2026",
       "url": "/articles/the-doom-headlines-are-about-a-different-machine.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 42,
+      "slug": "your-quotes-are-dying-in-the-follow-up",
+      "title": "Your Quotes Are Dying in the Follow-Up",
+      "category": "BUSINESS",
+      "date": "September 2026",
+      "url": "/articles/your-quotes-are-dying-in-the-follow-up.html",
       "unnumbered": false
     },
     {
