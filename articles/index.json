@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 43,
+  "article_count": 44,
   "articles": [
     {
       "issue": 1,
@@ -383,6 +383,15 @@
       "date": "September 2026",
       "url": "/articles/your-quotes-are-dying-in-the-follow-up.html",
       "unnumbered": false
+    },
+    {
+      "issue": null,
+      "slug": "forge-product-hunt-astra-challenge",
+      "title": "F.O.R.G.E. Is Live on Product Hunt",
+      "category": "LIVE NOW",
+      "date": "September 2026",
+      "url": "/articles/forge-product-hunt-astra-challenge.html",
+      "unnumbered": true
     },
     {
       "issue": null,
