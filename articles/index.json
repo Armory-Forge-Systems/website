@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 44,
+  "article_count": 45,
   "articles": [
     {
       "issue": 1,
@@ -382,6 +382,15 @@
       "category": "BUSINESS",
       "date": "September 2026",
       "url": "/articles/your-quotes-are-dying-in-the-follow-up.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 43,
+      "slug": "9-years-fighting-alongside-terrible-ivr-bots",
+      "title": "Nine Years Fighting Alongside Terrible IVR Bots",
+      "category": null,
+      "date": "September 2026",
+      "url": "/articles/9-years-fighting-alongside-terrible-ivr-bots.html",
       "unnumbered": false
     },
     {
