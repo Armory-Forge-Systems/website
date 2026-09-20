@@ -30,4 +30,4 @@ See the full product roadmap at [`docs/ARMORER-ROADMAP.md`](../docs/ARMORER-ROAD
 
 **Armory Forge Systems**
 
-*"You imagine. We build. To the victor, the Spoils."*
+*"You imagine. We build. To the victor, the spoils."*
