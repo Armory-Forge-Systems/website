@@ -23,8 +23,7 @@ Every image should immediately feel like **Armory Forge Systems.**
 
 - Article title in huge, bold industrial typography
 - **Armory Forge Systems**
-- *"You Imagine. We Build."*
-- *"To the victor, the spoils."*
+- *"You imagine. We build. To the victor, the spoils."*
 - AFS logo or AFS branding integrated naturally
 
 ## Visual Language
