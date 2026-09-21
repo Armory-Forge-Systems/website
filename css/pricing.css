@@ -598,3 +598,94 @@
 .tier-table thead th { background: #171819; border-color: var(--forge-border, rgba(255,255,255,.09)); }
 .tier-table tbody td { background: rgba(255,255,255,.018); }
 .tier-enterprise { background: linear-gradient(105deg, rgba(255,107,0,.07), transparent 48%), #171819 !important; }
+
+
+/* Equal FAQ previews; complete answers open without shifting the grid. */
+.faq-grid.faq-enhanced {
+    grid-auto-rows: 1fr;
+}
+
+.faq-enhanced .faq-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.faq-enhanced .faq-answer {
+    max-height: 7.82rem;
+    overflow: hidden;
+}
+
+.faq-enhanced .faq-answer.faq-truncated {
+    -webkit-mask-image: linear-gradient(#000 85%, transparent);
+    mask-image: linear-gradient(#000 85%, transparent);
+}
+
+.faq-read-more,
+.faq-close {
+    border: 1px solid rgba(255, 107, 0, .45);
+    border-radius: 6px;
+    background: transparent;
+    color: #ff9a50;
+    font: inherit;
+    cursor: pointer;
+    padding: 10px 14px;
+}
+
+.faq-read-more {
+    align-self: flex-start;
+    margin-top: auto;
+    position: relative;
+    top: 12px;
+}
+
+.faq-read-more:hover,
+.faq-close:hover {
+    background: rgba(255, 107, 0, .12);
+}
+
+.faq-read-more:focus-visible,
+.faq-close:focus-visible {
+    outline: 2px solid #ff9a50;
+    outline-offset: 4px;
+}
+
+.faq-dialog {
+    box-sizing: border-box;
+    width: min(640px, calc(100% - 32px));
+    max-height: 85dvh;
+    margin: auto;
+    padding: 28px;
+    border: 1px solid rgba(255, 107, 0, .4);
+    border-radius: 14px;
+    background: #171717;
+    color: #fff;
+    text-align: left;
+    overflow-y: auto;
+}
+
+.faq-dialog::backdrop {
+    background: rgba(0, 0, 0, .8);
+}
+
+.faq-close {
+    display: block;
+    margin: 0 0 20px auto;
+}
+
+.faq-dialog h2 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.faq-dialog-answer p {
+    color: #c4c4c4;
+    font-size: 1rem;
+    line-height: 1.75;
+    margin: 0 0 16px;
+}
+
+.faq-dialog-open {
+    overflow: hidden;
+}
