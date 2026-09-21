@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 45,
+  "article_count": 47,
   "articles": [
     {
       "issue": 1,
@@ -391,6 +391,24 @@
       "category": null,
       "date": "September 2026",
       "url": "/articles/9-years-fighting-alongside-terrible-ivr-bots.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 44,
+      "slug": "you-need-an-agent-strategy",
+      "title": "In 2007 You Needed a Mobile Strategy. In 2027 You Will Need an Agent Strategy.",
+      "category": "AI AGENTS",
+      "date": "September 2026",
+      "url": "/articles/you-need-an-agent-strategy.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 45,
+      "slug": "your-customers-can-smell-the-ai",
+      "title": "Your Customers Can Smell the AI. Keep It Behind the Counter.",
+      "category": "BUSINESS",
+      "date": "September 2026",
+      "url": "/articles/your-customers-can-smell-the-ai.html",
       "unnumbered": false
     },
     {
