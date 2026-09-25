@@ -525,6 +525,28 @@
    RESPONSIVE
    ═══════════════════════════════════════════ */
 
+/* Shared rows reserve note space beneath Free and align all prices. */
+@media (min-width: 901px) {
+    .pricing-card {
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 8;
+        row-gap: 0;
+    }
+
+    .pricing-card .card-price {
+        grid-row: 6;
+    }
+
+    .pricing-card .card-price-note {
+        grid-row: 7;
+    }
+
+    .pricing-card > .btn {
+        grid-row: 8;
+    }
+}
+
 @media (max-width: 900px) {
     .offerings {
         grid-template-columns: 1fr;
