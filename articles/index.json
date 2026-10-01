@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 48,
+  "article_count": 49,
   "articles": [
     {
       "issue": 1,
@@ -418,6 +418,15 @@
       "category": "AI AGENTS",
       "date": "October 2026",
       "url": "/articles/ai-may-recommend-not-decide.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 47,
+      "slug": "if-it-cant-run-the-economy-stop-calling-it-superintelligence",
+      "title": "If It Can't Run the Economy, Stop Calling It Superintelligence.",
+      "category": "AI",
+      "date": "October 2026",
+      "url": "/articles/if-it-cant-run-the-economy-stop-calling-it-superintelligence.html",
       "unnumbered": false
     },
     {
