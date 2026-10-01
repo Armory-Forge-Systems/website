@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 47,
+  "article_count": 48,
   "articles": [
     {
       "issue": 1,
@@ -409,6 +409,15 @@
       "category": "BUSINESS",
       "date": "September 2026",
       "url": "/articles/your-customers-can-smell-the-ai.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 46,
+      "slug": "ai-may-recommend-not-decide",
+      "title": "AI May Recommend. It Must Not Decide.",
+      "category": "AI AGENTS",
+      "date": "October 2026",
+      "url": "/articles/ai-may-recommend-not-decide.html",
       "unnumbered": false
     },
     {

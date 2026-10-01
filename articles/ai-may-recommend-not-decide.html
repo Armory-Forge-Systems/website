@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <title>AI May Recommend. It Must Not Decide. &mdash; Signet Article #046 | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="NPCI's chairman drew the most useful AI line of the year: decision and execution must stay separate. What that means for a small business handing work to an agent.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/signet.css">
+</head>
+
+<body>
+<!-- SVG filters for forge effects -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-heat-haze" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<!-- =========================
+    Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1 class="forge-text">Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../signet.html" class="active">The Signet</a>
+        <a href="../armorer.html">The Armorer</a>
+        <a href="../index.html#about">About</a>
+        <a href="../armorer.html">Contact</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Article Hero
+========================= -->
+<section class="article-hero">
+    <div class="hero-content">
+        <div class="article-meta-bar">
+            <span class="category">AI Agents</span>
+            <span class="date">October 2026</span>
+        </div>
+        <h1>AI May Recommend. It Must Not Decide. &mdash; Signet Article #046</h1>
+    </div>
+</section>
+
+<!-- =========================
+    Article Hero Image
+========================= -->
+<div class="article-hero-image">
+    <img src="../assets/images/ai-may-recommend-not-decide-hero.png"
+         alt="A payment rail and an AI agent operating on separate tracks &mdash; intent on one side, authorisation and settlement on the other">
+</div>
+
+<!-- =========================
+    Article Body
+========================= -->
+<article class="article-body">
+<p class="forge-note"><em>The Forge &mdash; Armory Forge Systems &mdash; Signet Article #046</em></p>
+
+<p>Something useful happened in Mumbai this month, and it had nothing to do with a new model release.</p>
+
+<p>On September 10, at the Global Fintech Fest, the chairman of India's National Payments Corporation drew a line through the middle of the agentic AI conversation. Ajay Kumar Choudhary, NPCI's non-executive chairman and independent director, put it like this:</p>
+
+<blockquote><p>"Decision making and execution must remain separate. AI may recommend, but authentication and final settlement must follow deterministic auditable rules."</p></blockquote>
+
+<p>Read that twice. It isn't a warning that AI is dangerous. It's an architectural instruction &mdash; and it applies to your business whether you process payments on a national rail or run a three-person plumbing shop.</p>
+
+<h2>What he was actually describing</h2>
+
+<p>NPCI runs UPI, India's real-time payments network. In August it carried roughly 24.5 billion transactions across 752 banks. When an institution like that says "here's how agents are allowed to touch money," it isn't a think piece &mdash; it's a design constraint for everyone building on top of it.</p>
+
+<p>His reasoning rests on a mismatch. AI reasoning is probabilistic: the same situation can produce different interpretations, and that flexibility is precisely why it's good at figuring out what a customer actually wants. Payments infrastructure has to be the opposite &mdash; deterministic, auditable, final. A settled transaction can't be <em>probably</em> settled. A spending limit can't be <em>approximately</em> enforced.</p>
+
+<p>So the architecture he described splits three things people normally lump together: <strong>intent, authorisation, and settlement.</strong> The agent reads intent. The rail verifies identity, mandate, limits and consent. Then the rail settles.</p>
+
+<p>Notice how little the agent is doing. It selects. It does not authorise. It does not enforce a limit. It does not move the money.</p>
+
+<p>The objective, Choudhary said, is not unlimited machine autonomy but "autonomy that is bounded and accountable."</p>
+
+<h2>The part that isn't settled yet</h2>
+
+<p>Reporters have gotten slightly ahead of the record here, so it's worth being precise. <a href="https://www.reuters.com/world/india/india-plans-ai-registry-it-looks-roll-out-agentic-payments-sources-say-2026-09-10">Reuters reported on September 10</a> that NPCI is building a registry to verify and monitor AI agents making transactions on UPI, forming part of a planned Unified Agentic Protocol &mdash; initially to vet agents paying on UPI, with cards and bill payments possibly later. Business Standard reported similar plans in July. Both reports rely on unnamed sources, NPCI has published no specification, and any launch would need approval from the Reserve Bank of India. Treat it as reported, not shipped.</p>
+
+<p>That's fine. The direction is what matters, and the direction was visible across the whole festival. In his own lane, the chairman of India's securities regulator made the same move, saying an AI-generated alert should not automatically be treated as a regulatory finding. Same rule, different industry: the machine that notices something is not the machine that decides what it means.</p>
+
+<h2>Why a small business should care</h2>
+
+<p>Here's the uncomfortable part. Most small businesses are doing the exact opposite of what Choudhary described &mdash; and they're doing it by accident.</p>
+
+<p>Look at where AI actually shows up in a ten-person company. A chat bot that answers the phone and books the job. A tool that drafts a quote and sends it. Software that reads vendor invoices and pays them. An assistant that replies to customers on its own.</p>
+
+<p>Every one of those collapses <em>deciding</em> and <em>doing</em> into a single step. The agent decides the job is booked, and books it. It decides the invoice matches, and pays it. That works right up until it doesn't &mdash; and when it doesn't, you have no idea which part failed, because there's only one part.</p>
+
+<p>That's the real risk. Not that AI is wrong often. That when it's wrong, you can't point to where the decision happened &mdash; so you can't fix it, correct it, or explain it to the customer.</p>
+
+<h2>Draw the line yourself</h2>
+
+<p>You don't need a regulator to hand you this. The same three-part split works in a business of any size:</p>
+
+<ul>
+<li><strong>Intent</strong> &mdash; what does the customer actually want? This is where AI is genuinely excellent, and where you can turn it loose. It reads, listens, summarises, proposes.</li>
+<li><strong>Authorisation</strong> &mdash; is this allowed? Amount, scope, policy, who signed off. This should be rules, not vibes. <em>Anything over $500 comes to me. New customers get a callback. Refunds never auto-issue.</em></li>
+<li><strong>Execution</strong> &mdash; do the thing, log the thing. Fast, automatic, and recorded so you can reconstruct it later.</li>
+</ul>
+
+<p>The agent lives in intent. It can live in execution, inside limits. Authorisation is where you stay.</p>
+
+<p>That's not a restriction on what AI can do for you. It's the thing that makes it safe to give AI more. A bounded agent can be trusted with real work. An unbounded one can only be trusted with a demo.</p>
+
+<h2>The question everyone will eventually ask</h2>
+
+<p>Every serious payments rail, every regulator, and &mdash; soon enough &mdash; every insurer and auditor is converging on the same question: when your agent acted, what was it allowed to do, and can you prove it?</p>
+
+<p>The businesses that look smart in two years will be the ones that answered that question before anyone asked it. Not with a policy document. With architecture: a clean split between what a machine interprets, what it is permitted to execute, and who owns the decision.</p>
+
+<p>That's the rule out of Mumbai. The payments part is India's problem. The rest is yours.</p>
+
+<p><em>Armory Forge Systems builds AI workers for exactly that job &mdash; the phone, the quotes, the follow-up, the support, the books. Each one is a defined role with limits, an audit trail, and a human holding the decision. If you want the leverage without the liability, let's talk.</em></p>
+
+</article>
+
+<!-- =========================
+    The Signet Certification
+========================= -->
+<div class="signet-approval hidden">
+
+<section class="signet-certification">
+    <div class="seal-line"></div>
+
+    <div class="seal-header">
+        <span class="seal-title">SEALED BY THE SIGNET</span>
+        <span class="seal-number">Issue #046</span>
+    </div>
+
+    <div class="seal-body">
+        <img src="../assets/images/signet-seal.png" alt="The Signet" class="seal-image">
+        <div class="seal-copy">
+            <blockquote>Every system we deliver is forged with intent, tested with rigor, and sealed with our mark.</blockquote>
+            <div class="seal-author">
+                <strong>Armory Forge Systems</strong>
+                <span>You imagine. We build. To the victor, the spoils.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="seal-line seal-line-bottom"></div>
+</section>
+
+<div class="seal-glow"></div>
+
+<!-- =========================
+    Article CTA
+========================= -->
+<div class="article-cta">
+    <h3>Ready to forge your next system?</h3>
+    <p>Whether you're deploying AI agents, automating workflows, or modernizing infrastructure, we're ready to help.</p>
+    <a href="../armorer.html" class="btn-primary cta-button">💬 Chat with The Armorer</a>
+    <a href="mailto:info@armoryforgesystems.com" class="btn-primary cta-button">Schedule a Discovery Call</a>
+    <a href="../signet.html" class="cta-secondary">Read another Signet article →</a>
+</div>
+
+</div>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="../index.html#hero">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../index.html#about">About</a>
+            <a href="../armorer.html">Contact</a>
+            <a href="../signet.html">The Signet</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="../js/forge-effects.js"></script>
+<script src="../js/app.js"></script>
+<script data-goatcounter="https://armoryforgesystems.goatcounter.com/count"
+ async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
