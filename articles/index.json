@@ -1,451 +1,460 @@
 {
-  "library": "The Signet — Armory Forge Systems",
-  "volumes": {
-    "volume_i": "Articles 1-50",
-    "volume_ii": "Articles 51-99"
+ "library": "The Signet — Armory Forge Systems",
+ "volumes": {
+  "volume_i": "Articles 1-50",
+  "volume_ii": "Articles 51-99"
+ },
+ "article_count": 50,
+ "articles": [
+  {
+   "issue": 1,
+   "slug": "ai-agents-what-they-actually-are",
+   "title": "What Is an AI Agent? (Without the Hype)",
+   "category": "AI",
+   "date": "July 2026",
+   "url": "/articles/ai-agents-what-they-actually-are.html",
+   "unnumbered": false
   },
-  "article_count": 49,
-  "articles": [
-    {
-      "issue": 1,
-      "slug": "ai-agents-what-they-actually-are",
-      "title": "What Is an AI Agent? (Without the Hype)",
-      "category": "AI",
-      "date": "July 2026",
-      "url": "/articles/ai-agents-what-they-actually-are.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 2,
-      "slug": "can-ai-answer-your-business-phone",
-      "title": "Can AI Answer Your Business Phone While You Sleep?",
-      "category": "AI",
-      "date": "July 2026",
-      "url": "/articles/can-ai-answer-your-business-phone.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 3,
-      "slug": "cloud-infrastructure-uncomplicated",
-      "title": "Cloud Infrastructure, Uncomplicated",
-      "category": "CLOUD",
-      "date": "July 2026",
-      "url": "/articles/cloud-infrastructure-uncomplicated.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 4,
-      "slug": "how-much-does-ai-receptionist-cost",
-      "title": "How Much Does an AI Receptionist Cost?",
-      "category": "AI",
-      "date": "July 2026",
-      "url": "/articles/how-much-does-ai-receptionist-cost.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 5,
-      "slug": "the-cost-of-doing-nothing",
-      "title": "The Cost of Doing Nothing",
-      "category": "BUSINESS",
-      "date": "July 2026",
-      "url": "/articles/the-cost-of-doing-nothing.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 6,
-      "slug": "future-of-ai-receptionists",
-      "title": "The Future of AI Receptionists",
-      "category": "AI",
-      "date": "July 2026",
-      "url": "/articles/future-of-ai-receptionists.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 7,
-      "slug": "small-business-automation-guide",
-      "title": "Small Business Automation Guide",
-      "category": "AUTOMATION",
-      "date": "July 2026",
-      "url": "/articles/small-business-automation-guide.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 8,
-      "slug": "why-cloud-security-matters",
-      "title": "Why Cloud Security Matters",
-      "category": "CLOUD",
-      "date": "July 2026",
-      "url": "/articles/why-cloud-security-matters.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 9,
-      "slug": "network-security-for-small-teams",
-      "title": "Network Security for Small Teams",
-      "category": "NETWORKING",
-      "date": "July 2026",
-      "url": "/articles/network-security-for-small-teams.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 10,
-      "slug": "ai-receptionist-vs-hiring",
-      "title": "AI Receptionist vs Hiring Another Employee",
-      "category": "AI",
-      "date": "July 2026",
-      "url": "/articles/ai-receptionist-vs-hiring.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 11,
-      "slug": "the-anatomy-of-a-phishing-email",
-      "title": "The Anatomy of a Phishing Email",
-      "category": "CYBERSECURITY",
-      "date": "August 2026",
-      "url": "/articles/the-anatomy-of-a-phishing-email.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 12,
-      "slug": "ai-for-hvac-companies",
-      "title": "Your HVAC Company Is Missing Calls This Summer",
-      "category": "AI",
-      "date": "August 2026",
-      "url": "/articles/ai-for-hvac-companies.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 13,
-      "slug": "the-29000-email",
-      "title": "The $29,000 Email: What the DNC Scam Teaches Every Business",
-      "category": "NEW",
-      "date": "August 2026",
-      "url": "/articles/the-29000-email.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 14,
-      "slug": "your-ai-makes-things-up",
-      "title": "Why Your AI Assistant Makes Things Up — and How RAG Fixes It",
-      "category": "AI",
-      "date": "August 2026",
-      "url": "/articles/your-ai-makes-things-up.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 15,
-      "slug": "ai-for-law-firms",
-      "title": "Your Law Firm Is Missing Calls — and Cases",
-      "category": "AI",
-      "date": "August 2026",
-      "url": "/articles/ai-for-law-firms.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 16,
-      "slug": "automation-arms-your-team",
-      "title": "Automation Isn't About Replacing People — It's About Arming Them",
-      "category": "AUTOMATION",
-      "date": "August 2026",
-      "url": "/articles/automation-arms-your-team.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 17,
-      "slug": "networking-ai-agents",
-      "title": "When Your AI Agents Start Talking to Each Other",
-      "category": "NETWORKING",
-      "date": "August 2026",
-      "url": "/articles/networking-ai-agents.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 18,
-      "slug": "ai-for-real-estate-agents",
-      "title": "Your Real Estate Business Is Missing Calls — and Listings",
-      "category": "REAL ESTATE",
-      "date": "August 2026",
-      "url": "/articles/ai-for-real-estate-agents.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 19,
-      "slug": "ai-for-doctors",
-      "title": "Doctors Don't Need a Better Receptionist — They Need a Better Revenue Cycle",
-      "category": "HEALTHCARE",
-      "date": "August 2026",
-      "url": "/articles/ai-for-doctors.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 20,
-      "slug": "your-construction-company-is-missing-calls",
-      "title": "Your Construction Company Is Missing Calls — and Bids",
-      "category": "CONSTRUCTION",
-      "date": "August 2026",
-      "url": "/articles/your-construction-company-is-missing-calls.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 21,
-      "slug": "your-auto-shop-is-missing-calls",
-      "title": "Your Auto Shop Is Missing the Calls That Pay the Bills",
-      "category": "AUTO REPAIR",
-      "date": "August 2026",
-      "url": "/articles/your-auto-shop-is-missing-calls.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 22,
-      "slug": "the-great-equalizer-small-business",
-      "title": "The Great Equalizer: Small Business Finally Has a Fighting Chance",
-      "category": "BUSINESS",
-      "date": "August 2026",
-      "url": "/articles/the-great-equalizer-small-business.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 23,
-      "slug": "your-plumbing-company-is-missing-calls",
-      "title": "Your Plumbing Company Is Missing the Calls That Pay the Bills",
-      "category": "PLUMBING",
-      "date": "August 2026",
-      "url": "/articles/your-plumbing-company-is-missing-calls.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 24,
-      "slug": "small-business-has-a-new-army",
-      "title": "Small Business Has a New Army — Don't Build a God Agent",
-      "category": "AI AGENTS",
-      "date": "August 2026",
-      "url": "/articles/small-business-has-a-new-army.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 25,
-      "slug": "we-found-a-leak-in-our-own-code",
-      "title": "We Found a Real Leak in Our Own Code — and Spent the Rest of the Day Locking the Door",
-      "category": "CYBERSECURITY",
-      "date": "August 2026",
-      "url": "/articles/we-found-a-leak-in-our-own-code.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 26,
-      "slug": "your-first-ai-employee",
-      "title": "How to Hire Your First AI Employee — Start With One Job, Not a God Agent",
-      "category": "AI AGENTS",
-      "date": "August 2026",
-      "url": "/articles/your-first-ai-employee.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 27,
-      "slug": "how-ai-pays-for-itself",
-      "title": "5 Ways AI Pays for Itself in 90 Days",
-      "category": "BUSINESS",
-      "date": "August 2026",
-      "url": "/articles/how-ai-pays-for-itself.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 28,
-      "slug": "your-dental-practice-is-missing-calls",
-      "title": "Your Dental Practice Is Missing the Calls That Pay for the Chair",
-      "category": "DENTAL",
-      "date": "August 2026",
-      "url": "/articles/your-dental-practice-is-missing-calls.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 29,
-      "slug": "your-ai-executive-assistant",
-      "title": "Meet the Enterprise Worker: Your AI Executive Assistant",
-      "category": "AI AGENTS",
-      "date": "August 2026",
-      "url": "/articles/your-ai-executive-assistant.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 30,
-      "slug": "your-ai-receptionist",
-      "title": "Meet the Enterprise Worker: Your AI Receptionist",
-      "category": "AI AGENTS",
-      "date": "August 2026",
-      "url": "/articles/your-ai-receptionist.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 31,
-      "slug": "your-ai-customer-support-specialist",
-      "title": "Meet the Enterprise Worker: Your AI Customer Support Specialist",
-      "category": "AI AGENTS",
-      "date": "August 2026",
-      "url": "/articles/your-ai-customer-support-specialist.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 32,
-      "slug": "the-age-of-agents-is-here",
-      "title": "The Age of Agents Is Here — Apple Is Selling the Hardware for It",
-      "category": "AI AGENTS",
-      "date": "August 2026",
-      "url": "/articles/the-age-of-agents-is-here.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 33,
-      "slug": "meet-the-enterprise-worker-your-ai-security-department",
-      "title": "Meet the Enterprise Worker: Your AI Security Department",
-      "category": "CYBERSECURITY",
-      "date": "August 2026",
-      "url": "/articles/meet-the-enterprise-worker-your-ai-security-department.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 34,
-      "slug": "meet-the-enterprise-worker-your-ai-finance-department",
-      "title": "Meet the Enterprise Worker: Your AI Finance Department",
-      "category": "BUSINESS",
-      "date": "August 2026",
-      "url": "/articles/meet-the-enterprise-worker-your-ai-finance-department.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 35,
-      "slug": "meet-the-enterprise-worker-your-ai-hr-department",
-      "title": "Meet the Enterprise Worker: Your AI HR Department",
-      "category": "BUSINESS",
-      "date": "August 2026",
-      "url": "/articles/meet-the-enterprise-worker-your-ai-hr-department.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 36,
-      "slug": "meet-the-enterprise-worker-your-ai-it-department",
-      "title": "Meet the Enterprise Worker: Your AI I.T. Department",
-      "category": "BUSINESS",
-      "date": "September 2026",
-      "url": "/articles/meet-the-enterprise-worker-your-ai-it-department.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 37,
-      "slug": "meet-the-enterprise-worker-your-ai-knowledge-base",
-      "title": "Meet the Enterprise Worker: Your AI Knowledge Base",
-      "category": "BUSINESS",
-      "date": "September 2026",
-      "url": "/articles/meet-the-enterprise-worker-your-ai-knowledge-base.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 38,
-      "slug": "you-had-enough-compute-to-run-a-business",
-      "title": "You Had Enough Compute to Run a Business Before Astra and Fable 5.1 Were Even Out",
-      "category": "AI",
-      "date": "September 2026",
-      "url": "/articles/you-had-enough-compute-to-run-a-business.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 39,
-      "slug": "meet-the-enterprise-worker-your-ai-research-department",
-      "title": "Meet the Enterprise Worker: Your AI Research Department",
-      "category": "BUSINESS",
-      "date": "September 2026",
-      "url": "/articles/meet-the-enterprise-worker-your-ai-research-department.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 40,
-      "slug": "you-dont-need-a-superintelligence-to-add-something-to-your-calendar",
-      "title": "You Don't Need a Superintelligence to Add Something to Your Calendar",
-      "category": "AI",
-      "date": "September 2026",
-      "url": "/articles/you-dont-need-a-superintelligence-to-add-something-to-your-calendar.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 41,
-      "slug": "the-doom-headlines-are-about-a-different-machine",
-      "title": "The AI Doom Headlines Are About a Different Machine",
-      "category": "AI",
-      "date": "September 2026",
-      "url": "/articles/the-doom-headlines-are-about-a-different-machine.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 42,
-      "slug": "your-quotes-are-dying-in-the-follow-up",
-      "title": "Your Quotes Are Dying in the Follow-Up",
-      "category": "BUSINESS",
-      "date": "September 2026",
-      "url": "/articles/your-quotes-are-dying-in-the-follow-up.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 43,
-      "slug": "9-years-fighting-alongside-terrible-ivr-bots",
-      "title": "Nine Years Fighting Alongside Terrible IVR Bots",
-      "category": null,
-      "date": "September 2026",
-      "url": "/articles/9-years-fighting-alongside-terrible-ivr-bots.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 44,
-      "slug": "you-need-an-agent-strategy",
-      "title": "In 2007 You Needed a Mobile Strategy. In 2027 You Will Need an Agent Strategy.",
-      "category": "AI AGENTS",
-      "date": "September 2026",
-      "url": "/articles/you-need-an-agent-strategy.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 45,
-      "slug": "your-customers-can-smell-the-ai",
-      "title": "Your Customers Can Smell the AI. Keep It Behind the Counter.",
-      "category": "BUSINESS",
-      "date": "September 2026",
-      "url": "/articles/your-customers-can-smell-the-ai.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 46,
-      "slug": "ai-may-recommend-not-decide",
-      "title": "AI May Recommend. It Must Not Decide.",
-      "category": "AI AGENTS",
-      "date": "October 2026",
-      "url": "/articles/ai-may-recommend-not-decide.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 47,
-      "slug": "if-it-cant-run-the-economy-stop-calling-it-superintelligence",
-      "title": "If It Can't Run the Economy, Stop Calling It Superintelligence.",
-      "category": "AI",
-      "date": "October 2026",
-      "url": "/articles/if-it-cant-run-the-economy-stop-calling-it-superintelligence.html",
-      "unnumbered": false
-    },
-    {
-      "issue": null,
-      "slug": "forge-product-hunt-astra-challenge",
-      "title": "F.O.R.G.E. Is Live on Product Hunt",
-      "category": "LIVE NOW",
-      "date": "September 2026",
-      "url": "/articles/forge-product-hunt-astra-challenge.html",
-      "unnumbered": true
-    },
-    {
-      "issue": null,
-      "slug": "introducing-the-armorer",
-      "title": "Introducing The Armorer — AFS's First AI Agent",
-      "category": "LIVE NOW",
-      "date": "July 2026",
-      "url": "/articles/introducing-the-armorer.html",
-      "unnumbered": true
-    }
-  ]
+  {
+   "issue": 2,
+   "slug": "can-ai-answer-your-business-phone",
+   "title": "Can AI Answer Your Business Phone While You Sleep?",
+   "category": "AI",
+   "date": "July 2026",
+   "url": "/articles/can-ai-answer-your-business-phone.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 3,
+   "slug": "cloud-infrastructure-uncomplicated",
+   "title": "Cloud Infrastructure, Uncomplicated",
+   "category": "CLOUD",
+   "date": "July 2026",
+   "url": "/articles/cloud-infrastructure-uncomplicated.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 4,
+   "slug": "how-much-does-ai-receptionist-cost",
+   "title": "How Much Does an AI Receptionist Cost?",
+   "category": "AI",
+   "date": "July 2026",
+   "url": "/articles/how-much-does-ai-receptionist-cost.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 5,
+   "slug": "the-cost-of-doing-nothing",
+   "title": "The Cost of Doing Nothing",
+   "category": "BUSINESS",
+   "date": "July 2026",
+   "url": "/articles/the-cost-of-doing-nothing.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 6,
+   "slug": "future-of-ai-receptionists",
+   "title": "The Future of AI Receptionists",
+   "category": "AI",
+   "date": "July 2026",
+   "url": "/articles/future-of-ai-receptionists.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 7,
+   "slug": "small-business-automation-guide",
+   "title": "Small Business Automation Guide",
+   "category": "AUTOMATION",
+   "date": "July 2026",
+   "url": "/articles/small-business-automation-guide.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 8,
+   "slug": "why-cloud-security-matters",
+   "title": "Why Cloud Security Matters",
+   "category": "CLOUD",
+   "date": "July 2026",
+   "url": "/articles/why-cloud-security-matters.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 9,
+   "slug": "network-security-for-small-teams",
+   "title": "Network Security for Small Teams",
+   "category": "NETWORKING",
+   "date": "July 2026",
+   "url": "/articles/network-security-for-small-teams.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 10,
+   "slug": "ai-receptionist-vs-hiring",
+   "title": "AI Receptionist vs Hiring Another Employee",
+   "category": "AI",
+   "date": "July 2026",
+   "url": "/articles/ai-receptionist-vs-hiring.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 11,
+   "slug": "the-anatomy-of-a-phishing-email",
+   "title": "The Anatomy of a Phishing Email",
+   "category": "CYBERSECURITY",
+   "date": "August 2026",
+   "url": "/articles/the-anatomy-of-a-phishing-email.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 12,
+   "slug": "ai-for-hvac-companies",
+   "title": "Your HVAC Company Is Missing Calls This Summer",
+   "category": "AI",
+   "date": "August 2026",
+   "url": "/articles/ai-for-hvac-companies.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 13,
+   "slug": "the-29000-email",
+   "title": "The $29,000 Email: What the DNC Scam Teaches Every Business",
+   "category": "NEW",
+   "date": "August 2026",
+   "url": "/articles/the-29000-email.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 14,
+   "slug": "your-ai-makes-things-up",
+   "title": "Why Your AI Assistant Makes Things Up — and How RAG Fixes It",
+   "category": "AI",
+   "date": "August 2026",
+   "url": "/articles/your-ai-makes-things-up.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 15,
+   "slug": "ai-for-law-firms",
+   "title": "Your Law Firm Is Missing Calls — and Cases",
+   "category": "AI",
+   "date": "August 2026",
+   "url": "/articles/ai-for-law-firms.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 16,
+   "slug": "automation-arms-your-team",
+   "title": "Automation Isn't About Replacing People — It's About Arming Them",
+   "category": "AUTOMATION",
+   "date": "August 2026",
+   "url": "/articles/automation-arms-your-team.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 17,
+   "slug": "networking-ai-agents",
+   "title": "When Your AI Agents Start Talking to Each Other",
+   "category": "NETWORKING",
+   "date": "August 2026",
+   "url": "/articles/networking-ai-agents.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 18,
+   "slug": "ai-for-real-estate-agents",
+   "title": "Your Real Estate Business Is Missing Calls — and Listings",
+   "category": "REAL ESTATE",
+   "date": "August 2026",
+   "url": "/articles/ai-for-real-estate-agents.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 19,
+   "slug": "ai-for-doctors",
+   "title": "Doctors Don't Need a Better Receptionist — They Need a Better Revenue Cycle",
+   "category": "HEALTHCARE",
+   "date": "August 2026",
+   "url": "/articles/ai-for-doctors.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 20,
+   "slug": "your-construction-company-is-missing-calls",
+   "title": "Your Construction Company Is Missing Calls — and Bids",
+   "category": "CONSTRUCTION",
+   "date": "August 2026",
+   "url": "/articles/your-construction-company-is-missing-calls.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 21,
+   "slug": "your-auto-shop-is-missing-calls",
+   "title": "Your Auto Shop Is Missing the Calls That Pay the Bills",
+   "category": "AUTO REPAIR",
+   "date": "August 2026",
+   "url": "/articles/your-auto-shop-is-missing-calls.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 22,
+   "slug": "the-great-equalizer-small-business",
+   "title": "The Great Equalizer: Small Business Finally Has a Fighting Chance",
+   "category": "BUSINESS",
+   "date": "August 2026",
+   "url": "/articles/the-great-equalizer-small-business.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 23,
+   "slug": "your-plumbing-company-is-missing-calls",
+   "title": "Your Plumbing Company Is Missing the Calls That Pay the Bills",
+   "category": "PLUMBING",
+   "date": "August 2026",
+   "url": "/articles/your-plumbing-company-is-missing-calls.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 24,
+   "slug": "small-business-has-a-new-army",
+   "title": "Small Business Has a New Army — Don't Build a God Agent",
+   "category": "AI AGENTS",
+   "date": "August 2026",
+   "url": "/articles/small-business-has-a-new-army.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 25,
+   "slug": "we-found-a-leak-in-our-own-code",
+   "title": "We Found a Real Leak in Our Own Code — and Spent the Rest of the Day Locking the Door",
+   "category": "CYBERSECURITY",
+   "date": "August 2026",
+   "url": "/articles/we-found-a-leak-in-our-own-code.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 26,
+   "slug": "your-first-ai-employee",
+   "title": "How to Hire Your First AI Employee — Start With One Job, Not a God Agent",
+   "category": "AI AGENTS",
+   "date": "August 2026",
+   "url": "/articles/your-first-ai-employee.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 27,
+   "slug": "how-ai-pays-for-itself",
+   "title": "5 Ways AI Pays for Itself in 90 Days",
+   "category": "BUSINESS",
+   "date": "August 2026",
+   "url": "/articles/how-ai-pays-for-itself.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 28,
+   "slug": "your-dental-practice-is-missing-calls",
+   "title": "Your Dental Practice Is Missing the Calls That Pay for the Chair",
+   "category": "DENTAL",
+   "date": "August 2026",
+   "url": "/articles/your-dental-practice-is-missing-calls.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 29,
+   "slug": "your-ai-executive-assistant",
+   "title": "Meet the Enterprise Worker: Your AI Executive Assistant",
+   "category": "AI AGENTS",
+   "date": "August 2026",
+   "url": "/articles/your-ai-executive-assistant.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 30,
+   "slug": "your-ai-receptionist",
+   "title": "Meet the Enterprise Worker: Your AI Receptionist",
+   "category": "AI AGENTS",
+   "date": "August 2026",
+   "url": "/articles/your-ai-receptionist.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 31,
+   "slug": "your-ai-customer-support-specialist",
+   "title": "Meet the Enterprise Worker: Your AI Customer Support Specialist",
+   "category": "AI AGENTS",
+   "date": "August 2026",
+   "url": "/articles/your-ai-customer-support-specialist.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 32,
+   "slug": "the-age-of-agents-is-here",
+   "title": "The Age of Agents Is Here — Apple Is Selling the Hardware for It",
+   "category": "AI AGENTS",
+   "date": "August 2026",
+   "url": "/articles/the-age-of-agents-is-here.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 33,
+   "slug": "meet-the-enterprise-worker-your-ai-security-department",
+   "title": "Meet the Enterprise Worker: Your AI Security Department",
+   "category": "CYBERSECURITY",
+   "date": "August 2026",
+   "url": "/articles/meet-the-enterprise-worker-your-ai-security-department.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 34,
+   "slug": "meet-the-enterprise-worker-your-ai-finance-department",
+   "title": "Meet the Enterprise Worker: Your AI Finance Department",
+   "category": "BUSINESS",
+   "date": "August 2026",
+   "url": "/articles/meet-the-enterprise-worker-your-ai-finance-department.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 35,
+   "slug": "meet-the-enterprise-worker-your-ai-hr-department",
+   "title": "Meet the Enterprise Worker: Your AI HR Department",
+   "category": "BUSINESS",
+   "date": "August 2026",
+   "url": "/articles/meet-the-enterprise-worker-your-ai-hr-department.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 36,
+   "slug": "meet-the-enterprise-worker-your-ai-it-department",
+   "title": "Meet the Enterprise Worker: Your AI I.T. Department",
+   "category": "BUSINESS",
+   "date": "September 2026",
+   "url": "/articles/meet-the-enterprise-worker-your-ai-it-department.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 37,
+   "slug": "meet-the-enterprise-worker-your-ai-knowledge-base",
+   "title": "Meet the Enterprise Worker: Your AI Knowledge Base",
+   "category": "BUSINESS",
+   "date": "September 2026",
+   "url": "/articles/meet-the-enterprise-worker-your-ai-knowledge-base.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 38,
+   "slug": "you-had-enough-compute-to-run-a-business",
+   "title": "You Had Enough Compute to Run a Business Before Astra and Fable 5.1 Were Even Out",
+   "category": "AI",
+   "date": "September 2026",
+   "url": "/articles/you-had-enough-compute-to-run-a-business.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 39,
+   "slug": "meet-the-enterprise-worker-your-ai-research-department",
+   "title": "Meet the Enterprise Worker: Your AI Research Department",
+   "category": "BUSINESS",
+   "date": "September 2026",
+   "url": "/articles/meet-the-enterprise-worker-your-ai-research-department.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 40,
+   "slug": "you-dont-need-a-superintelligence-to-add-something-to-your-calendar",
+   "title": "You Don't Need a Superintelligence to Add Something to Your Calendar",
+   "category": "AI",
+   "date": "September 2026",
+   "url": "/articles/you-dont-need-a-superintelligence-to-add-something-to-your-calendar.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 41,
+   "slug": "the-doom-headlines-are-about-a-different-machine",
+   "title": "The AI Doom Headlines Are About a Different Machine",
+   "category": "AI",
+   "date": "September 2026",
+   "url": "/articles/the-doom-headlines-are-about-a-different-machine.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 42,
+   "slug": "your-quotes-are-dying-in-the-follow-up",
+   "title": "Your Quotes Are Dying in the Follow-Up",
+   "category": "BUSINESS",
+   "date": "September 2026",
+   "url": "/articles/your-quotes-are-dying-in-the-follow-up.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 43,
+   "slug": "9-years-fighting-alongside-terrible-ivr-bots",
+   "title": "Nine Years Fighting Alongside Terrible IVR Bots",
+   "category": null,
+   "date": "September 2026",
+   "url": "/articles/9-years-fighting-alongside-terrible-ivr-bots.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 44,
+   "slug": "you-need-an-agent-strategy",
+   "title": "In 2007 You Needed a Mobile Strategy. In 2027 You Will Need an Agent Strategy.",
+   "category": "AI AGENTS",
+   "date": "September 2026",
+   "url": "/articles/you-need-an-agent-strategy.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 45,
+   "slug": "your-customers-can-smell-the-ai",
+   "title": "Your Customers Can Smell the AI. Keep It Behind the Counter.",
+   "category": "BUSINESS",
+   "date": "September 2026",
+   "url": "/articles/your-customers-can-smell-the-ai.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 46,
+   "slug": "ai-may-recommend-not-decide",
+   "title": "AI May Recommend. It Must Not Decide.",
+   "category": "AI AGENTS",
+   "date": "October 2026",
+   "url": "/articles/ai-may-recommend-not-decide.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 47,
+   "slug": "if-it-cant-run-the-economy-stop-calling-it-superintelligence",
+   "title": "If It Can't Run the Economy, Stop Calling It Superintelligence.",
+   "category": "AI",
+   "date": "October 2026",
+   "url": "/articles/if-it-cant-run-the-economy-stop-calling-it-superintelligence.html",
+   "unnumbered": false
+  },
+  {
+   "issue": 48,
+   "slug": "self-policing-is-fine-without-teeth",
+   "title": "Self-Policing Is Fine. Without Teeth, It's Just a Press Release.",
+   "category": "AI",
+   "date": "October 2026",
+   "url": "/articles/self-policing-is-fine-without-teeth.html",
+   "unnumbered": false
+  },
+  {
+   "issue": null,
+   "slug": "forge-product-hunt-astra-challenge",
+   "title": "F.O.R.G.E. Is Live on Product Hunt",
+   "category": "LIVE NOW",
+   "date": "September 2026",
+   "url": "/articles/forge-product-hunt-astra-challenge.html",
+   "unnumbered": true
+  },
+  {
+   "issue": null,
+   "slug": "introducing-the-armorer",
+   "title": "Introducing The Armorer — AFS's First AI Agent",
+   "category": "LIVE NOW",
+   "date": "July 2026",
+   "url": "/articles/introducing-the-armorer.html",
+   "unnumbered": true
+  }
+ ]
 }
