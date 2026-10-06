@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 50,
+  "article_count": 51,
   "articles": [
     {
       "issue": 1,
@@ -436,6 +436,15 @@
       "category": "AI",
       "date": "October 2026",
       "url": "/articles/self-policing-is-fine-without-teeth.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 49,
+      "slug": "rent-an-ai-team-vs-agent-strategy",
+      "title": "You Can Rent an AI Team for the Price of Lunch. You Can't Rent the Judgment to Run It.",
+      "category": "AI AGENTS",
+      "date": "October 2026",
+      "url": "/articles/rent-an-ai-team-vs-agent-strategy.html",
       "unnumbered": false
     },
     {
