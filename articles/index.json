@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 51,
+  "article_count": 52,
   "articles": [
     {
       "issue": 1,
@@ -445,6 +445,15 @@
       "category": "AI AGENTS",
       "date": "October 2026",
       "url": "/articles/rent-an-ai-team-vs-agent-strategy.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 50,
+      "slug": "everyone-has-an-agent-nobody-has-a-strategy",
+      "title": "OpenAI Just Handed Everyone an Agent. It Didn't Hand Anyone a Strategy.",
+      "category": "AI AGENTS",
+      "date": "October 2026",
+      "url": "/articles/everyone-has-an-agent-nobody-has-a-strategy.html",
       "unnumbered": false
     },
     {
