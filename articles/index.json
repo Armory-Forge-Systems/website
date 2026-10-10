@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 52,
+  "article_count": 53,
   "articles": [
     {
       "issue": 1,
@@ -454,6 +454,15 @@
       "category": "AI AGENTS",
       "date": "October 2026",
       "url": "/articles/everyone-has-an-agent-nobody-has-a-strategy.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 51,
+      "slug": "the-government-built-an-agent-that-says-no",
+      "title": "The Government Built an Agent That Says No. That's the Feature.",
+      "category": "AI AGENTS",
+      "date": "October 2026",
+      "url": "/articles/the-government-built-an-agent-that-says-no.html",
       "unnumbered": false
     },
     {
