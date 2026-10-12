@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 53,
+  "article_count": 54,
   "articles": [
     {
       "issue": 1,
@@ -463,6 +463,15 @@
       "category": "AI AGENTS",
       "date": "October 2026",
       "url": "/articles/the-government-built-an-agent-that-says-no.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 52,
+      "slug": "objectives-not-instructions",
+      "title": "Google Just Called It a Co-Worker. Now Somebody Has To Manage It.",
+      "category": "AI AGENTS",
+      "date": "October 2026",
+      "url": "/articles/objectives-not-instructions.html",
       "unnumbered": false
     },
     {
