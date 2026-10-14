@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 54,
+  "article_count": 55,
   "articles": [
     {
       "issue": 1,
@@ -472,6 +472,15 @@
       "category": "AI AGENTS",
       "date": "October 2026",
       "url": "/articles/objectives-not-instructions.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 53,
+      "slug": "if-your-agent-can-see-the-guardrail",
+      "title": "If Your Agent Can Read the Guardrail, It Can Reason Around It.",
+      "category": "CYBERSECURITY",
+      "date": "October 2026",
+      "url": "/articles/if-your-agent-can-see-the-guardrail.html",
       "unnumbered": false
     },
     {
