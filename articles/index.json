@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 56,
+  "article_count": 55,
   "articles": [
     {
       "issue": 1,
@@ -481,15 +481,6 @@
       "category": "CYBERSECURITY",
       "date": "October 2026",
       "url": "/articles/if-your-agent-can-see-the-guardrail.html",
-      "unnumbered": false
-    },
-    {
-      "issue": 54,
-      "slug": "fifty-dollars-a-breach",
-      "title": "$50 a Breach: The Attacker Got a Workforce Before You Did.",
-      "category": "CYBERSECURITY",
-      "date": "October 2026",
-      "url": "/articles/fifty-dollars-a-breach.html",
       "unnumbered": false
     },
     {
