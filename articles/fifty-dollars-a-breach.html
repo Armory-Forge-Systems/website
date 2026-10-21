@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <title>$50 a Breach: The Attacker Got a Workforce Before You Did. &mdash; Signet Article #054 | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="One hacker used AI agents to break into more than 100 companies at roughly $50 a breach. The economics of attack changed &mdash; and your security budget was priced for a human attacker.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/signet.css">
+</head>
+
+<body>
+<!-- SVG filters for forge effects -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-heat-haze" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<!-- =========================
+    Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1 class="forge-text">Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../signet.html" class="active">The Signet</a>
+        <a href="../armorer.html">The Armorer</a>
+        <a href="../index.html#about">About</a>
+        <a href="../armorer.html">Contact</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Article Hero
+========================= -->
+<section class="article-hero">
+    <div class="hero-content">
+        <div class="article-meta-bar">
+            <span class="category">Cybersecurity</span>
+            <span class="date">October 2026</span>
+        </div>
+        <h1>$50 a Breach: The Attacker Got a Workforce Before You Did. &mdash; Signet Article #054</h1>
+    </div>
+</section>
+
+<!-- =========================
+    Article Hero Image
+========================= -->
+<div class="article-hero-image">
+    <img src="../assets/images/fifty-dollars-a-breach-hero.png"
+         alt="A lone operator directing a fleet of AI agents breaking into small business websites, with the cost of each breach marked at fifty dollars">
+</div>
+
+<!-- =========================
+    Article Body
+========================= -->
+<article class="article-body">
+
+<article class="article-body">
+
+
+
+<article class="article-body">
+
+
+
+<p class="forge-note"><em>The Forge &mdash; Armory Forge Systems &mdash; Signet Article #054</em></p>
+
+<p>On Monday, Reuters published a story that should end a comfortable assumption a lot of small businesses have been carrying around: that they're too small to be worth a real attack.</p>
+
+<p>A single Chinese-speaking hacker broke into websites belonging to more than 100 companies. He didn't do most of the work. He handed it to AI agents and let them run &mdash; roughly 23 hours of autonomous probing per successful break-in, across more than 1,200 sites attempted since late September, in the US, Canada, Australia and Japan.</p>
+
+<p>The researcher who watched it happen, Snorre Fagerland of the security firm NorForge, put the token cost at roughly <strong>fifty dollars per successful intrusion.</strong></p>
+
+<p>Sit with that number. Fifty dollars. Less than a business lunch. Less than two hours of the person you'd hire to notice it happening.</p>
+
+<h2>What actually changed is the labor math.</h2>
+
+<p>Automated scanning is not new. Botnets are not new. Vulnerability scanners have been chewing through the internet since before most of your employees had smartphones.</p>
+
+<p>What's new is the judgment.</p>
+
+<p>A scanner finds bugs it already knows about. It does not reason about your login flow, notice that a leaked credential opens an admin panel, try four approaches when the front door is locked, then come back eight hours later and try a fifth. An agent does all of that, unsupervised, for as long as you let it run.</p>
+
+<p>That's the whole shift. One operator now commands the throughput of a crew &mdash; with no crew. No payroll. No timezone. No co-conspirator who might flip. The marginal cost of <em>trying</em> collapsed, which means the marginal cost of <em>trying you</em> collapsed with it.</p>
+
+<p>And here's the part that should genuinely reframe how you think about this: it wasn't frontier magic. Per NorForge's analysis, the agent workers in this campaign carried labels suggesting a Claude Code harness driving DeepSeek's V4.1 Flash model &mdash; a cheap model inside a competent harness, pointed at targets for hours.</p>
+
+<p>Nobody built a superweapon. Somebody built a workforce out of commodity parts and pointed it at people who weren't watching.</p>
+
+<h2>Even the attacker left his own doors open.</h2>
+
+<p>Fagerland didn't find this campaign by hacking back. He found it by noticing that roughly two dozen instances of Cairn &mdash; an open-source multi-agent platform the attacker was using to drive his fleet &mdash; were sitting on the open internet with no authentication.</p>
+
+<p>He watched over the attacker's shoulder for about two weeks. Then he ran a secrets scanner across the exposed panel data and found hundreds of credentials. <strong>Eleven percent of them were verified as valid.</strong></p>
+
+<p>Read that again, because it cuts in both directions. The thing that exposed this entire campaign was a misconfiguration &mdash; an admin panel nobody locked. And the thing that will expose <em>your</em> business is almost certainly the same class of mistake: a panel nobody locked, a token committed to a repo, a debug endpoint someone stood up in 2021 and forgot.</p>
+
+<p>You are running tools you have not audited, and every one of them is a door.</p>
+
+<h2>You're not too small to be targeted. You're cheap enough.</h2>
+
+<p>Reuters named three victims: Deere, SharkNinja and Cummins. More than a hundred companies were hit. Only three got named.</p>
+
+<p>The rest were e-commerce sites &mdash; the kind of business that assumes it doesn't have anything worth stealing, or that an attacker would go after someone bigger. The agent doesn't check your revenue before it starts. It checks whether the login form gives in after 23 hours.</p>
+
+<p>Your size was never the protection. Your <strong>obscurity</strong> was. And a fleet running 1,200 attempts for the price of a used laptop just deleted obscurity as a defense.</p>
+
+<h2>Your security budget was priced for a different attacker.</h2>
+
+<p>Think about the attacker your current security posture was built against: a human. Expensive to run, limited hours, physically one place at a time, and &mdash; critically &mdash; selective. A human attacker picks targets with a reason. Someone big, someone careless, someone with something specific worth taking.</p>
+
+<p>So you defended accordingly. A firewall. An annual penetration test. A monthly review. A person who reads the alerts on Monday morning, if the alerts are working, if anyone set them up.</p>
+
+<p>Now the attacker is a machine that costs fifty dollars a try, works 23-hour loops, runs four countries at once, and doesn't need a reason to pick you. It needs a reason to <em>skip</em> you, and it doesn't have one.</p>
+
+<p>You cannot close that gap by buying another dashboard. You close it by putting a machine on duty too.</p>
+
+<h2>Defense is a workforce decision now.</h2>
+
+<p>Look at the four things that would have changed the outcome in this campaign. None of them are exotic:</p>
+
+<ul>
+
+<li><strong>Patch latency.</strong> A known bug fixed in 48 hours is housekeeping. The same bug open eight months is an entry point. The difference isn't skill &mdash; it's whether anyone owns the clock.</li>
+
+<li><strong>Credential hygiene.</strong> Hundreds of secrets in one exposed panel, 11% valid. That's not an attacker's skill; that's credential sprawl sitting there measurably, waiting for someone to look.</li>
+
+<li><strong>Exposed control planes.</strong> Every tool you deploy is a new door. The attacker in this story got caught because one of his doors was open. Yours probably are too, and you don't have a researcher scanning for them.</li>
+
+<li><strong>Somebody awake at 3 AM.</strong> An agent that reads a log, correlates it, quarantines a host, and &mdash; when it can't decide &mdash; pages a human with a specific question instead of a wall of alerts.</li>
+
+</ul>
+
+<p>That list isn't a shopping list. It's a staffing plan.</p>
+
+<p>And that's the actual decision in front of every small business this month. Not "which security product," but <strong>which of that work does a machine own, in what order, with what authority to act on its own, and who gets woken up when it can't decide.</strong></p>
+
+<p>Anyone can automate a scanner. The strategy is deciding what your agents own at 3 AM.</p>
+
+<h2>The honest part.</h2>
+
+<p>Reuters could not confirm how much data was actually taken. Deere says it remediated with no sign sensitive information was accessed. SharkNinja says a standalone support site was contained. Cummins says it's investigating a vendor site. Cairn's creator says the platform was never a hacking tool &mdash; and both things can be true at once.</p>
+
+<p>The tool doesn't matter. The operator, the harness, and the economics mattered. A cheap model in a good harness beat a hundred companies' worth of "we're too small for this."</p>
+
+<p>You are not too small. You are priced.</p>
+
+<p>The attacker in this story didn't buy a superweapon. He built a workforce, and he pointed it at people who hadn't decided who was on duty.</p>
+
+<p>Decide. Then build.</p>
+
+<p><em>You imagine. We build. To the victor, the spoils.</em></p>
+
+<p>Armory Forge Systems decides which defensive work your business should hand to a machine &mdash; and then builds the workforce that owns it: patching, watching, quarantining, and waking you up only when a human decision is actually required. If nobody is on duty at 3 AM, let's fix that.</p>
+
+
+
+</article>
+
+<!-- =========================
+    The Signet Certification
+========================= -->
+<div class="signet-approval hidden">
+
+<section class="signet-certification">
+    <div class="seal-line"></div>
+
+    <div class="seal-header">
+        <span class="seal-title">SEALED BY THE SIGNET</span>
+        <span class="seal-number">Issue #054</span>
+    </div>
+
+    <div class="seal-body">
+        <img src="../assets/images/signet-seal.png" alt="The Signet" class="seal-image">
+        <div class="seal-copy">
+            <blockquote>Every system we deliver is forged with intent, tested with rigor, and sealed with our mark.</blockquote>
+            <div class="seal-author">
+                <strong>Armory Forge Systems</strong>
+                <span>You imagine. We build. To the victor, the spoils.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="seal-line seal-line-bottom"></div>
+</section>
+
+<div class="seal-glow"></div>
+
+<!-- =========================
+    Article CTA
+========================= -->
+<div class="article-cta">
+    <h3>Ready to forge your next system?</h3>
+    <p>Whether you're deploying AI agents, automating workflows, or modernizing infrastructure, we're ready to help.</p>
+    <a href="../armorer.html" class="btn-primary cta-button">💬 Chat with The Armorer</a>
+    <a href="mailto:info@armoryforgesystems.com" class="btn-primary cta-button">Schedule a Discovery Call</a>
+    <a href="../signet.html" class="cta-secondary">Read another Signet article →</a>
+</div>
+
+</div>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="../index.html#hero">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../index.html#about">About</a>
+            <a href="../armorer.html">Contact</a>
+            <a href="../signet.html">The Signet</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="../js/forge-effects.js"></script>
+<script src="../js/app.js"></script>
+<script data-goatcounter="https://armoryforgesystems.goatcounter.com/count"
+ async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
