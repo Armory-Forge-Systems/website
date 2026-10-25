@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 56,
+  "article_count": 57,
   "articles": [
     {
       "issue": 1,
@@ -490,6 +490,15 @@
       "category": "CYBERSECURITY",
       "date": "October 2026",
       "url": "/articles/fifty-dollars-a-breach.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 55,
+      "slug": "the-first-agent-election",
+      "title": "The First Agent Election: Campaigns Are Running the First Real AI Workforce",
+      "category": "AI AGENTS",
+      "date": "October 2026",
+      "url": "/articles/the-first-agent-election.html",
       "unnumbered": false
     },
     {
