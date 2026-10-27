@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <title>The Leak Wasn't the AI. It Was the Prompt. &mdash; Signet Article #056 | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="A campaign published the instruction it wrote for a machine. That's not an AI failure &mdash; it's a boundary failure, and every business is holding the same document one paste away from production.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/signet.css">
+</head>
+
+<body>
+<!-- SVG filters for forge effects -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-heat-haze" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<!-- =========================
+    Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1 class="forge-text">Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../signet.html" class="active">The Signet</a>
+        <a href="../armorer.html">The Armorer</a>
+        <a href="../index.html#about">About</a>
+        <a href="../armorer.html">Contact</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Article Hero
+========================= -->
+<section class="article-hero">
+    <div class="hero-content">
+        <div class="article-meta-bar">
+            <span class="category">Artificial Intelligence</span>
+            <span class="date">October 2026</span>
+        </div>
+        <h1>The Leak Wasn't the AI. It Was the Prompt. &mdash; Signet Article #056</h1>
+    </div>
+</section>
+
+<!-- =========================
+    Article Hero Image
+========================= -->
+<div class="article-hero-image">
+    <img src="../assets/images/the-leak-was-the-prompt-hero.png"
+         alt="Two screens &mdash; a polished public campaign page on one, confidential internal messaging instructions on the other">
+</div>
+
+<!-- =========================
+    Article Body
+========================= -->
+<article class="article-body">
+
+<article class="article-body">
+
+
+
+<article class="article-body">
+
+
+
+<article class="article-body">
+
+
+
+<p class="forge-note"><em>The Forge &mdash; Armory Forge Systems &mdash; Signet Article #056</em></p>
+
+<p>Somebody on a congressional campaign in Minnesota wrote a messaging instruction, handed it to a machine, got the copy back &mdash; and then published the instruction too.</p>
+
+<p>It sat on the campaign website, in a section literally called the Playbook, directly beneath a paragraph about affordability, accountability and safe communities. Right after the sentence about representatives leading with common sense, the page abruptly added:</p>
+
+<p><em>The President is not popular, so all messaging should be focused on local politics and needs.</em></p>
+
+<p>A screenshot went up Tuesday afternoon. The line was gone within hours. The campaign hasn't explained how it got there, and there's no evidence any AI agent was involved at all.</p>
+
+<p>Here's what's interesting: everybody read that as "AI messed up." It isn't. <strong>That's not a hallucination. That's a strategy document.</strong></p>
+
+<h2>The line was good advice.</h2>
+
+<p>Read it again without the politics. Distance from the unpopular figure at the top, run on local issues, stay close to what voters actually feel on their street. That is the advice a competent consultant gives in every cycle, to every candidate, in both parties. It's correct. It's just <em>true in writing</em>, which is the one place nobody wants it.</p>
+
+<p>The machine didn't invent it. The machine didn't leak it either. A human being took a paragraph written <strong>for</strong> a model and pasted it into a content management system next to the paragraph the model wrote <strong>for</strong> voters. Nobody checked the boundary, because on a busy campaign &mdash; like in a busy business &mdash; nobody owns that boundary.</p>
+
+<p>That's the whole failure. Not intelligence. Hygiene.</p>
+
+<h2>Every business is carrying the same document.</h2>
+
+<p>You have prompts. Maybe you call them something else &mdash; the instructions in your chatbot, the brief you paste into ChatGPT before asking for a proposal, the system message in the assistant your team built. Whatever you call them, here's what's actually inside them:</p>
+
+<ul>
+
+<li><strong>Positioning.</strong> Who you're for, who you're against, and the customer segment you're quietly not chasing anymore.</li>
+
+<li><strong>Pricing floors.</strong> "Don't go below X without approval." "Anchor high on enterprise, discount on the second call."</li>
+
+<li><strong>What you're afraid of.</strong> The competitor you keep mentioning, the weakness you keep working around, the objection you know you lose on.</li>
+
+<li><strong>Judgments about people.</strong> Which clients are a pain, which vendors are unreliable, which employee's work needs a second read.</li>
+
+</ul>
+
+<p>That is not scratch material. That's the most sensitive operational document in your company &mdash; the thing a competitor would pay for, the thing opposing counsel would subpoena, the thing your best client would be wounded to read.</p>
+
+<p>And where does it live? A chat window. A browser tab someone closed. A note in someone's phone. If you're sophisticated, maybe a shared doc nobody versioned.</p>
+
+<p><strong>If your prompts were published tomorrow, what would they reveal?</strong> Sit with the honest answer for a second, because that's your actual exposure &mdash; not the marketing copy.</p>
+
+<h2>Instruction and content are two different objects.</h2>
+
+<p>Software learned this decades ago. Comments in code are not code. Config is not the application. Drafts are not production. We built entire disciplines &mdash; code review, staging environments, release gates &mdash; around the simple rule that <strong>the stuff you use to make a thing is not the thing.</strong></p>
+
+<p>Content operations never needed that rule, because the instruction used to be a conversation in a conference room and the content was a Word doc. Now the instruction is text and the content is text, sitting in the same clipboard, one ctrl-V apart.</p>
+
+<p>So make them different objects, deliberately:</p>
+
+<ul>
+
+<li><strong>Keep prompts out of your CMS.</strong> Paste output, never the brief. If a tool can't separate them for you, do it by hand and treat the clipboard as a hazard.</li>
+
+<li><strong>Version your prompts like code.</strong> They change, they get reviewed, they have authors, and they encode decisions. If you can't answer "what did this instruction say three months ago," you don't have a record &mdash; you have a rumor.</li>
+
+<li><strong>Classify them.</strong> "Internal only, do not publish" is a real classification. Most companies have never applied it to a single prompt.</li>
+
+<li><strong>Review the output, not the prompt.</strong> The human gate belongs at the end: a person reads what ships. That's the one control that would have caught this, and it costs about ninety seconds.</li>
+
+<li><strong>Write them like they'll be read out loud.</strong> Not paranoid &mdash; professional. If a sentence in your prompt would embarrass you on a billboard, it's either badly written or it's a decision that shouldn't be hidden in a prompt in the first place.</li>
+
+</ul>
+
+<h2>The uncomfortable part</h2>
+
+<p>The campaign's mistake wasn't using AI. Everyone uses AI. The mistake was treating the instruction as disposable while treating the output as precious &mdash; when in reality the instruction is the more valuable document, and the one with more ways to escape.</p>
+
+<p>And notice how it escaped: not through a breach, not through a rogue agent, not through anything you'd put on a security slide. Through a person doing three things at once, pasting too much, and hitting publish.</p>
+
+<p>Which means the fix isn't a model. It's ownership and a gate.</p>
+
+<p><strong>Anyone can paste a prompt into a tool. The strategy is deciding what your instructions are allowed to touch &mdash; and who reviews what comes out.</strong></p>
+
+<p>Nine out of ten AI problems that reach the news are not intelligence failures. They're boundary failures: something internal crossed into something public because no one was assigned to watch the line.</p>
+
+<p>So assign it. Decide who owns your prompts, where they're allowed to live, and what has to be true before anything ships. Then build the gate that makes the answer automatic instead of heroic.</p>
+
+<p>The Playbook section is a funny story because it was true. Make sure yours stays private.</p>
+
+<p><em>You imagine. We build. To the victor, the spoils.</em></p>
+
+<p>Armory Forge Systems decides which work your business should hand to a machine &mdash; and then builds the workforce that owns it, boundaries included: who owns the prompts, where they're allowed to live, and what has to be true before anything ships.</p>
+
+
+
+</article>
+
+<!-- =========================
+    The Signet Certification
+========================= -->
+<div class="signet-approval hidden">
+
+<section class="signet-certification">
+    <div class="seal-line"></div>
+
+    <div class="seal-header">
+        <span class="seal-title">SEALED BY THE SIGNET</span>
+        <span class="seal-number">Issue #056</span>
+    </div>
+
+    <div class="seal-body">
+        <img src="../assets/images/signet-seal.png" alt="The Signet" class="seal-image">
+        <div class="seal-copy">
+            <blockquote>Every system we deliver is forged with intent, tested with rigor, and sealed with our mark.</blockquote>
+            <div class="seal-author">
+                <strong>Armory Forge Systems</strong>
+                <span>You imagine. We build. To the victor, the spoils.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="seal-line seal-line-bottom"></div>
+</section>
+
+<div class="seal-glow"></div>
+
+<!-- =========================
+    Article CTA
+========================= -->
+<div class="article-cta">
+    <h3>Ready to forge your next system?</h3>
+    <p>Whether you're deploying AI agents, automating workflows, or modernizing infrastructure, we're ready to help.</p>
+    <a href="../armorer.html" class="btn-primary cta-button">💬 Chat with The Armorer</a>
+    <a href="mailto:info@armoryforgesystems.com" class="btn-primary cta-button">Schedule a Discovery Call</a>
+    <a href="../signet.html" class="cta-secondary">Read another Signet article →</a>
+</div>
+
+</div>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="../index.html#hero">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../index.html#about">About</a>
+            <a href="../armorer.html">Contact</a>
+            <a href="../signet.html">The Signet</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="../js/forge-effects.js"></script>
+<script src="../js/app.js"></script>
+<script data-goatcounter="https://armoryforgesystems.goatcounter.com/count"
+ async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

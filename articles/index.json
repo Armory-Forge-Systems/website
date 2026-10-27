@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 57,
+  "article_count": 58,
   "articles": [
     {
       "issue": 1,
@@ -499,6 +499,15 @@
       "category": "AI AGENTS",
       "date": "October 2026",
       "url": "/articles/the-first-agent-election.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 56,
+      "slug": "the-leak-was-the-prompt",
+      "title": "The Leak Wasn't the AI. It Was the Prompt.",
+      "category": "AI",
+      "date": "October 2026",
+      "url": "/articles/the-leak-was-the-prompt.html",
       "unnumbered": false
     },
     {
