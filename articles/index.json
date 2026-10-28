@@ -513,8 +513,8 @@
     {
       "issue": 57,
       "slug": "the-agent-paradox",
-      "title": "The Agent Paradox: When AI Saves You So Much Time You Run Out of Time",
-      "category": "AI",
+      "title": "The Agent Paradox: When AI Saves You So Much Time You Run Out of Time.",
+      "category": null,
       "date": "October 2026",
       "url": "/articles/the-agent-paradox.html",
       "unnumbered": false
