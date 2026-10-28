@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 58,
+  "article_count": 59,
   "articles": [
     {
       "issue": 1,
@@ -508,6 +508,15 @@
       "category": "AI",
       "date": "October 2026",
       "url": "/articles/the-leak-was-the-prompt.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 57,
+      "slug": "the-agent-paradox",
+      "title": "The Agent Paradox: When AI Saves You So Much Time You Run Out of Time",
+      "category": "AI",
+      "date": "October 2026",
+      "url": "/articles/the-agent-paradox.html",
       "unnumbered": false
     },
     {
