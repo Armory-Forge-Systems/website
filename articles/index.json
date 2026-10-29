@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 59,
+  "article_count": 60,
   "articles": [
     {
       "issue": 1,
@@ -536,6 +536,15 @@
       "date": "July 2026",
       "url": "/articles/introducing-the-armorer.html",
       "unnumbered": true
+    },
+    {
+      "issue": 58,
+      "slug": "parallel-employment",
+      "title": "Parallel Employment: The End of the One-Human, One-Job Economy.",
+      "category": "Business",
+      "date": "October 2026",
+      "url": "/articles/parallel-employment.html",
+      "unnumbered": false
     }
   ]
 }
