@@ -520,6 +520,15 @@
       "unnumbered": false
     },
     {
+      "issue": 58,
+      "slug": "parallel-employment",
+      "title": "Parallel Employment: The End of the One-Human, One-Job Economy.",
+      "category": null,
+      "date": "October 2026",
+      "url": "/articles/parallel-employment.html",
+      "unnumbered": false
+    },
+    {
       "issue": null,
       "slug": "forge-product-hunt-astra-challenge",
       "title": "F.O.R.G.E. Is Live on Product Hunt",
@@ -536,15 +545,6 @@
       "date": "July 2026",
       "url": "/articles/introducing-the-armorer.html",
       "unnumbered": true
-    },
-    {
-      "issue": 58,
-      "slug": "parallel-employment",
-      "title": "Parallel Employment: The End of the One-Human, One-Job Economy.",
-      "category": "Business",
-      "date": "October 2026",
-      "url": "/articles/parallel-employment.html",
-      "unnumbered": false
     }
   ]
 }
