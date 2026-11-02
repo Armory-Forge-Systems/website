@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 60,
+  "article_count": 61,
   "articles": [
     {
       "issue": 1,
@@ -526,6 +526,15 @@
       "category": null,
       "date": "October 2026",
       "url": "/articles/parallel-employment.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 59,
+      "slug": "go-vote-future-of-ai-policy",
+      "title": "Go vote: The future of AI policy is on the ballot",
+      "category": null,
+      "date": "November 2026",
+      "url": "/articles/go-vote-future-of-ai-policy.html",
       "unnumbered": false
     },
     {
