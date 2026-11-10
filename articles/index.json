@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 61,
+  "article_count": 62,
   "articles": [
     {
       "issue": 1,
@@ -535,6 +535,15 @@
       "category": null,
       "date": "November 2026",
       "url": "/articles/go-vote-future-of-ai-policy.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 60,
+      "slug": "buy-a-department-not-an-automation",
+      "title": "Your competitor didn't buy 40 automations. They bought a department.",
+      "category": "Artificial Intelligence",
+      "date": "November 2026",
+      "url": "/articles/buy-a-department-not-an-automation.html",
       "unnumbered": false
     },
     {
