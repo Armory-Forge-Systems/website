@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+    <title>The Eve of a Cybersecurity Emergency &mdash; Signet Article #061 | The Signet | Armory Forge Systems</title>
+    <meta name="description" content="The FBI says agentic attacks now go from targeting to privileged access in under three hours. What the ARTEX framework and the ConnectWise compromise mean for small business security.">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/signet.css">
+</head>
+
+<body>
+<!-- SVG filters for forge effects -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <filter id="forge-heat-haze" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="forge-metal-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" seed="7" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+</svg>
+
+<!-- =========================
+    Header
+========================= -->
+<header>
+    <div class="header-top">
+        <div class="branding">
+            <h1 class="forge-text">Armory Forge Systems</h1>
+            <p>You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav>
+        <a href="../index.html#hero">Home</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../pricing.html">Pricing</a>
+        <a href="../signet.html" class="active">The Signet</a>
+        <a href="../armorer.html">The Armorer</a>
+        <a href="../index.html#about">About</a>
+        <a href="../armorer.html">Contact</a>
+    </nav>
+</header>
+
+<!-- =========================
+    Article Hero
+========================= -->
+<section class="article-hero">
+    <div class="hero-content">
+        <div class="article-meta-bar">
+            <span class="category">Cybersecurity</span>
+            <span class="date">November 2026</span>
+        </div>
+        <h1>The Eve of a Cybersecurity Emergency &mdash; Signet Article #061</h1>
+    </div>
+</section>
+
+<!-- =========================
+    Article Hero Image
+========================= -->
+<div class="article-hero-image">
+    <img src="../assets/images/the-eve-of-a-cyber-emergency-hero.png"
+         alt="A cyborg figure facing a night city skyline under red alert, with the headline The Eve of a Cybersecurity Emergency">
+</div>
+
+<!-- =========================
+    Article Body
+========================= -->
+<article class="article-body">
+
+
+
+<p class="forge-note"><em>The Forge &mdash; Armory Forge Systems &mdash; Signet Article #061</em></p>
+
+<p>On 23 October 2026, Japan's ruling party handed its prime minister a document about cyberattacks. It called the previous few weeks a crisis serious enough to threaten national security, and then it used a phrase worth pausing on.</p>
+
+<p><strong>"The eve of a cyber emergency."</strong></p>
+
+<p>Three weeks later, the FBI published a number that explains why.</p>
+
+<p>In confirmed intrusions, the time from initial targeting to privileged access was <strong>under three hours</strong>.</p>
+
+<p>Not three weeks. Not three days. Three hours &mdash; while you were in a meeting, or asleep.</p>
+
+<p>The FBI's advisory, released on 13 November, is about a piece of open-source software most business owners have never heard of. It is called ARTEX, and it does exactly what a penetration tester does, except nobody asked it to.</p>
+
+<h2>What ARTEX actually is</h2>
+
+<p>ARTEX is an open-source, large-language-model-driven penetration testing framework. Microsoft describes it as a multi-agent system written in Go with a Next.js front end that can drive any AI model: you describe an objective, and its agents run the penetration test &mdash; reconnaissance, initial access, privilege escalation, data exfiltration &mdash; accumulating discovered assets and weaknesses into a graph as they go, all "with little needed human interaction."</p>
+
+<p>The interface defaults to English but switches to Korean, Mandarin, Spanish, or Japanese.</p>
+
+<p>It was built to be a security tool. The FBI says malicious actors have been using it since at least August 2026 against financial services, government, technology, defense, semiconductors, energy, healthcare, manufacturing, telecommunications, and legal organisations. Microsoft, in its own analysis on 21 October, ties the framework's use in the largest of those campaigns to Storm-0940, a China-state-aligned actor active since 2021.</p>
+
+<h2>The part that should make a small business sit up</h2>
+
+<p>The FBI advisory names two campaigns. One stole personal information on roughly 67,000 people from South Korean financial institutions.</p>
+
+<p>The second is the one that matters if you are reading this in the United States, because it did not attack companies. It attacked a vendor those companies had already trusted.</p>
+
+<p>On 15 October, an actor used compromised application credentials belonging to ConnectWise Cloud Backup &mdash; formerly SkyKick &mdash; to authenticate into customers' Microsoft 365 environments. ConnectWise published an initial advisory on 16 October and suspended the service on 17 October, disabling six other application identities at the same time. The FBI and Microsoft both put the downstream reach at more than 2,250 Microsoft 365 tenants.</p>
+
+<p>Here is the detail worth reading twice. Most of the businesses caught in that sweep never bought anything from ConnectWise. They bought IT support from a managed service provider, and that provider connected a backup tool to their Microsoft 365 tenant on their behalf. The consent grant did its job. It just kept doing it long after anyone remembered it existed. The attacker's list included tenants with no active subscription at all &mdash; companies that had changed providers or cancelled years earlier, still reachable through a permission nobody revoked.</p>
+
+<p>And this is the thing an agent does that a human cannot. Acting as the backup application, it requested one app-only Microsoft Graph token per tenant, walking through consenting tenants in strictly ascending ID order, one to six minutes apart. Before that, between 10 and 14 October, the same infrastructure had run an automated password spray against 327 accounts across eight organisations: more than 151,000 failed logon attempts, peaking at 2,900 per minute, with more than 111,000 of them in a single day.</p>
+
+<p>None of that spray succeeded. It didn't need to. It was mapping the terrain, and four days later a stolen credential walked in the front door while every alarm that depends on a bad password stayed silent.</p>
+
+<h2>There was no patch to install</h2>
+
+<p>The instinct after a story like this is to ask which update closes it. There wasn't one. The FBI's advisory cites no CVEs. The framework exploited things that were simply there: unsigned SAML assertions, hardcoded passwords, unrotated keys &mdash; old weaknesses on overlooked cloud, identity, and Active Directory surfaces.</p>
+
+<p>So the entire defence, as the FBI frames it, is inventory and attention. Review every Microsoft 365 tenant where the affected applications are, or ever were, installed or authorised, even if the integration is no longer in use. Search by application ID rather than display name. Review successful and failed service-principal sign-ins separately, and do not limit the review to the published IP addresses. Watch for credential additions, privilege assignments, and unusual app-only activity. And do not delete the enterprise application as a first response &mdash; preserve the configuration and the evidence first.</p>
+
+<p>Read that list again. Every item is an act of ongoing stewardship. There is no product you can buy that performs it once and is finished.</p>
+
+<h2>And it is not contained</h2>
+
+<p>After public reporting in October 2026, the original developer removed the ARTEX repository from GitHub. The FBI's assessment is that this changed almost nothing. The framework continues through community forks, localised variations, archived copies, and a commercial version called ARTEX PRO.</p>
+
+<p>You cannot take the tool away. You can only get better at noticing what it does, faster than it does it.</p>
+
+<h2>Meanwhile, a country went into emergency</h2>
+
+<p>Japan had already reached that conclusion from the other direction. In the weeks before the FBI's advisory, more than 600 corporate cyber incidents were reported there &mdash; already past the total for all of 2025, with a quarter of the year left. The ruling party's recommendations warned specifically about "AI cyber saturation attacks," in which AI identifies vulnerabilities and launches attacks simultaneously.</p>
+
+<p>Prime Minister Sanae Takaichi convened her cabinet on 26 October and ordered emergency measures drawn up within a week. Part of the response is legal: Japan's active cyber defence law, in force since 1 October, lets the government, police, and Self-Defence Forces infiltrate and neutralise an attacker's systems. But the operational half is more instructive for anyone running a business. A specialist strike team. AI deployed to hunt vulnerabilities. A public-private rescue team for companies already breached, an advisory unit for companies about to be, and free cybersecurity consultation for smaller firms.</p>
+
+<p>That is an org chart, not a product list. Japan did not buy its way out of this. It built departments &mdash; offense, intelligence, response, advisory &mdash; and pointed AI at all of them.</p>
+
+<p>The former digital minister who drafted those recommendations, Masaaki Taira, put it in seven words: <em>"Structurally, it has become AI versus humans."</em></p>
+
+<h2>The question that decides whether you get hit</h2>
+
+<p>Two honest questions, and neither one is about tools.</p>
+
+<p>First: who owns your consent grants? Not who set them up &mdash; who is responsible, this month, for knowing which applications can reach into your Microsoft 365 tenant, what they can touch, and whether they should still be there. If the answer is "our IT guy," ask which IT guy, and ask what the answer would have been on 15 October.</p>
+
+<p>Second: how long would it take anyone to notice? Microsoft's own observation about this campaign is that the speed allows "very little time for Defenders to respond to those alerts." An attacker with under three hours does not beat your firewall. It beats your detection lag &mdash; the gap between something happening and a human looking at it.</p>
+
+<p>For most small businesses that gap is measured in weeks, because nothing is watching. The only way to shrink it to minutes is to put a machine on the job: something with a name and a territory that continuously checks the accounts, the vendors, the consent grants, the exposed services, and the machines, tells you in plain language what changed since yesterday, and escalates to a person when it finds something that matters. That is a department, not a subscription. It has an owner. It can fail, and you would know whose failure it was.</p>
+
+<h2>The number</h2>
+
+<p>Under three hours, from targeting to privileged access.</p>
+
+<p>Whatever your business does, that number is now the time you have. Not the time your IT provider has &mdash; yours. The organisations that come through this are the ones where somebody already decided, in advance, who is watching.</p>
+
+<p>The attackers made that decision. They put an agent on the job.</p>
+
+<p>Anyone can automate a task. Only a strategy lifts the business.</p>
+
+<p>Armory Forge Systems decides which work your business should hand to a machine &mdash; then builds the departments that own it, security included.</p>
+
+
+
+</article>
+
+<!-- =========================
+    The Signet Certification
+========================= -->
+<div class="signet-approval hidden">
+
+<section class="signet-certification">
+    <div class="seal-line"></div>
+
+    <div class="seal-header">
+        <span class="seal-title">SEALED BY THE SIGNET</span>
+        <span class="seal-number">Issue #061</span>
+    </div>
+
+    <div class="seal-body">
+        <img src="../assets/images/signet-seal.png" alt="The Signet" class="seal-image">
+        <div class="seal-copy">
+            <blockquote>Every system we deliver is forged with intent, tested with rigor, and sealed with our mark.</blockquote>
+            <div class="seal-author">
+                <strong>Armory Forge Systems</strong>
+                <span>You imagine. We build. To the victor, the spoils.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="seal-line seal-line-bottom"></div>
+</section>
+
+<div class="seal-glow"></div>
+
+<!-- =========================
+    Article CTA
+========================= -->
+<div class="article-cta">
+    <h3>Ready to forge your next system?</h3>
+    <p>Whether you're deploying AI agents, automating workflows, or modernizing infrastructure, we're ready to help.</p>
+    <a href="../armorer.html" class="btn-primary cta-button">💬 Chat with The Armorer</a>
+    <a href="mailto:info@armoryforgesystems.com" class="btn-primary cta-button">Schedule a Discovery Call</a>
+    <a href="../signet.html" class="cta-secondary">Read another Signet article →</a>
+</div>
+
+</div>
+
+<!-- =========================
+    Footer
+========================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="../assets/logos/afs-mark.svg" alt="Armory Forge Systems" class="footer-logo">
+            <p class="footer-tagline">You imagine. We build. To the victor, the spoils.</p>
+        </div>
+        <nav class="footer-nav">
+            <a href="../index.html#hero">Home</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../pricing.html">Pricing</a>
+            <a href="../index.html#about">About</a>
+            <a href="../armorer.html">Contact</a>
+            <a href="../signet.html">The Signet</a>
+        </nav>
+        <div class="footer-social">
+            <a href="https://github.com/Armory-Forge-Systems" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/company/armory-forge-systems/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/afs.labs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/afs_labs" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+        </div>
+        <p class="footer-copy">© 2026 Armory Forge Systems</p>
+        <p class="footer-location">🇺🇸 Forged in Florida, USA.</p>
+    </div>
+</footer>
+
+<script src="../js/forge-effects.js"></script>
+<script src="../js/app.js"></script>
+<script data-goatcounter="https://armoryforgesystems.goatcounter.com/count"
+ async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
