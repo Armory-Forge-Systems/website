@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 62,
+  "article_count": 63,
   "articles": [
     {
       "issue": 1,
@@ -544,6 +544,15 @@
       "category": null,
       "date": "November 2026",
       "url": "/articles/buy-a-department-not-an-automation.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 61,
+      "slug": "the-eve-of-a-cyber-emergency",
+      "title": "The Eve of a Cybersecurity Emergency",
+      "category": null,
+      "date": "November 2026",
+      "url": "/articles/the-eve-of-a-cyber-emergency.html",
       "unnumbered": false
     },
     {
