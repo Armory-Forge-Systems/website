@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 63,
+  "article_count": 64,
   "articles": [
     {
       "issue": 1,
@@ -553,6 +553,15 @@
       "category": null,
       "date": "November 2026",
       "url": "/articles/the-eve-of-a-cyber-emergency.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 62,
+      "slug": "two-trillion-zero-profit",
+      "title": "Two Trillion Dollars. Zero Profit. (So Far.)",
+      "category": null,
+      "date": "November 2026",
+      "url": "/articles/two-trillion-zero-profit.html",
       "unnumbered": false
     },
     {
