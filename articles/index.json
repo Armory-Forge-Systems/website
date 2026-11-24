@@ -4,7 +4,7 @@
     "volume_i": "Articles 1-50",
     "volume_ii": "Articles 51-99"
   },
-  "article_count": 64,
+  "article_count": 65,
   "articles": [
     {
       "issue": 1,
@@ -562,6 +562,15 @@
       "category": null,
       "date": "November 2026",
       "url": "/articles/two-trillion-zero-profit.html",
+      "unnumbered": false
+    },
+    {
+      "issue": 63,
+      "slug": "eleven-days-three-trillion",
+      "title": "Eleven Days, Three Trillion Dollars, One Man",
+      "category": null,
+      "date": "November 2026",
+      "url": "/articles/eleven-days-three-trillion.html",
       "unnumbered": false
     },
     {
